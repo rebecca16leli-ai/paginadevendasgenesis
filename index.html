@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Advanced Protection Film | Catálogo de Produtos</title>
+<meta name="description" content="Catálogo oficial Genesis Advanced Protection Film: PPF, películas automotivas e ferramentas profissionais Linha Guardian.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080a;
+  --bg-alt:#0e0e11;
+  --card:#141417;
+  --card-border:#232326;
+  --gold:#c9962c;
+  --gold-light:#f0cb6e;
+  --gold-dim:#8a6b25;
+  --text:#f2f0eb;
+  --text-muted:#9a9893;
+  --text-faint:#605e5a;
+  --radius:2px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  line-height:1.5;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,.brand,.navlink,.eyebrow,.btn-contact,.btn-mini,.btn-hero{
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%; display:block;}
+.wrap{max-width:1240px; margin:0 auto; padding:0 24px;}
+
+/* background texture */
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(201,150,44,.10), transparent 45%),
+    radial-gradient(ellipse at 90% 20%, rgba(201,150,44,.06), transparent 40%),
+    repeating-linear-gradient(120deg, rgba(255,255,255,.012) 0px, rgba(255,255,255,.012) 1px, transparent 1px, transparent 90px);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* HEADER */
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(8,8,10,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--card-border);
+}
+.navbar{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1240px; margin:0 auto;}
+.brand{display:flex; align-items:center; gap:10px; font-size:20px; font-weight:600; color:var(--text); letter-spacing:.12em;}
+.brand .shield{width:30px; height:auto; flex:0 0 auto;}
+.brand small{display:block; font-family:'Inter',sans-serif; text-transform:none; letter-spacing:0; font-size:9px; color:var(--gold); font-weight:500;}
+nav.navlinks{display:flex; gap:28px;}
+.navlink{font-size:12px; color:var(--text-muted); font-weight:500; transition:color .2s; letter-spacing:.08em;}
+.navlink:hover{color:var(--gold-light);}
+.nav-cta{
+  display:inline-flex; align-items:center; gap:8px;
+  border:1px solid var(--gold-dim); color:var(--gold-light);
+  padding:9px 16px; font-size:11px; font-weight:600;
+  transition:all .2s;
+}
+.nav-cta:hover{background:var(--gold); color:#0a0a0a; border-color:var(--gold);}
+.burger{display:none; color:var(--text); font-size:22px; background:none; border:none;}
+
+/* HERO */
+.hero{
+  position:relative; z-index:1;
+  padding:96px 24px 80px;
+  text-align:center;
+  border-bottom:1px solid var(--card-border);
+}
+.hero .shield-lg{width:320px; max-width:80%; height:auto; margin:0 auto 22px; display:block;}
+.eyebrow{
+  font-size:12px; color:var(--gold); letter-spacing:.28em; font-weight:500; margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(38px,7vw,74px); font-weight:600; line-height:1.02;
+  color:var(--text);
+}
+.hero h1 span{
+  background:linear-gradient(120deg, var(--gold-light), var(--gold) 60%, var(--gold-dim));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero-rule{width:70px; height:2px; background:var(--gold); margin:26px auto;}
+.hero p.sub{
+  font-family:'Inter',sans-serif; color:var(--text-muted); font-size:15px;
+  max-width:520px; margin:0 auto 34px; letter-spacing:.02em;
+}
+.hero-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+.btn-hero{
+  font-size:12px; font-weight:600; padding:15px 30px; letter-spacing:.1em;
+}
+.btn-hero.primary{background:var(--gold); color:#0a0a0a;}
+.btn-hero.primary:hover{background:var(--gold-light);}
+.btn-hero.ghost{border:1px solid var(--card-border); color:var(--text-muted);}
+.btn-hero.ghost:hover{border-color:var(--gold-dim); color:var(--gold-light);}
+
+/* SECTION HEADERS */
+.section{position:relative; z-index:1; padding:72px 24px; border-bottom:1px solid var(--card-border);}
+.section-head{display:flex; align-items:flex-end; gap:18px; margin-bottom:36px; flex-wrap:wrap;}
+.section-head .tag{
+  font-size:11px; color:var(--gold); letter-spacing:.22em; font-weight:600; margin-bottom:6px; display:block;
+}
+.section-head h2{font-size:clamp(26px,4vw,38px); font-weight:600; color:var(--text);}
+.section-head p{font-family:'Inter',sans-serif; color:var(--text-muted); font-size:13.5px; max-width:460px; margin-left:auto;}
+
+/* TABLES */
+.table-card{
+  border:1px solid var(--card-border); background:var(--card); overflow:hidden; margin-bottom:22px;
+}
+.table-card .tc-head{
+  background:linear-gradient(90deg,var(--gold-dim),var(--gold));
+  color:#0a0a0a; font-family:'Oswald',sans-serif; letter-spacing:.06em;
+  font-weight:600; font-size:13px; padding:12px 18px; text-transform:uppercase;
+}
+table{width:100%; border-collapse:collapse;}
+thead th{
+  text-align:left; font-family:'Inter',sans-serif; font-size:10.5px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--text-faint); padding:12px 18px; border-bottom:1px solid var(--card-border); font-weight:600;
+}
+tbody tr{border-bottom:1px solid var(--card-border);}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:rgba(201,150,44,.04);}
+tbody td{padding:14px 18px; font-size:13.5px; color:var(--text-muted); vertical-align:middle;}
+td.tname{color:var(--text); font-weight:500; font-family:'Oswald',sans-serif; letter-spacing:.02em; font-size:14px;}
+td.tname .ttons{display:block; font-family:'Inter',sans-serif; text-transform:none; letter-spacing:0; font-size:11.5px; color:var(--text-faint); margin-top:2px; font-weight:400;}
+td.tprice{color:var(--gold-light); font-weight:600; font-family:'Oswald',sans-serif; font-size:14.5px;}
+.btn-mini{
+  display:inline-block; border:1px solid var(--gold-dim); color:var(--gold-light);
+  font-size:10.5px; font-weight:600; padding:7px 14px; letter-spacing:.06em; white-space:nowrap;
+  transition:all .2s;
+}
+.btn-mini:hover{background:var(--gold); color:#0a0a0a;}
+
+@media (max-width: 720px){
+  thead{display:none;}
+  table, tbody, tr, td{display:block; width:100%;}
+  tbody tr{padding:14px 18px; border-bottom:1px solid var(--card-border);}
+  tbody td{padding:3px 0; border:none;}
+  td.tname{font-size:15px;}
+  td:last-child{margin-top:10px;}
+}
+
+/* PRODUCT GRID */
+.filter-bar{display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap;}
+.filter-bar input{
+  flex:1; min-width:220px; background:var(--card); border:1px solid var(--card-border);
+  color:var(--text); padding:12px 16px; font-family:'Inter',sans-serif; font-size:13.5px;
+}
+.filter-bar input:focus{outline:none; border-color:var(--gold-dim);}
+.filter-bar input::placeholder{color:var(--text-faint);}
+
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.grid{grid-template-columns:1fr;}}
+
+.pcard{
+  background:var(--card); border:1px solid var(--card-border);
+  display:flex; flex-direction:column; transition:border-color .2s, transform .2s;
+  min-width:0; width:100%;
+}
+.pcard:hover{border-color:var(--gold-dim); transform:translateY(-3px);}
+.pcard-img{aspect-ratio:1/1; overflow:hidden; border-bottom:1px solid var(--card-border); background:#0c0c0e;}
+.pcard-img img{width:100%; height:100%; object-fit:cover;}
+.pcard-body{padding:16px 18px 18px; display:flex; flex-direction:column; flex:1;}
+.pcard-code{font-size:9.5px; color:var(--text-faint); letter-spacing:.12em; font-family:'Inter',sans-serif; font-weight:600;}
+.pcard-body h3{font-size:14.5px; font-weight:600; margin:6px 0 8px; color:var(--text); line-height:1.25; letter-spacing:.01em;}
+.pcard-body p{font-family:'Inter',sans-serif; font-size:12px; color:var(--text-muted); line-height:1.5; flex:1; margin-bottom:14px;}
+.pcard-footer{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+.price{font-family:'Oswald',sans-serif; color:var(--gold-light); font-weight:600; font-size:16px;}
+.btn-contact{
+  border:1px solid var(--gold-dim); color:var(--gold-light); font-size:10.5px; font-weight:600;
+  padding:9px 14px; letter-spacing:.05em; transition:all .2s; white-space:nowrap;
+}
+.btn-contact:hover{background:var(--gold); color:#0a0a0a;}
+
+.no-results{display:none; text-align:center; padding:60px 0; color:var(--text-faint); font-family:'Inter',sans-serif;}
+
+/* FILM CARDS - Peliculas */
+.film-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+@media (max-width:900px){.film-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.film-grid{grid-template-columns:1fr;}}
+
+.film-card{
+  background:var(--card); border:1px solid var(--card-border);
+  display:flex; flex-direction:column; transition:border-color .2s, transform .2s;
+  min-width:0; width:100%;
+}
+.film-card:hover{border-color:var(--gold-dim); transform:translateY(-3px);}
+.film-card-img{aspect-ratio:1/1; overflow:hidden; border-bottom:1px solid var(--card-border); background:#0c0c0e;}
+.film-card-img img{width:100%; height:100%; max-width:100%; max-height:100%; object-fit:cover; display:block;}
+.film-card-body{padding:20px 22px 24px; display:flex; flex-direction:column; flex:1;}
+.film-card-body h3{font-size:16px; font-weight:600; color:var(--text); letter-spacing:.02em; margin-bottom:6px; line-height:1.25;}
+.film-desc{font-family:'Inter',sans-serif; font-size:12px; color:var(--text-muted); line-height:1.5; margin-bottom:8px;}
+.film-medida{font-family:'Inter',sans-serif; font-size:11px; color:var(--text-faint); letter-spacing:.04em; margin-bottom:16px; text-transform:uppercase;}
+
+.film-price-hero{
+  display:flex; align-items:baseline; gap:6px; margin-bottom:16px;
+  padding:14px 16px; background:linear-gradient(135deg, rgba(201,150,44,.14), rgba(201,150,44,.03));
+  border:1px solid var(--gold-dim); border-left:3px solid var(--gold);
+}
+.film-price-hero .price-value{font-family:'Oswald',sans-serif; font-size:30px; font-weight:700; color:var(--gold-light); letter-spacing:.01em;}
+.film-price-hero .price-unit{font-family:'Inter',sans-serif; font-size:12.5px; color:var(--text-muted); font-weight:500;}
+
+.bob-list{margin-bottom:18px; display:flex; flex-direction:column; gap:6px;}
+.bob-row{
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:'Inter',sans-serif; font-size:12.5px; color:var(--text-muted);
+  padding:7px 0; border-bottom:1px dashed var(--card-border);
+}
+.bob-row span:last-child{color:var(--text); font-weight:600; font-family:'Oswald',sans-serif; letter-spacing:.02em;}
+
+.film-cta{text-align:center; margin-top:auto;}
+
+/* CART CONTROLS on product cards */
+.cart-controls{display:flex; align-items:center; gap:10px; margin-top:10px;}
+.qty-stepper{
+  display:flex; align-items:center; border:1px solid var(--card-border);
+}
+.qty-btn{
+  background:none; border:none; color:var(--text-muted); font-family:'Oswald',sans-serif;
+  font-size:16px; width:28px; height:30px; cursor:pointer; transition:color .2s, background .2s;
+}
+.qty-btn:hover{color:var(--gold-light); background:rgba(201,150,44,.08);}
+.qty-value{min-width:26px; text-align:center; font-family:'Oswald',sans-serif; font-size:13px; color:var(--text);}
+.btn-add-cart{
+  flex:1; background:var(--gold); color:#0a0a0a; border:none; cursor:pointer;
+  font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.05em;
+  font-size:11px; font-weight:600; padding:9px 10px; transition:background .2s;
+}
+.btn-add-cart:hover{background:var(--gold-light);}
+.btn-add-cart.added{background:#3a7d44; color:#fff;}
+.wa-fallback{
+  display:block; margin-top:8px; font-family:'Inter',sans-serif; font-size:10.5px;
+  color:var(--text-faint); text-decoration:underline; text-underline-offset:2px;
+}
+.wa-fallback:hover{color:var(--text-muted);}
+
+/* CART BUTTON in nav */
+.cart-btn{
+  position:relative; display:inline-flex; align-items:center; gap:8px;
+  border:1px solid var(--gold-dim); color:var(--gold-light); background:none;
+  padding:9px 14px; font-family:'Oswald',sans-serif; font-size:11px; font-weight:600;
+  letter-spacing:.05em; cursor:pointer; transition:all .2s;
+}
+.cart-btn:hover{background:var(--gold); color:#0a0a0a;}
+.cart-count{
+  background:var(--gold); color:#0a0a0a; border-radius:50%; min-width:18px; height:18px;
+  display:inline-flex; align-items:center; justify-content:center; font-size:10px; font-weight:700;
+  padding:0 4px;
+}
+.cart-btn:hover .cart-count{background:#0a0a0a; color:var(--gold-light);}
+.cart-count.hidden{display:none;}
+
+/* CART DRAWER */
+.cart-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:90;
+  opacity:0; pointer-events:none; transition:opacity .25s;
+}
+.cart-overlay.open{opacity:1; pointer-events:auto;}
+.cart-drawer{
+  position:fixed; top:0; right:0; bottom:0; width:420px; max-width:92vw;
+  background:var(--bg-alt); border-left:1px solid var(--card-border); z-index:91;
+  transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column;
+}
+.cart-drawer.open{transform:translateX(0);}
+.cart-header{
+  display:flex; align-items:center; justify-content:space-between; padding:20px 22px;
+  border-bottom:1px solid var(--card-border);
+}
+.cart-header h3{font-family:'Oswald',sans-serif; font-size:16px; letter-spacing:.05em; text-transform:uppercase; color:var(--text);}
+.cart-close{background:none; border:none; color:var(--text-muted); font-size:22px; cursor:pointer; line-height:1;}
+.cart-close:hover{color:var(--gold-light);}
+.cart-items{flex:1; overflow-y:auto; padding:14px 22px;}
+.cart-empty{text-align:center; color:var(--text-faint); font-family:'Inter',sans-serif; font-size:13px; padding:60px 0;}
+.cart-item{display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--card-border);}
+.cart-item-img{width:60px; height:60px; flex:0 0 auto; background:#0c0c0e; border:1px solid var(--card-border); overflow:hidden;}
+.cart-item-img img{width:100%; height:100%; object-fit:cover;}
+.cart-item-info{flex:1; min-width:0;}
+.cart-item-info h4{font-family:'Oswald',sans-serif; font-size:12.5px; color:var(--text); letter-spacing:.02em; margin-bottom:4px; line-height:1.3;}
+.cart-item-price{font-family:'Inter',sans-serif; font-size:11.5px; color:var(--text-faint);}
+.cart-item-controls{display:flex; align-items:center; justify-content:space-between; margin-top:8px;}
+.cart-item-remove{background:none; border:none; color:var(--text-faint); font-size:11px; text-decoration:underline; cursor:pointer; font-family:'Inter',sans-serif;}
+.cart-item-remove:hover{color:#c94040;}
+.cart-item-subtotal{font-family:'Oswald',sans-serif; font-size:13px; color:var(--gold-light); font-weight:600; white-space:nowrap;}
+.cart-footer{border-top:1px solid var(--card-border); padding:18px 22px 22px;}
+.cart-total-row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px;}
+.cart-total-row span:first-child{font-family:'Inter',sans-serif; font-size:13px; color:var(--text-muted);}
+.cart-total-row span:last-child{font-family:'Oswald',sans-serif; font-size:24px; color:var(--gold-light); font-weight:700;}
+.btn-checkout{
+  display:block; width:100%; text-align:center; background:var(--gold); color:#0a0a0a;
+  border:none; padding:15px; font-family:'Oswald',sans-serif; text-transform:uppercase;
+  letter-spacing:.08em; font-weight:600; font-size:12.5px; cursor:pointer; transition:background .2s;
+}
+.btn-checkout:hover{background:var(--gold-light);}
+.btn-checkout:disabled{background:#333; color:#777; cursor:not-allowed;}
+.cart-note{font-family:'Inter',sans-serif; font-size:10.5px; color:var(--text-faint); text-align:center; margin-top:10px; line-height:1.5;}
+
+/* METER SLIDER on film cards */
+.btn-ficha{
+  display:inline-block; background:none; border:1px solid var(--card-border); color:var(--text-muted);
+  font-family:'Inter',sans-serif; font-size:11px; padding:6px 12px; margin-bottom:14px;
+  cursor:pointer; transition:all .2s; letter-spacing:.02em;
+}
+.btn-ficha:hover{border-color:var(--gold-dim); color:var(--gold-light);}
+.meter-select{border-top:1px solid var(--card-border); padding-top:14px; margin-top:auto;}
+.meter-row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;}
+.meter-label{font-family:'Inter',sans-serif; font-size:11.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em;}
+.meter-value{font-family:'Oswald',sans-serif; font-size:15px; color:var(--text);}
+.meter-value .meter-num{color:var(--gold-light); font-size:19px; font-weight:600;}
+.meter-slider{
+  width:100%; -webkit-appearance:none; appearance:none; height:4px; background:var(--card-border);
+  outline:none; margin:10px 0 14px; cursor:pointer;
+}
+.meter-slider::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none; width:16px; height:16px; border-radius:50%;
+  background:var(--gold); cursor:pointer; border:2px solid #0a0a0a;
+}
+.meter-slider::-moz-range-thumb{
+  width:16px; height:16px; border-radius:50%; background:var(--gold); cursor:pointer; border:2px solid #0a0a0a;
+}
+.meter-price-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;}
+.meter-price-row span:first-child{font-family:'Inter',sans-serif; font-size:11.5px; color:var(--text-faint);}
+.meter-price-row span:last-child{font-family:'Oswald',sans-serif; font-size:19px; color:var(--gold-light); font-weight:700;}
+
+/* FICHA TECNICA MODAL */
+.ficha-overlay{position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:95; opacity:0; pointer-events:none; transition:opacity .2s;}
+.ficha-overlay.open{opacity:1; pointer-events:auto;}
+.ficha-modal{
+  position:fixed; top:50%; left:50%; transform:translate(-50%,-46%); width:480px; max-width:90vw;
+  max-height:80vh; overflow-y:auto; background:var(--bg-alt); border:1px solid var(--card-border);
+  z-index:96; opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
+}
+.ficha-modal.open{opacity:1; pointer-events:auto; transform:translate(-50%,-50%);}
+.ficha-modal-head{display:flex; justify-content:space-between; align-items:center; padding:20px 24px; border-bottom:1px solid var(--card-border);}
+.ficha-modal-head h3{font-family:'Oswald',sans-serif; font-size:15px; letter-spacing:.03em; color:var(--text); text-transform:uppercase;}
+.ficha-close{background:none; border:none; color:var(--text-muted); font-size:22px; cursor:pointer; line-height:1;}
+.ficha-close:hover{color:var(--gold-light);}
+.ficha-body{padding:10px 24px 22px;}
+.ficha-row{display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-bottom:1px dashed var(--card-border); font-family:'Inter',sans-serif; font-size:12.5px;}
+.ficha-row span:first-child{color:var(--text-faint);}
+.ficha-row span:last-child{color:var(--text); text-align:right; font-weight:500;}
+.ficha-disclaimer{margin-top:16px; font-family:'Inter',sans-serif; font-size:10.5px; color:var(--text-faint); line-height:1.5; font-style:italic;}
+
+/* FRETE (shipping) in cart */
+.frete-box{border-top:1px solid var(--card-border); padding-top:14px; margin-bottom:14px;}
+.frete-row{display:flex; gap:8px; margin-bottom:8px;}
+.frete-row input{
+  flex:1; background:var(--card); border:1px solid var(--card-border); color:var(--text);
+  padding:9px 12px; font-family:'Inter',sans-serif; font-size:12.5px;
+}
+.frete-row input:focus{outline:none; border-color:var(--gold-dim);}
+.frete-row button{
+  background:none; border:1px solid var(--gold-dim); color:var(--gold-light); padding:0 14px;
+  font-family:'Oswald',sans-serif; font-size:11px; font-weight:600; letter-spacing:.04em; cursor:pointer;
+}
+.frete-row button:hover{background:var(--gold); color:#0a0a0a;}
+.frete-result{font-family:'Inter',sans-serif; font-size:11.5px; color:var(--text-muted); min-height:16px;}
+.frete-result strong{color:var(--gold-light); font-family:'Oswald',sans-serif;}
+
+
+@media (max-width:520px){
+  .cart-drawer{width:100vw; max-width:100vw;}
+}
+
+
+
+/* FOOTER CTA */
+.footer-cta{
+  position:relative; z-index:1; text-align:center; padding:80px 24px;
+  background:linear-gradient(180deg, transparent, rgba(201,150,44,.05));
+}
+.footer-cta h2{font-size:clamp(24px,4vw,36px); margin-bottom:14px; font-weight:600;}
+.footer-cta p{font-family:'Inter',sans-serif; color:var(--text-muted); margin-bottom:30px; font-size:14px;}
+
+footer{
+  position:relative; z-index:1;
+  border-top:1px solid var(--card-border); padding:36px 24px; text-align:center;
+}
+footer .brand{justify-content:center; margin-bottom:10px;}
+footer p{font-family:'Inter',sans-serif; font-size:11.5px; color:var(--text-faint);}
+
+/* WhatsApp floating button */
+.float-wa{
+  position:fixed; bottom:22px; right:22px; z-index:60;
+  width:56px; height:56px; border-radius:50%;
+  background:var(--gold); display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.5);
+  transition:transform .2s;
+}
+.float-wa:hover{transform:scale(1.08);}
+.float-wa svg{width:28px; height:28px;}
+
+@media (max-width:720px){
+  nav.navlinks{display:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <a href="#top" class="brand">
+      <img class="shield" src="assets/img/genesis_shield.png" alt="Genesis">
+      <span>GENESIS<small>Advanced Protection Film</small></span>
+    </a>
+    <nav class="navlinks">
+      <a class="navlink" href="#peliculas">Películas</a>
+      <a class="navlink" href="#ppf">PPF</a>
+      <a class="navlink" href="#ferramentas">Ferramentas</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <button type="button" class="cart-btn" id="cartToggle" aria-label="Abrir carrinho">
+        🛒 Carrinho <span class="cart-count hidden" id="cartCount">0</span>
+      </button>
+      <a class="nav-cta" href="https://wa.me/5541988866000?text=Ol%C3%A1%21%20Vim%20pelo%20Cat%C3%A1logo%20Genesis%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras">
+  <div class="cart-header">
+    <h3>Seu carrinho</h3>
+    <button type="button" class="cart-close" id="cartClose" aria-label="Fechar carrinho">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Seu carrinho está vazio.</p>
+  </div>
+  <div class="cart-footer">
+    <div class="frete-box">
+      <div class="frete-row">
+        <input type="text" id="cepInput" placeholder="Seu CEP (ex: 80000-000)" maxlength="9">
+        <button type="button" id="cepCalc">Calcular frete</button>
+      </div>
+      <div class="frete-result" id="freteResult"></div>
+    </div>
+    <div class="cart-total-row">
+      <span>Subtotal</span>
+      <span id="cartTotal">R$ 0,00</span>
+    </div>
+    <div class="cart-total-row" id="freteRow" style="display:none;">
+      <span>Frete estimado</span>
+      <span id="freteValue">—</span>
+    </div>
+    <div class="cart-total-row" style="border-top:1px solid var(--card-border); padding-top:10px;">
+      <span>Total</span>
+      <span id="cartGrandTotal">R$ 0,00</span>
+    </div>
+    <button type="button" class="btn-checkout" id="cartCheckout" disabled>Finalizar pedido no WhatsApp</button>
+    <p class="cart-note">O pedido é enviado organizado para o nosso WhatsApp. Pagamento e confirmação são combinados por lá. Frete é uma estimativa por região — valor final confirmado no fechamento.</p>
+  </div>
+</aside>
+
+<div class="ficha-overlay" id="fichaOverlay"></div>
+<div class="ficha-modal" id="fichaModal" role="dialog" aria-modal="true">
+  <div class="ficha-modal-head">
+    <h3 id="fichaTitle">Ficha Técnica</h3>
+    <button type="button" class="ficha-close" id="fichaClose" aria-label="Fechar">&times;</button>
+  </div>
+  <div class="ficha-body" id="fichaBody"></div>
+</div>
+
+<section class="hero" id="top">
+  <img class="shield-lg" src="assets/img/genesis_shield.png" alt="Genesis Advanced Protection Film">
+  <span class="eyebrow">Proteção automotiva de alta performance</span>
+  <h1>Equipe seu <span>Estúdio</span></h1>
+  <div class="hero-rule"></div>
+  <p class="sub">Paint Protection Film · Películas térmicas · Ferramentas profissionais da Linha Guardian.</p>
+  <div class="hero-ctas">
+    <a class="btn-hero primary" href="#ferramentas">Ver ferramentas</a>
+    <a class="btn-hero ghost" href="https://wa.me/5541988866000?text=Ol%C3%A1%21%20Vim%20pelo%20Cat%C3%A1logo%20Genesis%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar com um consultor</a>
+  </div>
+</section>
+
+<section class="section" id="peliculas">
+  <div class="section-head">
+    <div>
+      <span class="tag">Linha Guardian</span>
+      <h2>Películas Automotivas</h2>
+    </div>
+    <p>Escolha a metragem exata que precisa — preço por metro, corte sob medida. <strong style="color:var(--gold-light);">Preço de teste: R$ 300/m em toda a linha.</strong></p>
+  </div>
+
+  <div class="film-grid">
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/pelicula_imperiale.jpg?v=2" alt="GUARDIAN IMPERIALE CERÂMICO" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN IMPERIALE CERÂMICO</h3>
+            <p class="film-desc">Cerâmica premium, a mais alta transferência de calor da linha Guardian.</p>
+            <p class="film-medida">1,52m de largura · até 30m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="imperiale">Ver ficha técnica</button>
+            <div class="meter-select" data-id="imperiale" data-name="GUARDIAN IMPERIALE CERÂMICO" data-price="300" data-img="assets/img/pelicula_imperiale.jpg?v=2" data-max="30">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="30" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/pelicula_democrazia.jpg?v=2" alt="GUARDIAN DEMOCRAZIA CARBONO" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN DEMOCRAZIA CARBONO</h3>
+            <p class="film-desc">Carbono de alta performance com ótimo custo-benefício.</p>
+            <p class="film-medida">1,52m de largura · até 30m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="democrazia">Ver ficha técnica</button>
+            <div class="meter-select" data-id="democrazia" data-name="GUARDIAN DEMOCRAZIA CARBONO" data-price="300" data-img="assets/img/pelicula_democrazia.jpg?v=2" data-max="30">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="30" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/pelicula_black_gold.jpg?v=2" alt="GUARDIAN BLACK GOLD" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN BLACK GOLD</h3>
+            <p class="film-desc">Entrada da linha Guardian, escurecimento uniforme e acabamento preto profundo.</p>
+            <p class="film-medida">1,52m de largura · até 30m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="black_gold">Ver ficha técnica</button>
+            <div class="meter-select" data-id="black_gold" data-name="GUARDIAN BLACK GOLD" data-price="300" data-img="assets/img/pelicula_black_gold.jpg?v=2" data-max="30">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="30" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/pelicula_placeholder.jpg" alt="GUARDIAN PHOTOCHROMIC SERIES" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN PHOTOCHROMIC SERIES</h3>
+            <p class="film-desc">Película fotocromática: escurece com a luz solar e clareia à noite.</p>
+            <p class="film-medida">1,52m de largura · até 5m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="photochromic">Ver ficha técnica</button>
+            <div class="meter-select" data-id="photochromic" data-name="GUARDIAN PHOTOCHROMIC SERIES" data-price="300" data-img="assets/img/pelicula_placeholder.jpg" data-max="5">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="5" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/pelicula_placeholder.jpg" alt="GUARDIAN NANO METAL" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN NANO METAL</h3>
+            <p class="film-desc">Tecnologia nano metálica para máxima rejeição de calor e infravermelho.</p>
+            <p class="film-medida">1,52m de largura · até 10m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="nano_metal">Ver ficha técnica</button>
+            <div class="meter-select" data-id="nano_metal" data-name="GUARDIAN NANO METAL" data-price="300" data-img="assets/img/pelicula_placeholder.jpg" data-max="10">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="10" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+  </div>
+</section>
+
+<section class="section" id="ppf">
+  <div class="section-head">
+    <div>
+      <span class="tag">Linha Guardian</span>
+      <h2>Paint Protection Film</h2>
+    </div>
+    <p>PPF premium em diferentes acabamentos, cortado na metragem que você precisar.</p>
+  </div>
+
+  <div class="film-grid">
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 6.5" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN ELITE SERIES 6.5</h3>
+            <p class="film-desc">PPF de alta transparência e autorregenerável, acabamento brilhante.</p>
+            <p class="film-medida">1,52m de largura · até 15m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="ppf_elite65">Ver ficha técnica</button>
+            <div class="meter-select" data-id="ppf_elite65" data-name="GUARDIAN ELITE SERIES 6.5" data-price="300" data-img="assets/img/ppf_elite.jpg?v=2" data-max="15">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="15" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/pelicula_placeholder.jpg" alt="GUARDIAN MATTE ULTRA" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN MATTE ULTRA</h3>
+            <p class="film-desc">Acabamento fosco premium com proteção total da pintura.</p>
+            <p class="film-medida">1,52m de largura · até 15m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="ppf_matte">Ver ficha técnica</button>
+            <div class="meter-select" data-id="ppf_matte" data-name="GUARDIAN MATTE ULTRA" data-price="300" data-img="assets/img/pelicula_placeholder.jpg" data-max="15">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="15" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/pelicula_placeholder.jpg" alt="GUARDIAN BLACK ULTRA" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN BLACK ULTRA</h3>
+            <p class="film-desc">PPF black satinado, transforma a cor do veículo com proteção máxima.</p>
+            <p class="film-medida">1,52m de largura · até 15m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="ppf_black">Ver ficha técnica</button>
+            <div class="meter-select" data-id="ppf_black" data-name="GUARDIAN BLACK ULTRA" data-price="300" data-img="assets/img/pelicula_placeholder.jpg" data-max="15">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="15" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 7.5" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN ELITE SERIES 7.5</h3>
+            <p class="film-desc">Versão mais espessa da Elite Series, reforço extra contra impactos.</p>
+            <p class="film-medida">1,52m de largura · até 15m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="ppf_elite75">Ver ficha técnica</button>
+            <div class="meter-select" data-id="ppf_elite75" data-name="GUARDIAN ELITE SERIES 7.5" data-price="300" data-img="assets/img/ppf_elite.jpg?v=2" data-max="15">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="15" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/ppf_scudo.jpg?v=2" alt="GUARDIAN SCUDO 6.5" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN SCUDO 6.5</h3>
+            <p class="film-desc">Ótimo custo-benefício mantendo a autorregeneração da linha Guardian.</p>
+            <p class="film-medida">1,52m de largura · até 15m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="ppf_scudo">Ver ficha técnica</button>
+            <div class="meter-select" data-id="ppf_scudo" data-name="GUARDIAN SCUDO 6.5" data-price="300" data-img="assets/img/ppf_scudo.jpg?v=2" data-max="15">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">5</span> m</span>
+              </div>
+              <input type="range" min="1" max="15" value="5" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 1500.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+  </div>
+
+  <div class="table-card" style="margin-top:32px;">
+    <div class="tc-head">Kit e ferramentas PPF</div>
+    <table>
+      <thead><tr><th>Produto</th><th>Medida</th><th>Garantia</th><th></th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="tname">KIT START G</td>
+          <td>1,0 x 1,0m</td>
+          <td>—</td>
+          <td><a class="btn-mini" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20KIT%20START%20G." target="_blank" rel="noopener">Consultar</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="farol">
+  <div class="section-head">
+    <div>
+      <span class="tag">Linha Guardian</span>
+      <h2 style="font-size:24px;">Películas para Farol</h2>
+    </div>
+  </div>
+  <div class="film-grid">
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/pelicula_placeholder.jpg" alt="GUARDIAN CAMALEÃO PURPLE" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN CAMALEÃO PURPLE</h3>
+            <p class="film-desc">Película camaleão para faróis, efeito translúcido com mudança de tom conforme o ângulo.</p>
+            <p class="film-medida">1,52m de largura · até 5m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="camaleao_purple">Ver ficha técnica</button>
+            <div class="meter-select" data-id="camaleao_purple" data-name="GUARDIAN CAMALEÃO PURPLE" data-price="300" data-img="assets/img/pelicula_placeholder.jpg" data-max="5">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">2</span> m</span>
+              </div>
+              <input type="range" min="1" max="5" value="2" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 600.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <div class="film-card-img"><img src="assets/img/pelicula_placeholder.jpg" alt="GUARDIAN CAMALEÃO BLACK" loading="lazy" onerror="this.src='assets/img/pelicula_placeholder.jpg'"></div>
+          <div class="film-card-body">
+            <h3>GUARDIAN CAMALEÃO BLACK</h3>
+            <p class="film-desc">Película camaleão para faróis em tom black, acabamento fumê premium.</p>
+            <p class="film-medida">1,52m de largura · até 5m por bobina</p>
+            <button type="button" class="btn-ficha" data-ficha="camaleao_black">Ver ficha técnica</button>
+            <div class="meter-select" data-id="camaleao_black" data-name="GUARDIAN CAMALEÃO BLACK" data-price="300" data-img="assets/img/pelicula_placeholder.jpg" data-max="5">
+              <div class="meter-row">
+                <span class="meter-label">Metragem</span>
+                <span class="meter-value"><span class="meter-num">2</span> m</span>
+              </div>
+              <input type="range" min="1" max="5" value="2" step="1" class="meter-slider">
+              <div class="meter-price-row">
+                <span>R$ 300,00 /m</span>
+                <span class="meter-subtotal">R$ 600.00</span>
+              </div>
+              <button type="button" class="btn-add-cart film-meter-add">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </article>
+  </div>
+</section>
+
+<section class="section" id="ferramentas" style="border-bottom:none;">
+  <div class="section-head">
+    <div>
+      <span class="tag">Linha Guardian</span>
+      <h2>Ferramentas Profissionais</h2>
+    </div>
+    <p>46 itens para aplicação, corte e acabamento de PPF e películas. Clique em "Entre em contato" para falar direto no WhatsApp sobre o item.</p>
+  </div>
+
+  <div class="filter-bar">
+    <input type="text" id="searchInput" placeholder="Buscar ferramenta por nome... (ex: espátula, lâmina, luva)">
+  </div>
+
+  <div class="grid" id="productGrid">
+        <article class="pcard" data-name="kit espátulas para ppf">
+          <div class="pcard-img"><img src="assets/img/kit_espatulas.jpg" alt="KIT ESPÁTULAS PARA PPF" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD001KIT</span>
+            <h3>KIT ESPÁTULAS PARA PPF</h3>
+            <p>Conjunto de espátulas para aplicação de PPF.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 119,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD001KIT" data-name="KIT ESPÁTULAS PARA PPF" data-price="119.90" data-img="assets/img/kit_espatulas.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Kit%20Esp%C3%A1tulas%20Para%20Ppf." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="kit para desmontagem interna 38pc">
+          <div class="pcard-img"><img src="assets/img/kit_desmontagem.jpg" alt="KIT PARA DESMONTAGEM INTERNA 38PC" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD028KIT</span>
+            <h3>KIT PARA DESMONTAGEM INTERNA 38PC</h3>
+            <p>Kit com 38 peças para desmontagem de acabamentos e componentes internos automotivos.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 149,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD028KIT" data-name="KIT PARA DESMONTAGEM INTERNA 38PC" data-price="149.90" data-img="assets/img/kit_desmontagem.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Kit%20Para%20Desmontagem%20Interna%2038Pc." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="jogo de pinças metálicas hard">
+          <div class="pcard-img"><img src="assets/img/jogo_pincas.jpg" alt="JOGO DE PINÇAS METÁLICAS HARD" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD034KIT</span>
+            <h3>JOGO DE PINÇAS METÁLICAS HARD</h3>
+            <p>Conjunto de pinças metálicas resistentes para trabalhos de precisão.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 99,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD034KIT" data-name="JOGO DE PINÇAS METÁLICAS HARD" data-price="99.90" data-img="assets/img/jogo_pincas.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Jogo%20De%20Pin%C3%A7as%20Met%C3%A1licas%20Hard." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="pinça metálica ponta chata">
+          <div class="pcard-img"><img src="assets/img/pinca_chata.jpg" alt="PINÇA METÁLICA PONTA CHATA" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD065PNÇ</span>
+            <h3>PINÇA METÁLICA PONTA CHATA</h3>
+            <p>Pinça com ponta chata para segurar, posicionar e remover materiais com precisão.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 35,50</span>
+            </div>
+            <div class="cart-controls" data-id="GD065PNÇ" data-name="PINÇA METÁLICA PONTA CHATA" data-price="35.50" data-img="assets/img/pinca_chata.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Pin%C3%A7a%20Met%C3%A1lica%20Ponta%20Chata." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="pinça metálica ponta fina">
+          <div class="pcard-img"><img src="assets/img/pinca_fina.jpg" alt="PINÇA METÁLICA PONTA FINA" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD066PNÇ</span>
+            <h3>PINÇA METÁLICA PONTA FINA</h3>
+            <p>Pinça de ponta fina indicada para detalhes e áreas de difícil acesso.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 35,50</span>
+            </div>
+            <div class="cart-controls" data-id="GD066PNÇ" data-name="PINÇA METÁLICA PONTA FINA" data-price="35.50" data-img="assets/img/pinca_fina.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Pin%C3%A7a%20Met%C3%A1lica%20Ponta%20Fina." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="pinça metálica ponta curvada">
+          <div class="pcard-img"><img src="assets/img/pinca_curvada.jpg" alt="PINÇA METÁLICA PONTA CURVADA" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD067PNÇ</span>
+            <h3>PINÇA METÁLICA PONTA CURVADA</h3>
+            <p>Pinça com ponta curva para manuseio preciso em cantos e áreas estreitas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 35,50</span>
+            </div>
+            <div class="cart-controls" data-id="GD067PNÇ" data-name="PINÇA METÁLICA PONTA CURVADA" data-price="35.50" data-img="assets/img/pinca_curvada.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Pin%C3%A7a%20Met%C3%A1lica%20Ponta%20Curvada." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="caixa cortadora de lâmina">
+          <div class="pcard-img"><img src="assets/img/caixa_cortadora_lamina.jpg" alt="CAIXA CORTADORA DE LÂMINA" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD010CUT</span>
+            <h3>CAIXA CORTADORA DE LÂMINA</h3>
+            <p>Caixa de corte com suporte de armazenamento de lâminas usadas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 74,50</span>
+            </div>
+            <div class="cart-controls" data-id="GD010CUT" data-name="CAIXA CORTADORA DE LÂMINA" data-price="74.50" data-img="assets/img/caixa_cortadora_lamina.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Caixa%20Cortadora%20De%20L%C3%A2mina." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="mini raspador">
+          <div class="pcard-img"><img src="assets/img/mini_raspador.jpg" alt="MINI RASPADOR" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD037CUT</span>
+            <h3>MINI RASPADOR</h3>
+            <p>Raspador compacto para remoção de resíduos, adesivos e pequenas imperfeições.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 9,50</span>
+            </div>
+            <div class="cart-controls" data-id="GD037CUT" data-name="MINI RASPADOR" data-price="9.50" data-img="assets/img/mini_raspador.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Mini%20Raspador." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="estilete basic alumínio">
+          <div class="pcard-img"><img src="assets/img/estilete_basic.jpg" alt="ESTILETE BASIC ALUMÍNIO" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD003CUT</span>
+            <h3>ESTILETE BASIC ALUMÍNIO</h3>
+            <p>Estilete para PPF e películas, para lâminas 9mm. Precisão e ergonomia!</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 44,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD003CUT" data-name="ESTILETE BASIC ALUMÍNIO" data-price="44.90" data-img="assets/img/estilete_basic.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Estilete%20Basic%20Alum%C3%ADnio." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="cortador line guardian">
+          <div class="pcard-img"><img src="assets/img/cortador_line_guardian.jpg" alt="CORTADOR LINE GUARDIAN" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD004CUT</span>
+            <h3>CORTADOR LINE GUARDIAN</h3>
+            <p>Cortador de películas e PPF, preciso e seguro.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 20,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD004CUT" data-name="CORTADOR LINE GUARDIAN" data-price="20.00" data-img="assets/img/cortador_line_guardian.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Cortador%20Line%20Guardian." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="raspador duplo">
+          <div class="pcard-img"><img src="assets/img/raspador_duplo.jpg" alt="RASPADOR DUPLO" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD009CUT</span>
+            <h3>RASPADOR DUPLO</h3>
+            <p>Raspador com duas extremidades para diferentes tipos de remoção e acabamento.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 29,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD009CUT" data-name="RASPADOR DUPLO" data-price="29.90" data-img="assets/img/raspador_duplo.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Raspador%20Duplo." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="estilete olfa 9mm">
+          <div class="pcard-img"><img src="assets/img/estilete_olfa.jpg" alt="ESTILETE OLFA 9mm" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD042CUT</span>
+            <h3>ESTILETE OLFA 9mm</h3>
+            <p>Renomado estilete OLFA para lâminas 9mm com lâminas de 30°.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 109,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD042CUT" data-name="ESTILETE OLFA 9mm" data-price="109.90" data-img="assets/img/estilete_olfa.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Estilete%20Olfa%209Mm." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="lâminas gold titanium 9mm 30° cx/10">
+          <div class="pcard-img"><img src="assets/img/laminas_gold_titanium.jpg" alt="LÂMINAS GOLD TITANIUM 9mm 30° CX/10" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD097CUT</span>
+            <h3>LÂMINAS GOLD TITANIUM 9mm 30° CX/10</h3>
+            <p>Caixa com 10 lâminas de titânio dourado 9mm e ponta de 30°.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 25,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD097CUT" data-name="LÂMINAS GOLD TITANIUM 9mm 30° CX/10" data-price="25.00" data-img="assets/img/laminas_gold_titanium.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20L%C3%A2minas%20Gold%20Titanium%209Mm%2030%C2%B0%20Cx/10." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="lâminas aço carbono 9mm 30° cx/10">
+          <div class="pcard-img"><img src="assets/img/laminas_aco_carbono.jpg" alt="LÂMINAS AÇO CARBONO 9mm 30° CX/10" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD099CUT</span>
+            <h3>LÂMINAS AÇO CARBONO 9mm 30° CX/10</h3>
+            <p>Caixa com 10 lâminas de aço carbono 9mm e ponta de 30°.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 25,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD099CUT" data-name="LÂMINAS AÇO CARBONO 9mm 30° CX/10" data-price="25.00" data-img="assets/img/laminas_aco_carbono.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20L%C3%A2minas%20A%C3%A7o%20Carbono%209Mm%2030%C2%B0%20Cx/10." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="lâminas aço inox 9mm 30° cx/10">
+          <div class="pcard-img"><img src="assets/img/laminas_aco_inox.jpg" alt="LÂMINAS AÇO INOX 9mm 30° CX/10" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD045CUT</span>
+            <h3>LÂMINAS AÇO INOX 9mm 30° CX/10</h3>
+            <p>Caixa com 10 lâminas de aço inox 9mm e ponta de 30°.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 25,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD045CUT" data-name="LÂMINAS AÇO INOX 9mm 30° CX/10" data-price="25.00" data-img="assets/img/laminas_aco_inox.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20L%C3%A2minas%20A%C3%A7o%20Inox%209Mm%2030%C2%B0%20Cx/10." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="cortador de line simples">
+          <div class="pcard-img"><img src="assets/img/cortador_line_simples.jpg" alt="CORTADOR DE LINE SIMPLES" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD025CUT</span>
+            <h3>CORTADOR DE LINE SIMPLES</h3>
+            <p>Ferramenta prática para cortes rápidos em películas, fitas e materiais leves.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 29,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD025CUT" data-name="CORTADOR DE LINE SIMPLES" data-price="29.90" data-img="assets/img/cortador_line_simples.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Cortador%20De%20Line%20Simples." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="suporte de lâmina para filme">
+          <div class="pcard-img"><img src="assets/img/suporte_lamina_filme.jpg" alt="SUPORTE DE LÂMINA PARA FILME" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD047CUT</span>
+            <h3>SUPORTE DE LÂMINA PARA FILME</h3>
+            <p>Suporte para lâmina desenvolvido para cortes em filmes e películas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 29,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD047CUT" data-name="SUPORTE DE LÂMINA PARA FILME" data-price="29.90" data-img="assets/img/suporte_lamina_filme.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Suporte%20De%20L%C3%A2mina%20Para%20Filme." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="suporte metálico de precisão 2pc">
+          <div class="pcard-img"><img src="assets/img/suporte_metalico_precisao.jpg" alt="SUPORTE METÁLICO DE PRECISÃO 2PC" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD018CUT</span>
+            <h3>SUPORTE METÁLICO DE PRECISÃO 2PC</h3>
+            <p>Conjunto com 2 suportes metálicos para cortes e trabalhos de precisão.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 80,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD018CUT" data-name="SUPORTE METÁLICO DE PRECISÃO 2PC" data-price="80.00" data-img="assets/img/suporte_metalico_precisao.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Suporte%20Met%C3%A1lico%20De%20Precis%C3%A3o%202Pc." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="mini rodo longo">
+          <div class="pcard-img"><img src="assets/img/mini_rodo_longo.jpg" alt="MINI RODO LONGO" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD020RD</span>
+            <h3>MINI RODO LONGO</h3>
+            <p>Mini rodo alongado para aplicação e acabamento em áreas estreitas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 34,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD020RD" data-name="MINI RODO LONGO" data-price="34.90" data-img="assets/img/mini_rodo_longo.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Mini%20Rodo%20Longo." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="cabo plástico blue max 35cm">
+          <div class="pcard-img"><img src="assets/img/cabo_plastico_bluemax.jpg" alt="CABO PLÁSTICO BLUE MAX 35CM" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD002RD</span>
+            <h3>CABO PLÁSTICO BLUE MAX 35CM</h3>
+            <p>Cabo plástico resistente para uso com a linha Blue Max Hard.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 45,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD002RD" data-name="CABO PLÁSTICO BLUE MAX 35CM" data-price="45.00" data-img="assets/img/cabo_plastico_bluemax.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Cabo%20Pl%C3%A1stico%20Blue%20Max%2035Cm." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="cabo alumínio blue max 45cm">
+          <div class="pcard-img"><img src="assets/img/cabo_aluminio_bluemax.jpg" alt="CABO ALUMÍNIO BLUE MAX 45CM" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD022RD</span>
+            <h3>CABO ALUMÍNIO BLUE MAX 45CM</h3>
+            <p>Cabo de alumínio resistente para uso com a linha Blue Max Hard.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 45,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD022RD" data-name="CABO ALUMÍNIO BLUE MAX 45CM" data-price="45.00" data-img="assets/img/cabo_aluminio_bluemax.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Cabo%20Alum%C3%ADnio%20Blue%20Max%2045Cm." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="rodo grande de silicone">
+          <div class="pcard-img"><img src="assets/img/rodo_grande_silicone.jpg" alt="RODO GRANDE DE SILICONE" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD021RD</span>
+            <h3>RODO GRANDE DE SILICONE</h3>
+            <p>Rodo grande para locais de difícil acesso como para-brisa e vidros traseiros.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 75,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD021RD" data-name="RODO GRANDE DE SILICONE" data-price="75.00" data-img="assets/img/rodo_grande_silicone.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Rodo%20Grande%20De%20Silicone." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="blue max original 90°">
+          <div class="pcard-img"><img src="assets/img/blue_max_original.jpg" alt="BLUE MAX ORIGINAL 90°" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD023RD</span>
+            <h3>BLUE MAX ORIGINAL 90°</h3>
+            <p>Rodo Blue Max original com ângulo de 90° para aplicação profissional.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 69,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD023RD" data-name="BLUE MAX ORIGINAL 90°" data-price="69.90" data-img="assets/img/blue_max_original.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Blue%20Max%20Original%2090%C2%B0." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="espátula gold com feltro">
+          <div class="pcard-img"><img src="assets/img/espatula_gold_feltro.jpg" alt="ESPÁTULA GOLD COM FELTRO" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD005ESP</span>
+            <h3>ESPÁTULA GOLD COM FELTRO</h3>
+            <p>Espátula com borda de feltro para aplicação sem riscar a película.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 19,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD005ESP" data-name="ESPÁTULA GOLD COM FELTRO" data-price="19.90" data-img="assets/img/espatula_gold_feltro.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Esp%C3%A1tula%20Gold%20Com%20Feltro." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="espátula de acabamento para film">
+          <div class="pcard-img"><img src="assets/img/espatula_acabamento_film.jpg" alt="ESPÁTULA DE ACABAMENTO PARA FILM" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD006ESP</span>
+            <h3>ESPÁTULA DE ACABAMENTO PARA FILM</h3>
+            <p>Espátula rígida para acabamento de películas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 19,50</span>
+            </div>
+            <div class="cart-controls" data-id="GD006ESP" data-name="ESPÁTULA DE ACABAMENTO PARA FILM" data-price="19.50" data-img="assets/img/espatula_acabamento_film.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Esp%C3%A1tula%20De%20Acabamento%20Para%20Film." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="mini espátula com feltro">
+          <div class="pcard-img"><img src="assets/img/mini_espatula_feltro.jpg" alt="MINI ESPÁTULA COM FELTRO" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD007ESP</span>
+            <h3>MINI ESPÁTULA COM FELTRO</h3>
+            <p>Espátula compacta com feltro para detalhes e áreas pequenas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 14,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD007ESP" data-name="MINI ESPÁTULA COM FELTRO" data-price="14.90" data-img="assets/img/mini_espatula_feltro.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Mini%20Esp%C3%A1tula%20Com%20Feltro." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="espátula slim fibra de carbono">
+          <div class="pcard-img"><img src="assets/img/espatula_slim_fibra_carbono.jpg" alt="ESPÁTULA SLIM FIBRA DE CARBONO" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD008ESP</span>
+            <h3>ESPÁTULA SLIM FIBRA DE CARBONO</h3>
+            <p>Espátula fina em fibra de carbono para acabamento preciso em espaços estreitos.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 34,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD008ESP" data-name="ESPÁTULA SLIM FIBRA DE CARBONO" data-price="34.90" data-img="assets/img/espatula_slim_fibra_carbono.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Esp%C3%A1tula%20Slim%20Fibra%20De%20Carbono." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="espátula green com furo">
+          <div class="pcard-img"><img src="assets/img/espatula_green_furo.jpg" alt="ESPÁTULA GREEN COM FURO" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD016ESP</span>
+            <h3>ESPÁTULA GREEN COM FURO</h3>
+            <p>Espátula verde com furo para cabo retrátil.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 15,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD016ESP" data-name="ESPÁTULA GREEN COM FURO" data-price="15.90" data-img="assets/img/espatula_green_furo.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Esp%C3%A1tula%20Green%20Com%20Furo." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="espátula ppf wrap ward verde + espátula ppf soft azul">
+          <div class="pcard-img"><img src="assets/img/espatula_ppf_wrap.jpg" alt="ESPÁTULA PPF WRAP WARD VERDE + ESPÁTULA PPF SOFT AZUL" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD019ESP</span>
+            <h3>ESPÁTULA PPF WRAP WARD VERDE + ESPÁTULA PPF SOFT AZUL</h3>
+            <p>Espátulas versáteis para aplicações de PPF e envelopamento.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 30,00 <small style="font-size:11px; color:var(--text-faint); font-family:'Inter',sans-serif;">cada</small></span>
+            </div>
+            <div class="cart-controls" data-id="GD019ESP" data-name="ESPÁTULA PPF WRAP WARD VERDE + ESPÁTULA PPF SOFT AZUL" data-price="30.00" data-img="assets/img/espatula_ppf_wrap.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Esp%C3%A1tula%20Ppf%20Wrap%20Ward%20Verde%20%2B%20Esp%C3%A1tula%20Ppf%20Soft%20Azul." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="espátula tiazinha">
+          <div class="pcard-img"><img src="assets/img/espatula_tiazinha.jpg" alt="ESPÁTULA TIAZINHA" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD038ESP</span>
+            <h3>ESPÁTULA TIAZINHA</h3>
+            <p>Espátula pequena para acabamento em canto de película.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 9,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD038ESP" data-name="ESPÁTULA TIAZINHA" data-price="9.90" data-img="assets/img/espatula_tiazinha.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Esp%C3%A1tula%20Tiazinha." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="espátula conquistador (batman)">
+          <div class="pcard-img"><img src="assets/img/espatula_conquistador.jpg" alt="ESPÁTULA CONQUISTADOR (BATMAN)" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD050ESP</span>
+            <h3>ESPÁTULA CONQUISTADOR (BATMAN)</h3>
+            <p>Espátula de formato especial para aplicação e acabamento em áreas complexas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 29,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD050ESP" data-name="ESPÁTULA CONQUISTADOR (BATMAN)" data-price="29.90" data-img="assets/img/espatula_conquistador.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Esp%C3%A1tula%20Conquistador%20%28Batman%29." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="kit tucking 3 peças hard">
+          <div class="pcard-img"><img src="assets/img/kit_tucking.jpg" alt="KIT TUCKING 3 PEÇAS HARD" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD032ESP</span>
+            <h3>KIT TUCKING 3 PEÇAS HARD</h3>
+            <p>Kit com 3 ferramentas rígidas para encaixe de película em frestas e acabamentos.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 19,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD032ESP" data-name="KIT TUCKING 3 PEÇAS HARD" data-price="19.90" data-img="assets/img/kit_tucking.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Kit%20Tucking%203%20Pe%C3%A7as%20Hard." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="espátula longa de raspagem plástica">
+          <div class="pcard-img"><img src="assets/img/espatula_longa_raspagem.jpg" alt="ESPÁTULA LONGA DE RASPAGEM PLÁSTICA" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD033ESP</span>
+            <h3>ESPÁTULA LONGA DE RASPAGEM PLÁSTICA</h3>
+            <p>Espátula plástica longa para raspagem e alcance em áreas profundas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 14,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD033ESP" data-name="ESPÁTULA LONGA DE RASPAGEM PLÁSTICA" data-price="14.90" data-img="assets/img/espatula_longa_raspagem.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Esp%C3%A1tula%20Longa%20De%20Raspagem%20Pl%C3%A1stica." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="tape de alcântara para espátulas">
+          <div class="pcard-img"><img src="assets/img/tape_alcantara.jpg" alt="TAPE DE ALCÂNTARA PARA ESPÁTULAS" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD029ESP</span>
+            <h3>TAPE DE ALCÂNTARA PARA ESPÁTULAS</h3>
+            <p>Fita de alcântara para revestir espátulas e reduzir riscos na aplicação. Caixa com 10 unidades.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 40,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD029ESP" data-name="TAPE DE ALCÂNTARA PARA ESPÁTULAS" data-price="40.00" data-img="assets/img/tape_alcantara.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Tape%20De%20Alc%C3%A2ntara%20Para%20Esp%C3%A1tulas." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="mini espátula para wrap">
+          <div class="pcard-img"><img src="assets/img/mini_espatula_wrap.jpg" alt="MINI ESPÁTULA PARA WRAP" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD013ESP</span>
+            <h3>MINI ESPÁTULA PARA WRAP</h3>
+            <p>Mini espátula para envelopamento e acabamento em detalhes pequenos.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 17,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD013ESP" data-name="MINI ESPÁTULA PARA WRAP" data-price="17.90" data-img="assets/img/mini_espatula_wrap.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Mini%20Esp%C3%A1tula%20Para%20Wrap." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="espátula de feltro 3m">
+          <div class="pcard-img"><img src="assets/img/espatula_feltro_3m.jpg" alt="ESPÁTULA DE FELTRO 3M" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD049ESP</span>
+            <h3>ESPÁTULA DE FELTRO 3M</h3>
+            <p>Espátula de feltro 3M para moldagem de películas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 17,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD049ESP" data-name="ESPÁTULA DE FELTRO 3M" data-price="17.90" data-img="assets/img/espatula_feltro_3m.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Esp%C3%A1tula%20De%20Feltro%203M." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="pulverizador manual snow">
+          <div class="pcard-img"><img src="assets/img/pulverizador_snow.jpg" alt="PULVERIZADOR MANUAL SNOW" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD051SPY</span>
+            <h3>PULVERIZADOR MANUAL SNOW</h3>
+            <p>Pulverizador Multijato para aplicação uniforme de líquidos e soluções.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 129,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD051SPY" data-name="PULVERIZADOR MANUAL SNOW" data-price="129.90" data-img="assets/img/pulverizador_snow.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Pulverizador%20Manual%20Snow." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="borrifador super-resistente para acd/alc">
+          <div class="pcard-img"><img src="assets/img/borrifador_acd_alc.jpg" alt="BORRIFADOR SUPER-RESISTENTE PARA ACD/ALC" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD030SPY</span>
+            <h3>BORRIFADOR SUPER-RESISTENTE PARA ACD/ALC</h3>
+            <p>Borrifador resistente a produtos ácidos e alcalinos.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 89,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD030SPY" data-name="BORRIFADOR SUPER-RESISTENTE PARA ACD/ALC" data-price="89.90" data-img="assets/img/borrifador_acd_alc.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Borrifador%20Super-Resistente%20Para%20Acd/Alc." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="pulverizador para acd/alc 750 ml">
+          <div class="pcard-img"><img src="assets/img/pulverizador_acd_alc.jpg" alt="PULVERIZADOR PARA ACD/ALC 750 ML" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD024SPY</span>
+            <h3>PULVERIZADOR PARA ACD/ALC 750 ML</h3>
+            <p>Pulverizador de 750 ml resistente a produtos ácidos e alcalinos.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 49,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD024SPY" data-name="PULVERIZADOR PARA ACD/ALC 750 ML" data-price="49.90" data-img="assets/img/pulverizador_acd_alc.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Pulverizador%20Para%20Acd/Alc%20750%20Ml." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="mochila de pulverização elétrica 3l">
+          <div class="pcard-img"><img src="assets/img/mochila_pulverizacao.jpg" alt="MOCHILA DE PULVERIZAÇÃO ELÉTRICA 3L" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD031SPY</span>
+            <h3>MOCHILA DE PULVERIZAÇÃO ELÉTRICA 3L</h3>
+            <p>Pulverizador elétrico tipo mochila, com capacidade de 3 litros.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 1.217,60</span>
+            </div>
+            <div class="cart-controls" data-id="GD031SPY" data-name="MOCHILA DE PULVERIZAÇÃO ELÉTRICA 3L" data-price="1217.60" data-img="assets/img/mochila_pulverizacao.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Mochila%20De%20Pulveriza%C3%A7%C3%A3o%20El%C3%A9trica%203L." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="luva alta performance a seco">
+          <div class="pcard-img"><img src="assets/img/luva_alta_performance.jpg" alt="LUVA ALTA PERFORMANCE A SECO" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD039LUV</span>
+            <h3>LUVA ALTA PERFORMANCE A SECO</h3>
+            <p>Luva de alta performance para aplicação e acabamento a seco ou molhado.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 100,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD039LUV" data-name="LUVA ALTA PERFORMANCE A SECO" data-price="100.00" data-img="assets/img/luva_alta_performance.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Luva%20Alta%20Performance%20A%20Seco." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="luva para wrap/film">
+          <div class="pcard-img"><img src="assets/img/luva_wrap_film.jpg" alt="LUVA PARA WRAP/FILM" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD027LUV</span>
+            <h3>LUVA PARA WRAP/FILM</h3>
+            <p>Luva para películas e envelopamento.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 19,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD027LUV" data-name="LUVA PARA WRAP/FILM" data-price="19.90" data-img="assets/img/luva_wrap_film.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Luva%20Para%20Wrap/Film." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="cordão retrátil multiuso 90cm">
+          <div class="pcard-img"><img src="assets/img/cordao_retratil.jpg" alt="CORDÃO RETRÁTIL MULTIUSO 90CM" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD040ACS</span>
+            <h3>CORDÃO RETRÁTIL MULTIUSO 90CM</h3>
+            <p>Cabo retrátil multiuso de 90 cm para organização e acesso rápido às ferramentas.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 55,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD040ACS" data-name="CORDÃO RETRÁTIL MULTIUSO 90CM" data-price="55.90" data-img="assets/img/cordao_retratil.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Cord%C3%A3o%20Retr%C3%A1til%20Multiuso%2090Cm." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="tape de teflon antirrisco com 10m">
+          <div class="pcard-img"><img src="assets/img/tape_teflon.jpg" alt="TAPE DE TEFLON ANTIRRISCO COM 10M" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD043ACS</span>
+            <h3>TAPE DE TEFLON ANTIRRISCO COM 10M</h3>
+            <p>Fita de teflon de 10 metros para proteção de ferramentas e prevenção de riscos.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 69,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD043ACS" data-name="TAPE DE TEFLON ANTIRRISCO COM 10M" data-price="69.90" data-img="assets/img/tape_teflon.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Tape%20De%20Teflon%20Antirrisco%20Com%2010M." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="prendedor de rolo">
+          <div class="pcard-img"><img src="assets/img/prendedor_rolo.jpg" alt="PRENDEDOR DE ROLO" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD015GIF</span>
+            <h3>PRENDEDOR DE ROLO</h3>
+            <p>Prendedor para manter rolos de película organizados e firmes durante o uso.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 14,90</span>
+            </div>
+            <div class="cart-controls" data-id="GD015GIF" data-name="PRENDEDOR DE ROLO" data-price="14.90" data-img="assets/img/prendedor_rolo.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Prendedor%20De%20Rolo." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="pcard" data-name="microfibra premium 2 lados">
+          <div class="pcard-img"><img src="assets/img/microfibra_premium.jpg" alt="MICROFIBRA PREMIUM 2 LADOS" loading="lazy"></div>
+          <div class="pcard-body">
+            <span class="pcard-code">GD048MIC</span>
+            <h3>MICROFIBRA PREMIUM 2 LADOS</h3>
+            <p>Pano de microfibra premium dupla face para limpeza e acabamento.</p>
+            <div class="pcard-footer">
+              <span class="price">R$ 35,00</span>
+            </div>
+            <div class="cart-controls" data-id="GD048MIC" data-name="MICROFIBRA PREMIUM 2 LADOS" data-price="35.00" data-img="assets/img/microfibra_premium.jpg">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <button type="button" class="btn-add-cart">Adicionar</button>
+            </div>
+            <a class="wa-fallback" href="https://wa.me/5541988866000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Microfibra%20Premium%202%20Lados." target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>
+          </div>
+        </article>
+  </div>
+  <p class="no-results" id="noResults">Nenhum produto encontrado para essa busca.</p>
+</section>
+
+<section class="footer-cta">
+  <h2>Pronto para equipar sua oficina?</h2>
+  <p>Fale agora com a Genesis e monte seu pedido de películas, PPF e ferramentas.</p>
+  <a class="btn-hero primary" href="https://wa.me/5541988866000?text=Ol%C3%A1%21%20Vim%20pelo%20Cat%C3%A1logo%20Genesis%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Entre em contato pelo WhatsApp</a>
+</section>
+
+<footer>
+  <div class="brand">
+    <img class="shield" src="assets/img/genesis_shield.png" alt="Genesis" width="24">
+    <span>GENESIS</span>
+  </div>
+  <p>Genesis Advanced Protection Film — Catálogo de Produtos · Linha Guardian</p>
+</footer>
+
+<a class="float-wa" href="https://wa.me/5541988866000?text=Ol%C3%A1%21%20Vim%20pelo%20Cat%C3%A1logo%20Genesis%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#0a0a0a"><path d="M16.001 2.667C8.637 2.667 2.667 8.637 2.667 16c0 2.462.665 4.77 1.822 6.752L2.667 29.333l6.751-1.773A13.28 13.28 0 0 0 16.001 29.333c7.363 0 13.333-5.97 13.333-13.333S23.364 2.667 16.001 2.667zm0 24.242a10.86 10.86 0 0 1-5.541-1.517l-.397-.236-4.007 1.052 1.07-3.906-.259-.4a10.878 10.878 0 0 1-1.673-5.902c0-6.017 4.894-10.911 10.912-10.911 6.017 0 10.911 4.894 10.911 10.911s-4.894 10.909-10.916 10.909zm5.983-8.169c-.328-.164-1.94-.957-2.24-1.066-.301-.109-.52-.164-.739.164-.219.328-.848 1.066-1.04 1.285-.191.219-.383.246-.711.082-.328-.164-1.386-.511-2.64-1.63-.976-.87-1.635-1.945-1.827-2.273-.191-.328-.02-.505.144-.669.148-.147.328-.383.492-.575.164-.191.219-.328.328-.547.109-.219.055-.41-.027-.574-.082-.164-.739-1.781-1.013-2.44-.267-.64-.538-.553-.739-.563l-.629-.011c-.219 0-.574.082-.875.41-.301.328-1.148 1.122-1.148 2.738 0 1.615 1.176 3.176 1.34 3.395.164.219 2.315 3.535 5.608 4.957.784.339 1.396.541 1.873.693.787.25 1.503.215 2.070.13.631-.094 1.94-.793 2.213-1.559.273-.766.273-1.422.191-1.559-.082-.137-.301-.219-.629-.383z"/></svg>
+</a>
+
+<script>
+const input = document.getElementById('searchInput');
+const cards = Array.from(document.querySelectorAll('.pcard'));
+const noResults = document.getElementById('noResults');
+input.addEventListener('input', () => {
+  const q = input.value.trim().toLowerCase();
+  let visible = 0;
+  cards.forEach(c => {
+    const match = c.dataset.name.includes(q);
+    c.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+});
+</script>
+
+<script>
+(function(){
+  const WHATS = "5541988866000";
+  const STORAGE_KEY = "genesis_cart_v1";
+
+  function loadCart(){
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch(e){ return {}; }
+  }
+  function saveCart(cart){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cart)); } catch(e){}
+  }
+
+  let cart = loadCart(); // { id: {id,name,price,img,qty} }
+
+  const cartToggle = document.getElementById('cartToggle');
+  const cartOverlay = document.getElementById('cartOverlay');
+  const cartDrawer = document.getElementById('cartDrawer');
+  const cartClose = document.getElementById('cartClose');
+  const cartItemsEl = document.getElementById('cartItems');
+  const cartTotalEl = document.getElementById('cartTotal');
+  const cartCountEl = document.getElementById('cartCount');
+  const cartCheckoutBtn = document.getElementById('cartCheckout');
+
+  function fmtBRL(n){
+    return "R$ " + n.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+
+  function openCart(){ cartOverlay.classList.add('open'); cartDrawer.classList.add('open'); }
+  function closeCart(){ cartOverlay.classList.remove('open'); cartDrawer.classList.remove('open'); }
+  cartToggle.addEventListener('click', () => { renderCart(); openCart(); });
+  cartClose.addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', closeCart);
+
+  function totalItems(){
+    return Object.values(cart).reduce((s,i) => s + i.qty, 0);
+  }
+  function totalPrice(){
+    return Object.values(cart).reduce((s,i) => s + i.qty * i.price, 0);
+  }
+
+  function updateBadge(){
+    const n = totalItems();
+    cartCountEl.textContent = n;
+    cartCountEl.classList.toggle('hidden', n === 0);
+  }
+
+  function renderCart(){
+    const items = Object.values(cart);
+    if (items.length === 0){
+      cartItemsEl.innerHTML = '<p class="cart-empty">Seu carrinho está vazio.</p>';
+      cartCheckoutBtn.disabled = true;
+    } else {
+      cartItemsEl.innerHTML = items.map(item => {
+        const unit = item.unit === 'm' ? 'm' : 'un.';
+        const step = item.unit === 'm' ? 1 : 1;
+        return `
+        <div class="cart-item" data-id="${item.id}">
+          <div class="cart-item-img"><img src="${item.img}" alt="${item.name}"></div>
+          <div class="cart-item-info">
+            <h4>${item.name}</h4>
+            <div class="cart-item-price">${fmtBRL(item.price)} / ${item.unit === 'm' ? 'metro' : 'un.'}</div>
+            <div class="cart-item-controls">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn cart-qty-minus" aria-label="Diminuir">−</button>
+                <span class="qty-value">${item.qty}${item.unit === 'm' ? 'm' : ''}</span>
+                <button type="button" class="qty-btn cart-qty-plus" aria-label="Aumentar">+</button>
+              </div>
+              <span class="cart-item-subtotal">${fmtBRL(item.qty * item.price)}</span>
+            </div>
+            <button type="button" class="cart-item-remove">Remover</button>
+          </div>
+        </div>
+      `;}).join('');
+      cartCheckoutBtn.disabled = false;
+    }
+    cartTotalEl.textContent = fmtBRL(totalPrice());
+    updateGrandTotal();
+    updateBadge();
+  }
+
+  // ---- FRETE (regional shipping estimate) ----
+  let freteValor = 0;
+  const REGIAO_FRETE = [
+    { prefixes: ['8','9'], nome: 'Sul', valor: 25 },
+    { prefixes: ['0','1','2','3'], nome: 'Sudeste', valor: 35 },
+    { prefixes: ['7'], nome: 'Centro-Oeste', valor: 45 },
+    { prefixes: ['4','5'], nome: 'Nordeste', valor: 55 },
+    { prefixes: ['6'], nome: 'Norte / Nordeste', valor: 60 },
+  ];
+  function calcularFrete(cep){
+    const digits = cep.replace(/\D/g,'');
+    if (digits.length < 5) return null;
+    const first = digits[0];
+    const region = REGIAO_FRETE.find(r => r.prefixes.includes(first));
+    return region || { nome: 'Estimado', valor: 40 };
+  }
+  const cepInput = document.getElementById('cepInput');
+  const cepCalcBtn = document.getElementById('cepCalc');
+  const freteResultEl = document.getElementById('freteResult');
+  const freteRow = document.getElementById('freteRow');
+  const freteValueEl = document.getElementById('freteValue');
+  const cartGrandTotalEl = document.getElementById('cartGrandTotal');
+
+  cepInput.addEventListener('input', () => {
+    let v = cepInput.value.replace(/\D/g,'').slice(0,8);
+    if (v.length > 5) v = v.slice(0,5) + '-' + v.slice(5);
+    cepInput.value = v;
+  });
+
+  cepCalcBtn.addEventListener('click', () => {
+    const region = calcularFrete(cepInput.value);
+    if (!region){
+      freteResultEl.textContent = 'Digite um CEP válido.';
+      freteValor = 0;
+      freteRow.style.display = 'none';
+    } else {
+      freteValor = region.valor;
+      freteResultEl.innerHTML = `Região <strong>${region.nome}</strong>: frete estimado <strong>${fmtBRL(region.valor)}</strong>`;
+      freteRow.style.display = 'flex';
+      freteValueEl.textContent = fmtBRL(region.valor);
+    }
+    updateGrandTotal();
+  });
+
+  function updateGrandTotal(){
+    cartGrandTotalEl.textContent = fmtBRL(totalPrice() + freteValor);
+  }
+
+  cartItemsEl.addEventListener('click', (e) => {
+    const row = e.target.closest('.cart-item');
+    if (!row) return;
+    const id = row.dataset.id;
+    if (e.target.classList.contains('cart-qty-plus')){
+      cart[id].qty += 1;
+    } else if (e.target.classList.contains('cart-qty-minus')){
+      cart[id].qty -= 1;
+      if (cart[id].qty <= 0) delete cart[id];
+    } else if (e.target.classList.contains('cart-item-remove')){
+      delete cart[id];
+    } else {
+      return;
+    }
+    saveCart(cart);
+    renderCart();
+  });
+
+  cartCheckoutBtn.addEventListener('click', () => {
+    const items = Object.values(cart);
+    if (items.length === 0) return;
+    let msg = "Olá! Quero fazer o seguinte pedido:\n\n";
+    items.forEach(item => {
+      const label = item.unit === 'm' ? `${item.qty}m` : `${item.qty}x`;
+      msg += `• ${label} ${item.name} — ${fmtBRL(item.qty * item.price)}\n`;
+    });
+    msg += `\nSubtotal: ${fmtBRL(totalPrice())}`;
+    if (freteValor > 0){
+      msg += `\nFrete estimado: ${fmtBRL(freteValor)}`;
+      msg += `\nTotal: ${fmtBRL(totalPrice() + freteValor)}`;
+    } else {
+      msg += `\n(Frete a calcular)`;
+    }
+    if (cepInput.value.trim()){
+      msg += `\nCEP: ${cepInput.value.trim()}`;
+    }
+    const url = `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank', 'noopener');
+  });
+
+  // Wire up "Adicionar" buttons on product cards
+  document.querySelectorAll('.cart-controls').forEach(ctrl => {
+    const id = ctrl.dataset.id;
+    const name = ctrl.dataset.name;
+    const price = parseFloat(ctrl.dataset.price);
+    const img = ctrl.dataset.img;
+    const qtyValueEl = ctrl.querySelector('.qty-value');
+    const minusBtn = ctrl.querySelector('.qty-minus');
+    const plusBtn = ctrl.querySelector('.qty-plus');
+    const addBtn = ctrl.querySelector('.btn-add-cart');
+    let localQty = 1;
+
+    minusBtn.addEventListener('click', () => {
+      localQty = Math.max(1, localQty - 1);
+      qtyValueEl.textContent = localQty;
+    });
+    plusBtn.addEventListener('click', () => {
+      localQty = Math.min(99, localQty + 1);
+      qtyValueEl.textContent = localQty;
+    });
+    addBtn.addEventListener('click', () => {
+      if (cart[id]){
+        cart[id].qty += localQty;
+      } else {
+        cart[id] = { id, name, price, img, qty: localQty };
+      }
+      saveCart(cart);
+      updateBadge();
+      addBtn.textContent = 'Adicionado ✓';
+      addBtn.classList.add('added');
+      setTimeout(() => { addBtn.textContent = 'Adicionar'; addBtn.classList.remove('added'); }, 1400);
+      localQty = 1;
+      qtyValueEl.textContent = localQty;
+    });
+  });
+
+  updateBadge();
+
+  // ---- FICHA TECNICA modal ----
+  const FICHAS = {"imperiale": {"title": "GUARDIAN IMPERIALE CERÂMICO", "rows": [["Material", "Cerâmica multicamada"], ["Espessura", "~50 µm"], ["Transmissão de luz (VLT)", "5% / 15% / 35% / 50% / 75%"], ["Rejeição UV", "99%"], ["Rejeição de calor infravermelho", "até 92%"], ["Garantia", "10 anos"], ["Aplicação indicada", "Vidros laterais e traseiro"], ["Acabamento", "Fosco neutro"]]}, "democrazia": {"title": "GUARDIAN DEMOCRAZIA CARBONO", "rows": [["Material", "Carbono multicamada"], ["Espessura", "~40 µm"], ["Transmissão de luz (VLT)", "5% / 15% / 35% / 50%"], ["Rejeição UV", "99%"], ["Rejeição de calor infravermelho", "até 60%"], ["Garantia", "8 anos"], ["Aplicação indicada", "Vidros laterais e traseiro"], ["Acabamento", "Neutro fosco"]]}, "black_gold": {"title": "GUARDIAN BLACK GOLD", "rows": [["Material", "Poliéster tingido"], ["Espessura", "~35 µm"], ["Transmissão de luz (VLT)", "5% / 20% / 35% / 50%"], ["Rejeição UV", "97%"], ["Rejeição de calor infravermelho", "até 45%"], ["Garantia", "5 anos"], ["Aplicação indicada", "Vidros laterais e traseiro"], ["Acabamento", "Preto fosco profundo"]]}, "photochromic": {"title": "GUARDIAN PHOTOCHROMIC SERIES", "rows": [["Material", "Fotocromático adaptável"], ["Transmissão de luz (VLT)", "35% a 75% (variável com luz solar)"], ["Rejeição UV", "99%"], ["Garantia", "10 anos"], ["Aplicação indicada", "Vidros laterais e para-brisa"], ["Acabamento", "Adaptável / neutro"]]}, "nano_metal": {"title": "GUARDIAN NANO METAL", "rows": [["Material", "Nano-metalizado"], ["Espessura", "~45 µm"], ["Rejeição de calor infravermelho", "até 80%"], ["Rejeição UV", "99%"], ["Garantia", "15 anos"], ["Aplicação indicada", "Vidros laterais e traseiro"], ["Acabamento", "Metálico espelhado leve"]]}, "ppf_elite65": {"title": "GUARDIAN ELITE SERIES 6.5", "rows": [["Material", "TPU (poliuretano termoplástico)"], ["Espessura", "6.5 mil (~165 µm)"], ["Autorregenerável", "Sim, com calor"], ["Garantia", "10 anos"], ["Acabamento", "Brilhante"], ["Aplicação indicada", "Pintura completa ou parcial do veículo"]]}, "ppf_matte": {"title": "GUARDIAN MATTE ULTRA", "rows": [["Material", "TPU (poliuretano termoplástico)"], ["Espessura", "~180 µm"], ["Autorregenerável", "Sim, com calor"], ["Garantia", "10 anos"], ["Acabamento", "Fosco (matte)"], ["Aplicação indicada", "Pintura completa ou parcial do veículo"]]}, "ppf_black": {"title": "GUARDIAN BLACK ULTRA", "rows": [["Material", "TPU (poliuretano termoplástico)"], ["Espessura", "~180 µm"], ["Autorregenerável", "Sim, com calor"], ["Garantia", "10 anos"], ["Acabamento", "Black satinado"], ["Aplicação indicada", "Pintura completa ou parcial do veículo"]]}, "ppf_elite75": {"title": "GUARDIAN ELITE SERIES 7.5", "rows": [["Material", "TPU (poliuretano termoplástico)"], ["Espessura", "7.5 mil (~190 µm)"], ["Autorregenerável", "Sim, com calor"], ["Garantia", "10 anos"], ["Acabamento", "Brilhante"], ["Aplicação indicada", "Pintura completa ou parcial do veículo"]]}, "ppf_scudo": {"title": "GUARDIAN SCUDO 6.5", "rows": [["Material", "TPU (poliuretano termoplástico)"], ["Espessura", "6.5 mil (~165 µm)"], ["Autorregenerável", "Sim, com calor"], ["Garantia", "7 anos"], ["Acabamento", "Brilhante"], ["Aplicação indicada", "Pintura completa ou parcial do veículo"]]}, "camaleao_purple": {"title": "GUARDIAN CAMALEÃO PURPLE", "rows": [["Material", "Película decorativa camaleão"], ["Largura", "0,50 m"], ["Garantia", "10 anos"], ["Aplicação indicada", "Faróis e lanternas"]]}, "camaleao_black": {"title": "GUARDIAN CAMALEÃO BLACK", "rows": [["Material", "Película decorativa camaleão"], ["Largura", "0,50 m"], ["Garantia", "10 anos"], ["Aplicação indicada", "Faróis e lanternas"]]}};
+  const fichaOverlay = document.getElementById('fichaOverlay');
+  const fichaModal = document.getElementById('fichaModal');
+  const fichaTitle = document.getElementById('fichaTitle');
+  const fichaBody = document.getElementById('fichaBody');
+  const fichaClose = document.getElementById('fichaClose');
+
+  function openFicha(key){
+    const data = FICHAS[key];
+    if (!data) return;
+    fichaTitle.textContent = data.title;
+    fichaBody.innerHTML = data.rows.map(([label,value]) => `
+      <div class="ficha-row"><span>${label}</span><span>${value}</span></div>
+    `).join('') + '<p class="ficha-disclaimer">Dados técnicos de referência para testes — sujeitos a confirmação com o fabricante antes da publicação oficial.</p>';
+    fichaOverlay.classList.add('open');
+    fichaModal.classList.add('open');
+  }
+  function closeFicha(){
+    fichaOverlay.classList.remove('open');
+    fichaModal.classList.remove('open');
+  }
+  document.querySelectorAll('.btn-ficha').forEach(btn => {
+    btn.addEventListener('click', () => openFicha(btn.dataset.ficha));
+  });
+  fichaClose.addEventListener('click', closeFicha);
+  fichaOverlay.addEventListener('click', closeFicha);
+
+  // ---- METER SLIDER on película/PPF cards ----
+  document.querySelectorAll('.meter-select').forEach(sel => {
+    const id = sel.dataset.id;
+    const name = sel.dataset.name;
+    const price = parseFloat(sel.dataset.price);
+    const img = sel.dataset.img;
+    const slider = sel.querySelector('.meter-slider');
+    const numEl = sel.querySelector('.meter-num');
+    const subtotalEl = sel.querySelector('.meter-subtotal');
+    const addBtn = sel.querySelector('.film-meter-add');
+
+    function updateDisplay(){
+      const m = parseInt(slider.value, 10);
+      numEl.textContent = m;
+      subtotalEl.textContent = fmtBRL(m * price);
+    }
+    slider.addEventListener('input', updateDisplay);
+    updateDisplay();
+
+    addBtn.addEventListener('click', () => {
+      const m = parseInt(slider.value, 10);
+      if (cart[id]){
+        cart[id].qty += m;
+      } else {
+        cart[id] = { id, name, price, img, qty: m, unit: 'm' };
+      }
+      saveCart(cart);
+      updateBadge();
+      addBtn.textContent = 'Adicionado ✓';
+      addBtn.classList.add('added');
+      setTimeout(() => { addBtn.textContent = 'Adicionar ao carrinho'; addBtn.classList.remove('added'); }, 1400);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
