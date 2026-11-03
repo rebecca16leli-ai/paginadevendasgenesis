@@ -399,6 +399,31 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 .ck-error.show{display:block;}
 .ck-error a{color:var(--ouro-claro); text-decoration:underline; text-underline-offset:2px;}
 
+
+/* PAGAMENTO: Pix e link do Mercado Pago (enquanto o pagamento online não está ativo) */
+.pix-view{display:none; flex:1; overflow-y:auto; padding:16px 22px 26px;}
+.cart-drawer.step-pix .pix-view{display:block;}
+.cart-drawer.step-pix .cart-items,.cart-drawer.step-pix .cart-footer{display:none;}
+.pag-card{border:1px solid var(--linha-forte); border-radius:2px; padding:18px; background:var(--grafite-2);}
+.pag-card + .pag-card{margin-top:14px;}
+.pag-card h4{font-stretch:var(--largo); font-weight:800; font-size:15px; margin-bottom:10px;}
+.pag-valor{display:flex; align-items:baseline; gap:10px; margin-bottom:14px;}
+.pag-valor strong{font-stretch:var(--largo); font-weight:800; font-size:26px; color:var(--ouro-claro);}
+.pag-valor span{font-size:13px; color:var(--texto-3);}
+.pag-texto{font-size:13.5px; color:var(--texto-2); margin-bottom:14px;}
+.pix-qr{display:flex; justify-content:center; margin:4px 0 16px;}
+.pix-qr:empty{display:none;}
+.pix-qr svg,.pix-qr img{width:196px; height:196px; background:#fff; padding:10px; border-radius:2px;}
+.pix-chave{display:grid; grid-template-columns:1fr auto; gap:2px 12px; align-items:center; padding:12px 0; border-top:1px solid var(--linha); border-bottom:1px solid var(--linha); margin-bottom:14px;}
+.pix-chave span{grid-column:1; font-size:12px; color:var(--texto-3);}
+.pix-chave strong{grid-column:1; font-size:16px; font-weight:700; letter-spacing:.02em;}
+.pix-copiar{grid-column:2; grid-row:1 / 3; background:none; border:1px solid var(--linha-forte); border-radius:2px; color:var(--texto); padding:9px 12px; font-size:13px; font-weight:600; cursor:pointer;}
+.pix-copiar:hover{border-color:var(--ouro); color:var(--ouro-claro);}
+.pix-nota{font-size:12.5px; color:var(--texto-2); line-height:1.5; margin:12px 0 14px;}
+.pix-cep{margin-bottom:4px;}
+.btn-wa-alt.destaque{border-color:var(--ouro-escuro); color:var(--ouro-claro);}
+.copiado{background:var(--ok) !important; color:#06210c !important; border-color:var(--ok) !important;}
+
 /* Ficha técnica e resultado do pagamento */
 .ficha-overlay{position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:95; opacity:0; pointer-events:none; transition:opacity .2s;}
 .ficha-overlay.open{opacity:1; pointer-events:auto;}
@@ -647,6 +672,32 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     <button type="submit" class="btn-checkout" id="ckPay">Ir para o pagamento</button>
     <p class="cart-note">Você será levado ao ambiente seguro do Mercado Pago para pagar com Pix, cartão ou boleto.</p>
   </form>
+
+  <div class="pix-view" id="pixView">
+    <button type="button" class="ck-back" id="pixBack">← Voltar ao carrinho</button>
+    <p class="ck-section">Como você quer pagar?</p>
+
+    <section class="pag-card" aria-labelledby="pixTitulo">
+      <h4 id="pixTitulo">Pix direto para a Genesis</h4>
+      <p class="pag-valor"><strong id="pixValor">R$ 0,00</strong><span id="pixRotulo">valor dos produtos</span></p>
+      <div class="pix-qr" id="pixQr" aria-label="QR Code do Pix"></div>
+      <div class="pix-chave">
+        <span>Chave Pix (CNPJ)</span>
+        <strong>62.406.067/0001-88</strong>
+        <button type="button" class="pix-copiar" id="pixCopiarChave">Copiar chave</button>
+      </div>
+      <button type="button" class="btn-checkout" id="pixCopiaCola">Copiar Pix copia e cola</button>
+      <p class="pix-nota" id="pixNota">Confira o CNPJ 62.406.067/0001-88 no app do banco antes de confirmar. O frete da Princesa dos Campos é calculado pela nossa equipe e enviado no WhatsApp, à parte.</p>
+      <div class="ck-field pix-cep"><label for="pixCep">CEP de entrega</label><input id="pixCep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000"></div>
+      <button type="button" class="btn-wa-alt destaque" id="pixComprovante">Enviar pedido e comprovante no WhatsApp</button>
+    </section>
+
+    <section class="pag-card" aria-labelledby="linkTitulo">
+      <h4 id="linkTitulo">Cartão ou boleto</h4>
+      <p class="pag-texto">Peça o link de pagamento do Mercado Pago no WhatsApp. Ele já vem com o frete.</p>
+      <button type="button" class="btn-wa-alt" id="pedirLink">Pedir link de pagamento no WhatsApp</button>
+    </section>
+  </div>
 </aside>
 
 <div class="ficha-overlay" id="resultOverlay"></div>
@@ -667,6 +718,16 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   </div>
   <div class="ficha-body" id="fichaBody"></div>
 </div>
+
+<main>
+
+<main>
+
+<main>
+
+<main>
+
+<main>
 
 <main>
 
@@ -2202,7 +2263,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} },
     del(k){ try { localStorage.removeItem(k); } catch(e){} }
   };
-  const waLink = (msg) => `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
+  const waLink = (msg) => `https://wa.me/${WHATS}?text=${encodeURIComponent(String(msg).replace(/\u00a0/g, ' '))}`;
 
   // ================= CATÁLOGO =================
   // Preços que estão na página. Ao abrir, são trocados pelos preços oficiais
@@ -2362,6 +2423,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     const el = $('freteResult'); const hint = $('ckCepHint');
     let html = '';
     if (freteEstado === 'calculando') html = 'Calculando o frete…';
+    else if (freteEstado === 'manual') html = 'Frete pela Princesa dos Campos: nossa equipe calcula e envia no WhatsApp.';
     else if (freteEstado === 'erro') html = esc(freteErro);
     else if (freteEstado === 'ok' && freteAtual){
       html = freteAtual.fonte === 'transportadora'
@@ -2369,6 +2431,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         : `Região <strong>${esc(freteAtual.nome)}</strong>: frete <strong>${fmtBRL(freteAtual.valor)}</strong>`;
     }
     el.innerHTML = html; hint.innerHTML = html;
+    if (typeof atualizarPix === 'function') atualizarPix();
     el.classList.toggle('erro', freteEstado === 'erro');
     const temFrete = freteEstado === 'ok' && freteAtual;
     $('freteRow').style.display = temFrete ? 'flex' : 'none';
@@ -2385,6 +2448,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     $('cartGrandTotal').textContent = fmtBRL(sub + fr);
     $('ckSubtotal').textContent = fmtBRL(sub);
     $('ckFrete').textContent = freteEstado === 'calculando' ? 'Calculando…'
+      : freteEstado === 'manual' ? 'Confirmado no WhatsApp'
       : freteAtual ? `${fmtBRL(fr)}${freteAtual.dias ? ` (${freteAtual.dias} dias)` : ` (${freteAtual.nome})`}`
       : 'Informe o CEP';
     $('ckTotal').textContent = fmtBRL(sub + fr);
@@ -2401,10 +2465,9 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     }
     if (lines().length === 0){ freteAtual = null; freteEstado = 'vazio'; pintarFrete(); return; }
     assinaturaFrete = assinaturaCarrinho();
+    // Sem servidor (ex.: GitHub Pages): o frete da transportadora é passado pela equipe no WhatsApp.
     const local = () => {
-      const r = regiaoDoCep(d);
-      freteAtual = r ? { nome: r.nome, valor: Number(r.valor), cep: d, dias: null, fonte: 'tabela' } : null;
-      freteEstado = freteAtual ? 'ok' : 'erro'; freteErro = 'CEP inválido.';
+      freteAtual = null; freteEstado = 'manual';
       pintarFrete();
     };
     if (!freteServidor) return local();
@@ -2460,13 +2523,14 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       msg += `\nCEP: ${mascaraCep(freteAtual.cep)}`;
     } else {
       msg += `\n(Frete a calcular)`;
+      if (cepFrete.length === 8) msg += `\nCEP: ${mascaraCep(cepFrete)}`;
     }
     window.open(waLink(msg), '_blank', 'noopener');
   }
   cartWhatsBtn.addEventListener('click', enviarWhats);
   cartCheckoutBtn.addEventListener('click', () => {
     if (lines().length === 0) return;
-    if (pagamentoOnline) irParaDados(); else enviarWhats();
+    if (pagamentoOnline) irParaDados(); else irParaPix();
   });
 
   function aplicarModo(){
@@ -2476,11 +2540,135 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       $('cartNote').textContent = 'Pagamento seguro pelo Mercado Pago: Pix, cartão ou boleto. ' +
         (freteTransportadora ? 'Frete e prazo calculados pela transportadora Princesa dos Campos.' : 'Frete fixo por região de entrega.');
     } else {
-      cartCheckoutBtn.textContent = 'Finalizar pedido no WhatsApp';
+      cartCheckoutBtn.textContent = 'Escolher forma de pagamento';
       cartWhatsBtn.hidden = true;
-      $('cartNote').textContent = 'O pedido é enviado organizado para o nosso WhatsApp. Pagamento e confirmação são combinados por lá.';
+      $('cartNote').textContent = 'Pague com Pix direto para a Genesis ou peça o link do Mercado Pago no WhatsApp. O frete é confirmado pela nossa equipe.';
     }
   }
+
+
+  // ================= PIX E LINK DE PAGAMENTO (sem pagamento online) =================
+  const PIX = { chave: '62406067000188', nome: 'GUARDIAN PROTECTION FILMS', cidade: 'LONDRINA' };
+  const QR_LIB = 'https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js';
+  let pixCodigo = '';
+  let pixPedido = '';
+
+  const campoEmv = (id, valor) => id + String(String(valor).length).padStart(2, '0') + valor;
+  function crc16(str){
+    let crc = 0xFFFF;
+    for (let k = 0; k < str.length; k++){
+      crc ^= str.charCodeAt(k) << 8;
+      for (let i = 0; i < 8; i++){ crc = (crc & 0x8000) ? ((crc << 1) ^ 0x1021) : (crc << 1); crc &= 0xFFFF; }
+    }
+    return crc.toString(16).toUpperCase().padStart(4, '0');
+  }
+  // "Pix copia e cola" (BR Code do Banco Central) com o valor já preenchido.
+  function codigoPix(valor, txid){
+    const limpo = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^A-Za-z0-9 ]/g, '').toUpperCase();
+    let p = campoEmv('00', '01')
+      + campoEmv('26', campoEmv('00', 'br.gov.bcb.pix') + campoEmv('01', PIX.chave))
+      + campoEmv('52', '0000') + campoEmv('53', '986')
+      + (valor > 0 ? campoEmv('54', valor.toFixed(2)) : '')
+      + campoEmv('58', 'BR') + campoEmv('59', limpo(PIX.nome).slice(0, 25)) + campoEmv('60', limpo(PIX.cidade).slice(0, 15))
+      + campoEmv('62', campoEmv('05', (txid || '***').replace(/[^A-Za-z0-9]/g, '').slice(0, 25) || '***'));
+    p += '6304';
+    return p + crc16(p);
+  }
+  let qrPromessa = null;
+  function carregarQr(){
+    if (window.qrcode) return Promise.resolve(window.qrcode);
+    if (!qrPromessa) qrPromessa = new Promise((ok, falha) => {
+      const sc = document.createElement('script');
+      sc.src = QR_LIB; sc.async = true;
+      sc.onload = () => window.qrcode ? ok(window.qrcode) : falha();
+      sc.onerror = falha;
+      document.head.appendChild(sc);
+    });
+    return qrPromessa;
+  }
+  function desenharQr(codigo){
+    const alvo = $('pixQr');
+    alvo.innerHTML = '';
+    carregarQr().then(qrcode => {
+      if (codigo !== pixCodigo) return;
+      const q = qrcode(0, 'M'); q.addData(codigo); q.make();
+      alvo.innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+    }).catch(() => { alvo.innerHTML = ''; });  // sem QR, a chave e o copia e cola continuam
+  }
+  function novoPedidoPix(){
+    const d = new Date();
+    const data = `${String(d.getFullYear()).slice(2)}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
+    return `GEN${data}${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+  }
+  // Com o frete da transportadora calculado, o Pix já leva produtos + frete.
+  const freteNoPix = () => Boolean(freteAtual && freteAtual.fonte === 'transportadora');
+  const valorPix = () => Math.round((subtotal() + (freteNoPix() ? freteAtual.valor : 0)) * 100) / 100;
+  function atualizarPix(){
+    if (!cartDrawer.classList.contains('step-pix')) return;
+    const valor = valorPix();
+    const novo = codigoPix(valor, pixPedido);
+    $('pixValor').textContent = fmtBRL(valor);
+    $('pixRotulo').textContent = freteNoPix() ? 'produtos + frete' : 'valor dos produtos';
+    const confira = 'Confira o CNPJ 62.406.067/0001-88 no app do banco antes de confirmar.';
+    $('pixNota').textContent = freteNoPix()
+      ? `${confira} Inclui o frete da Princesa dos Campos: ${fmtBRL(freteAtual.valor)}${freteAtual.dias ? `, ${prazoTexto(freteAtual)}` : ''}.`
+      : freteEstado === 'calculando' ? `${confira} Calculando o frete…`
+      : freteServidor && freteTransportadora ? `${confira} Informe o CEP para incluir o frete da Princesa dos Campos no Pix.`
+      : `${confira} O frete da Princesa dos Campos é calculado pela nossa equipe e enviado no WhatsApp, à parte.`;
+    if (novo !== pixCodigo){ pixCodigo = novo; desenharQr(pixCodigo); }
+  }
+  function irParaPix(){
+    cartDrawer.classList.remove('step-dados');
+    cartDrawer.classList.add('step-pix');
+    $('cartTitle').textContent = 'Pagamento';
+    pixPedido = novoPedidoPix();
+    pixCodigo = '';
+    if (cepFrete.length === 8) $('pixCep').value = mascaraCep(cepFrete);
+    atualizarPix();
+    setTimeout(() => $('pixCopiaCola').focus(), 320);
+  }
+  $('pixBack').addEventListener('click', () => { voltarCarrinho(); renderCart(); });
+  $('pixCep').addEventListener('input', () => {
+    const el = $('pixCep'); el.value = mascaraCep(el.value);
+    if (digits(el.value).length === 8){ cepInput.value = el.value; cotar(el.value, true); }
+  });
+
+  async function copiar(texto, botao, padrao){
+    try { await navigator.clipboard.writeText(texto); }
+    catch (e){
+      const t = document.createElement('textarea'); t.value = texto; t.setAttribute('readonly', '');
+      t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); } catch (e2){}
+      t.remove();
+    }
+    botao.textContent = 'Copiado ✓'; botao.classList.add('copiado');
+    clearTimeout(botao._t);
+    botao._t = setTimeout(() => { botao.textContent = padrao; botao.classList.remove('copiado'); }, 1800);
+  }
+  $('pixCopiarChave').addEventListener('click', (e) => copiar(PIX.chave, e.currentTarget, 'Copiar chave'));
+  $('pixCopiaCola').addEventListener('click', (e) => copiar(pixCodigo, e.currentTarget, 'Copiar Pix copia e cola'));
+
+  function resumoPedido(){
+    return lines().map(l => `• ${l.qty}x ${l.name}${l.codigo && l.unit === 'bobina' ? ` (${l.codigo})` : ''} — ${fmtBRL(l.qty * l.price)}`).join('\n');
+  }
+  const cepDoPedido = () => {
+    const d = digits($('pixCep').value) || cepFrete;
+    return d.length === 8 ? mascaraCep(d) : '(vou informar)';
+  };
+  $('pixComprovante').addEventListener('click', () => {
+    const msg = freteNoPix()
+      ? `Olá! Fiz o pedido ${pixPedido} pelo site e paguei via Pix (CNPJ 62.406.067/0001-88):\n\n${resumoPedido()}\n\n`
+        + `Produtos: ${fmtBRL(subtotal())}\nFrete (${freteAtual.nome}): ${fmtBRL(freteAtual.valor)}${freteAtual.dias ? ` — ${prazoTexto(freteAtual)}` : ''}\n`
+        + `Total pago no Pix: ${fmtBRL(valorPix())}\nCEP para entrega: ${cepDoPedido()}\n\nSegue o comprovante.`
+      : `Olá! Fiz o pedido ${pixPedido} pelo site e paguei os produtos via Pix (CNPJ 62.406.067/0001-88):\n\n${resumoPedido()}\n\n`
+        + `Total dos produtos (Pix): ${fmtBRL(subtotal())}\nCEP para entrega: ${cepDoPedido()}\n\nSegue o comprovante. Aguardo o valor do frete.`;
+    window.open(waLink(msg), '_blank', 'noopener');
+  });
+  $('pedirLink').addEventListener('click', () => {
+    const msg = `Olá! Quero pagar este pedido com cartão ou boleto. Pode me enviar o link de pagamento do Mercado Pago, já com o frete?\n\n${resumoPedido()}\n\n`
+      + `Total dos produtos: ${fmtBRL(subtotal())}\nCEP para entrega: ${cepDoPedido()}`;
+    window.open(waLink(msg), '_blank', 'noopener');
+  });
 
   // ================= CHECKOUT (dados + Mercado Pago) =================
   const form = $('checkoutForm');
@@ -2505,7 +2693,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     setTimeout(() => (vazio ? campos[vazio] : ckPay).focus(), 320);
   }
   function voltarCarrinho(){
-    cartDrawer.classList.remove('step-dados');
+    cartDrawer.classList.remove('step-dados', 'step-pix');
     $('cartTitle').textContent = 'Seu carrinho';
   }
   $('ckBack').addEventListener('click', () => { voltarCarrinho(); renderCart(); });
