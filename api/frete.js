@@ -18,6 +18,10 @@ export default async function handler(req, res) {
     return res.status(200).json({ fonte: f.fonte, nome: f.nome, valor: f.valor, dias: f.dias });
   } catch (e) {
     const status = e instanceof ErroFrete ? e.status : 500;
-    return res.status(status).json({ erro: e instanceof ErroFrete ? e.message : 'Não foi possível calcular o frete agora.' });
+    return res.status(status).json({
+      erro: e instanceof ErroFrete ? e.message : 'Não foi possível calcular o frete agora.',
+      // Resposta da transportadora, para diagnóstico (a página não mostra este campo).
+      ...(e instanceof ErroFrete && e.detalhe ? { detalhe: e.detalhe } : {}),
+    });
   }
 }
