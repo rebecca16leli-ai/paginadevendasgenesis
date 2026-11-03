@@ -370,6 +370,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 .frete-row button:hover{border-color:var(--ouro); color:var(--ouro-claro);}
 .frete-result{font-size:13px; color:var(--texto-2); min-height:18px;}
 .frete-result strong{color:var(--ouro-claro);}
+.frete-result.erro{color:#F6C9C4;}
 
 .checkout-view{display:none; flex:1; overflow-y:auto; padding:16px 22px 24px;}
 .cart-drawer.step-dados .checkout-view{display:block;}
@@ -562,7 +563,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 <header>
   <div class="navbar">
     <a href="#top" class="brand" aria-label="Genesis Advanced Premium Film, início da loja">
-      <img class="logo" src="assets/img/genesis_logo.png" alt="Genesis Advanced Premium Film" width="852" height="210">
+      <img class="logo" src="assets/img/genesis_logo.png" alt="Genesis Advanced Premium Film" width="852" height="210" onerror="this.outerHTML='<span class=brand-name>GENESIS</span>'">
     </a>
     <nav class="navlinks" aria-label="Seções da loja">
       <a class="navlink" href="#peliculas">Películas</a>
@@ -680,13 +681,21 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 <main>
 
 <main>
+
+<main>
+
+<main>
+
+<main>
+
+<main>
 <section class="hero" id="top">
   <picture class="hero-foto">
     <source media="(max-width:600px)" srcset="assets/img/banner_carro_celular.jpg">
-    <img src="assets/img/banner_carro.jpg" alt="Sedã preto estacionado à noite, com a cidade ao fundo" width="1916" height="821" fetchpriority="high">
+    <img src="assets/img/banner_carro.jpg" alt="" width="1916" height="821" fetchpriority="high" onerror="this.closest('picture').remove()">
   </picture>
   <div class="hero-conteudo">
-    <p class="hero-kicker"><img src="assets/img/genesis_escudo.png" alt="" width="187" height="210">Loja oficial da linha Guardian</p>
+    <p class="hero-kicker"><img src="assets/img/genesis_escudo.png" alt="" width="187" height="210" onerror="this.remove()">Loja oficial da linha Guardian</p>
     <h1>Equipe seu estúdio</h1>
     <p class="hero-sub">Películas e PPF em bobina fechada e ferramentas profissionais, com preço de tabela e pagamento online.</p>
     <div class="hero-ctas">
@@ -700,7 +709,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   <ul>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg><div><strong>Até 15 anos de garantia</strong><span>conforme a linha escolhida</span></div></li>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3 10h18M7 15h4"/></svg><div><strong>Pix, cartão ou boleto</strong><span>pagamento pelo Mercado Pago</span></div></li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3v3h-7"/><circle cx="6.5" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></svg><div><strong>Entrega para todo o Brasil</strong><span>frete calculado pelo CEP</span></div></li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3v3h-7"/><circle cx="6.5" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></svg><div><strong>Frete pelo CEP</strong><span>valor e prazo antes de pagar</span></div></li>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1"/><rect x="17" y="13" width="4" height="6" rx="1"/><path d="M19 19c0 1.5-2 2-5 2"/></svg><div><strong>Suporte técnico</strong><span>antes e depois da compra</span></div></li>
   </ul>
 </section>
@@ -732,7 +741,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 <section class="marca" id="genesis" aria-labelledby="marca-titulo">
   <div class="marca-grid">
     <div>
-      <img class="marca-logo" src="assets/img/genesis_logo.png" alt="Genesis Advanced Premium Film" width="852" height="210" loading="lazy">
+      <img class="marca-logo" src="assets/img/genesis_logo.png" alt="Genesis Advanced Premium Film" width="852" height="210" loading="lazy" onerror="this.remove()">
       <h2 id="marca-titulo">PPF, películas e ferramentas para quem vive da aplicação.</h2>
       <div class="marca-texto">
         <p>A Genesis Protection fornece PPF, películas automotivas e ferramentas profissionais para aplicadores, estúdios de estética automotiva, instaladores e empresas do setor de proteção automotiva.</p>
@@ -881,7 +890,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="metal_hp" id="p-metal_hp">
-      <div class="linha-foto"><img src="assets/img/pelicula_placeholder.jpg" alt="GUARDIAN METAL HP CERÂMICO" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto"><img src="assets/img/pelicula_metal_hp.jpg" alt="GUARDIAN METAL HP CERÂMICO" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
       <div class="linha-info">
         <h3>GUARDIAN METAL HP CERÂMICO</h3>
         <p class="linha-desc">A película com a maior garantia da linha: 15 anos.</p>
@@ -918,7 +927,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="photochromic" id="p-photochromic">
-      <div class="linha-foto"><img src="assets/img/pelicula_placeholder.jpg" alt="GUARDIAN PHOTOCHROMIC SERIES" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto"><img src="assets/img/pelicula_photochromic.jpg" alt="GUARDIAN PHOTOCHROMIC SERIES" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
       <div class="linha-info">
         <h3>GUARDIAN PHOTOCHROMIC SERIES</h3>
         <p class="linha-desc">Escurece sob a luz do sol e clareia quando a luz diminui.</p>
@@ -2145,7 +2154,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#top" class="brand"><img class="logo" src="assets/img/genesis_logo.png" alt="Genesis Advanced Premium Film" width="852" height="210" loading="lazy"></a>
+        <a href="#top" class="brand"><img class="logo" src="assets/img/genesis_logo.png" alt="Genesis Advanced Premium Film" width="852" height="210" loading="lazy" onerror="this.outerHTML='<span class=brand-name>GENESIS</span>'"></a>
         <p>PPF, películas e ferramentas para quem vive da aplicação.</p>
       </div>
       <div>
@@ -2167,7 +2176,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 
 <a class="float-wa" href="https://wa.me/5541988866000?text=Ol%C3%A1%21%20Vim%20pela%20loja%20Genesis%20e%20gostaria%20de%20ajuda%20para%20escolher." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2.7C8.6 2.7 2.7 8.6 2.7 16c0 2.5.7 4.8 1.8 6.8l-1.8 6.6 6.8-1.8c2 1.1 4.2 1.7 6.6 1.7 7.4 0 13.3-6 13.3-13.3S23.4 2.7 16 2.7Zm0 24.2c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1 1.1-3.9-.3-.4a10.9 10.9 0 1 1 9.1 5Zm6-8.2c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6l-1-2.4c-.3-.6-.5-.6-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4Z"/></svg></a>
 
-<script type="application/json" id="dadosBobinas">{"skus": {"imperiale-05-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-05-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-15-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-15-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-35-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-35-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-50-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-50-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-75-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "imperiale-75-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "democrazia-05-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-05-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-15-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-15-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-35-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-35-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-50-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "democrazia-50-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "black_gold-05-30": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-05-15": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-15-30": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-15-15": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-35-30": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-35-15": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-50-30": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "black_gold-50-15": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "metal_hp-05-30": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-05-15": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-15-30": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-15-15": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-35-30": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "metal_hp-35-15": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "photochromic-35-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 35% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "GDN-PHO-35", "base": "photochromic"}, "photochromic-75-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 75% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "GDN-PHO-75", "base": "photochromic"}, "ppf_elite65": {"name": "GUARDIAN ELITE SERIES 6.5 · BOBINA 1,52 × 15 M", "price": 4700.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite65"}, "ppf_matte": {"name": "GUARDIAN MATTE ULTRA · BOBINA 1,52 × 15 M", "price": 6000.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_matte"}, "ppf_black": {"name": "GUARDIAN BLACK ULTRA · BOBINA 1,52 × 15 M", "price": 6900.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_black"}, "ppf_elite75": {"name": "GUARDIAN ELITE SERIES 7.5 · BOBINA 1,52 × 15 M", "price": 5500.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite75"}, "ppf_scudo": {"name": "GUARDIAN SCUDO 6.5 · BOBINA 1,52 × 15 M", "price": 3950.0, "img": "assets/img/ppf_scudo.jpg?v=2", "codigo": "", "base": "ppf_scudo"}, "camaleao_purple": {"name": "ELITE CAMALEÃO PURPLE · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "", "base": "camaleao_purple"}, "camaleao_black": {"name": "ELITE CAMALEÃO BLACK · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "", "base": "camaleao_black"}}, "fichas": {"imperiale": {"title": "GUARDIAN IMPERIALE CERÂMICO", "rows": [["Tecnologia", "Cerâmica"], ["Tonalidades (VLT)", "5%, 15%, 35%, 50% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-IMP-05, GDN-IMP-15, GDN-IMP-35, GDN-IMP-50, GDN-IMP-75"]]}, "democrazia": {"title": "GUARDIAN DEMOCRAZIA CARBONO", "rows": [["Tecnologia", "Carbono"], ["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "8 anos"], ["Códigos", "GDN-DEM-05, GDN-DEM-15, GDN-DEM-35, GDN-DEM-50"]]}, "black_gold": {"title": "GUARDIAN BLACK GOLD", "rows": [["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "5 anos"], ["Códigos", "GDN-BG-05, GDN-BG-20, GDN-BG-35, GDN-BG-50"]]}, "metal_hp": {"title": "GUARDIAN METAL HP CERÂMICO", "rows": [["Tecnologia", "Metal cerâmica"], ["Tonalidades (VLT)", "5%, 15% e 35%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "15 anos"], ["Códigos", "GDN-MET-05, GDN-MET-15, GDN-MET-35"]]}, "photochromic": {"title": "GUARDIAN PHOTOCHROMIC SERIES", "rows": [["Tecnologia", "Fotocromática"], ["Tonalidades (VLT)", "35% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "10 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-PHO-35, GDN-PHO-75"]]}, "ppf_elite65": {"title": "GUARDIAN ELITE SERIES 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_matte": {"title": "GUARDIAN MATTE ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Fosco"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_black": {"title": "GUARDIAN BLACK ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Preto"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_elite75": {"title": "GUARDIAN ELITE SERIES 7.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "7,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_scudo": {"title": "GUARDIAN SCUDO 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "7 anos"]]}, "camaleao_purple": {"title": "ELITE CAMALEÃO PURPLE", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}, "camaleao_black": {"title": "ELITE CAMALEÃO BLACK", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}}}</script>
+<script type="application/json" id="dadosBobinas">{"skus": {"imperiale-05-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-05-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-15-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-15-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-35-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-35-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-50-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-50-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-75-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "imperiale-75-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "democrazia-05-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-05-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-15-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-15-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-35-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-35-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-50-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "democrazia-50-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "black_gold-05-30": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-05-15": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-15-30": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-15-15": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-35-30": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-35-15": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-50-30": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "black_gold-50-15": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "metal_hp-05-30": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-05-15": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-15-30": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-15-15": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-35-30": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "metal_hp-35-15": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "photochromic-35-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 35% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-35", "base": "photochromic"}, "photochromic-75-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 75% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-75", "base": "photochromic"}, "ppf_elite65": {"name": "GUARDIAN ELITE SERIES 6.5 · BOBINA 1,52 × 15 M", "price": 4700.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite65"}, "ppf_matte": {"name": "GUARDIAN MATTE ULTRA · BOBINA 1,52 × 15 M", "price": 6000.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_matte"}, "ppf_black": {"name": "GUARDIAN BLACK ULTRA · BOBINA 1,52 × 15 M", "price": 6900.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_black"}, "ppf_elite75": {"name": "GUARDIAN ELITE SERIES 7.5 · BOBINA 1,52 × 15 M", "price": 5500.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite75"}, "ppf_scudo": {"name": "GUARDIAN SCUDO 6.5 · BOBINA 1,52 × 15 M", "price": 3950.0, "img": "assets/img/ppf_scudo.jpg?v=2", "codigo": "", "base": "ppf_scudo"}, "camaleao_purple": {"name": "ELITE CAMALEÃO PURPLE · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "", "base": "camaleao_purple"}, "camaleao_black": {"name": "ELITE CAMALEÃO BLACK · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/pelicula_placeholder.jpg", "codigo": "", "base": "camaleao_black"}}, "fichas": {"imperiale": {"title": "GUARDIAN IMPERIALE CERÂMICO", "rows": [["Tecnologia", "Cerâmica"], ["Tonalidades (VLT)", "5%, 15%, 35%, 50% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-IMP-05, GDN-IMP-15, GDN-IMP-35, GDN-IMP-50, GDN-IMP-75"]]}, "democrazia": {"title": "GUARDIAN DEMOCRAZIA CARBONO", "rows": [["Tecnologia", "Carbono"], ["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "8 anos"], ["Códigos", "GDN-DEM-05, GDN-DEM-15, GDN-DEM-35, GDN-DEM-50"]]}, "black_gold": {"title": "GUARDIAN BLACK GOLD", "rows": [["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "5 anos"], ["Códigos", "GDN-BG-05, GDN-BG-20, GDN-BG-35, GDN-BG-50"]]}, "metal_hp": {"title": "GUARDIAN METAL HP CERÂMICO", "rows": [["Tecnologia", "Metal cerâmica"], ["Tonalidades (VLT)", "5%, 15% e 35%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "15 anos"], ["Códigos", "GDN-MET-05, GDN-MET-15, GDN-MET-35"]]}, "photochromic": {"title": "GUARDIAN PHOTOCHROMIC SERIES", "rows": [["Tecnologia", "Fotocromática"], ["Tonalidades (VLT)", "35% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "10 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-PHO-35, GDN-PHO-75"]]}, "ppf_elite65": {"title": "GUARDIAN ELITE SERIES 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_matte": {"title": "GUARDIAN MATTE ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Fosco"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_black": {"title": "GUARDIAN BLACK ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Preto"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_elite75": {"title": "GUARDIAN ELITE SERIES 7.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "7,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_scudo": {"title": "GUARDIAN SCUDO 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "7 anos"]]}, "camaleao_purple": {"title": "ELITE CAMALEÃO PURPLE", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}, "camaleao_black": {"title": "ELITE CAMALEÃO BLACK", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}}}</script>
 <script>
 (function(){
   'use strict';
@@ -2298,6 +2307,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     }
     cartCheckoutBtn.disabled = ls.length === 0;
     cartWhatsBtn.disabled = ls.length === 0;
+    if (cepFrete.length === 8 && assinaturaCarrinho() !== assinaturaFrete) cotar(cepFrete);
     updateTotals();
     updateBadge();
   }
@@ -2323,7 +2333,19 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   });
 
   // ================= FRETE =================
-  let freteAtual = null; // { nome, valor, cep }
+  // Na Vercel, o frete vem de /api/frete: pela transportadora (valor e prazo reais)
+  // ou pela tabela por região, enquanto a transportadora não estiver configurada.
+  // Sem servidor (página aberta direto do computador), usa a tabela aqui mesmo.
+  let freteAtual = null;        // { nome, valor, cep, dias, fonte }
+  let freteEstado = 'vazio';    // vazio | calculando | ok | erro
+  let freteErro = '';
+  let freteServidor = true;
+  let freteTransportadora = false;
+  let cepFrete = '';
+  let assinaturaFrete = '';
+  let pedidoFrete = 0;
+  let timerFrete = null;
+
   function regiaoDoCep(cep){
     const d = digits(cep);
     if (d.length !== 8) return null;
@@ -2333,21 +2355,28 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     let d = digits(v).slice(0, 8);
     return d.length > 5 ? d.slice(0,5) + '-' + d.slice(5) : d;
   }
-  function definirFrete(cep){
-    const r = regiaoDoCep(cep);
-    freteAtual = r ? { nome: r.nome, valor: Number(r.valor), cep: digits(cep) } : null;
-    const freteResultEl = $('freteResult');
-    if (freteAtual){
-      freteResultEl.innerHTML = `Região <strong>${esc(freteAtual.nome)}</strong>: frete <strong>${fmtBRL(freteAtual.valor)}</strong>`;
-      $('freteRow').style.display = 'flex';
-      $('freteLabel').textContent = `Frete (${freteAtual.nome})`;
+  const assinaturaCarrinho = () => cepFrete + '|' + lines().map(l => `${l.id}:${l.qty}`).sort().join(',');
+  const prazoTexto = (f) => f && f.dias ? `prazo de ${f.dias} ${f.dias === 1 ? 'dia' : 'dias'} após o envio` : '';
+
+  function pintarFrete(){
+    const el = $('freteResult'); const hint = $('ckCepHint');
+    let html = '';
+    if (freteEstado === 'calculando') html = 'Calculando o frete…';
+    else if (freteEstado === 'erro') html = esc(freteErro);
+    else if (freteEstado === 'ok' && freteAtual){
+      html = freteAtual.fonte === 'transportadora'
+        ? `${esc(freteAtual.nome)}: <strong>${fmtBRL(freteAtual.valor)}</strong>${freteAtual.dias ? `<br>${prazoTexto(freteAtual)}` : ''}`
+        : `Região <strong>${esc(freteAtual.nome)}</strong>: frete <strong>${fmtBRL(freteAtual.valor)}</strong>`;
+    }
+    el.innerHTML = html; hint.innerHTML = html;
+    el.classList.toggle('erro', freteEstado === 'erro');
+    const temFrete = freteEstado === 'ok' && freteAtual;
+    $('freteRow').style.display = temFrete ? 'flex' : 'none';
+    if (temFrete){
+      $('freteLabel').textContent = freteAtual.fonte === 'transportadora' ? 'Frete' : `Frete (${freteAtual.nome})`;
       $('freteValue').textContent = fmtBRL(freteAtual.valor);
-    } else {
-      freteResultEl.textContent = digits(cep).length ? 'Digite o CEP completo, com 8 números.' : '';
-      $('freteRow').style.display = 'none';
     }
     updateTotals();
-    return freteAtual;
   }
   function updateTotals(){
     const sub = subtotal();
@@ -2355,16 +2384,66 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     $('cartTotal').textContent = fmtBRL(sub);
     $('cartGrandTotal').textContent = fmtBRL(sub + fr);
     $('ckSubtotal').textContent = fmtBRL(sub);
-    $('ckFrete').textContent = freteAtual ? `${fmtBRL(fr)} (${freteAtual.nome})` : 'Informe o CEP';
+    $('ckFrete').textContent = freteEstado === 'calculando' ? 'Calculando…'
+      : freteAtual ? `${fmtBRL(fr)}${freteAtual.dias ? ` (${freteAtual.dias} dias)` : ` (${freteAtual.nome})`}`
+      : 'Informe o CEP';
     $('ckTotal').textContent = fmtBRL(sub + fr);
+  }
+
+  function cotar(cep, imediato){
+    const d = digits(cep);
+    cepFrete = d;
+    clearTimeout(timerFrete);
+    const meu = ++pedidoFrete;
+    if (d.length !== 8){
+      freteAtual = null; freteEstado = d.length && imediato ? 'erro' : 'vazio'; freteErro = 'Digite o CEP completo, com 8 números.';
+      pintarFrete(); return;
+    }
+    if (lines().length === 0){ freteAtual = null; freteEstado = 'vazio'; pintarFrete(); return; }
+    assinaturaFrete = assinaturaCarrinho();
+    const local = () => {
+      const r = regiaoDoCep(d);
+      freteAtual = r ? { nome: r.nome, valor: Number(r.valor), cep: d, dias: null, fonte: 'tabela' } : null;
+      freteEstado = freteAtual ? 'ok' : 'erro'; freteErro = 'CEP inválido.';
+      pintarFrete();
+    };
+    if (!freteServidor) return local();
+    freteAtual = null; freteEstado = 'calculando'; pintarFrete();
+    const executar = async () => {
+      try {
+        const r = await fetch(`${API_BASE}/api/frete`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ cep: d, itens: lines().map(l => ({ id: l.id, qtd: l.qty })) }),
+        });
+        if (meu !== pedidoFrete) return;
+        // Sem as funções da Vercel (ex.: GitHub Pages), a rota não existe.
+        const ehJson = (r.headers.get('content-type') || '').includes('json');
+        if (!r.ok && !ehJson && !freteTransportadora){ freteServidor = false; return local(); }
+        const j = await r.json().catch(() => ({}));
+        if (meu !== pedidoFrete) return;
+        if (!r.ok || !(Number(j.valor) >= 0)){
+          freteAtual = null; freteEstado = 'erro'; freteErro = j.erro || 'Não foi possível calcular o frete agora. Tente de novo ou finalize pelo WhatsApp.';
+        } else {
+          freteAtual = { nome: j.nome, valor: Number(j.valor), cep: d, dias: j.dias || null, fonte: j.fonte };
+          freteEstado = 'ok';
+        }
+        pintarFrete();
+      } catch (e){
+        if (meu !== pedidoFrete) return;
+        if (!freteTransportadora){ freteServidor = false; return local(); }
+        freteAtual = null; freteEstado = 'erro'; freteErro = 'Sem conexão para calcular o frete. Tente de novo.';
+        pintarFrete();
+      }
+    };
+    if (imediato) executar(); else timerFrete = setTimeout(executar, 450);
   }
 
   const cepInput = $('cepInput');
   cepInput.addEventListener('input', () => {
     cepInput.value = mascaraCep(cepInput.value);
-    if (digits(cepInput.value).length === 8 || freteAtual) definirFrete(cepInput.value);
+    if (digits(cepInput.value).length === 8 || freteAtual || freteEstado === 'erro') cotar(cepInput.value);
   });
-  $('cepCalc').addEventListener('click', () => definirFrete(cepInput.value));
+  $('cepCalc').addEventListener('click', () => cotar(cepInput.value, true));
 
   // ================= FECHAR PELO WHATSAPP =================
   function enviarWhats(){
@@ -2376,7 +2455,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     });
     msg += `\nSubtotal: ${fmtBRL(subtotal())}`;
     if (freteAtual){
-      msg += `\nFrete (${freteAtual.nome}): ${fmtBRL(freteAtual.valor)}`;
+      msg += `\nFrete (${freteAtual.nome}): ${fmtBRL(freteAtual.valor)}${freteAtual.dias ? ` — ${prazoTexto(freteAtual)}` : ''}`;
       msg += `\nTotal: ${fmtBRL(subtotal() + freteAtual.valor)}`;
       msg += `\nCEP: ${mascaraCep(freteAtual.cep)}`;
     } else {
@@ -2394,7 +2473,8 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     if (pagamentoOnline){
       cartCheckoutBtn.textContent = 'Finalizar compra';
       cartWhatsBtn.hidden = false;
-      $('cartNote').textContent = 'Pagamento seguro pelo Mercado Pago: Pix, cartão ou boleto. Frete fixo por região de entrega.';
+      $('cartNote').textContent = 'Pagamento seguro pelo Mercado Pago: Pix, cartão ou boleto. ' +
+        (freteTransportadora ? 'Frete e prazo calculados pela transportadora Princesa dos Campos.' : 'Frete fixo por região de entrega.');
     } else {
       cartCheckoutBtn.textContent = 'Finalizar pedido no WhatsApp';
       cartWhatsBtn.hidden = true;
@@ -2417,7 +2497,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     $('cartTitle').textContent = 'Entrega e pagamento';
     const salvo = store.get(CLIENTE_KEY, {}) || {};
     Object.keys(campos).forEach(k => { if (!campos[k].value && salvo[k]) campos[k].value = salvo[k]; });
-    if (!campos.cep.value && freteAtual) campos.cep.value = mascaraCep(freteAtual.cep);
+    if (!campos.cep.value && cepFrete.length === 8) campos.cep.value = mascaraCep(cepFrete);
     if (campos.cep.value) atualizarCepCheckout(false);
     limparErro();
     updateTotals();
@@ -2460,14 +2540,14 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     campos.cep.value = mascaraCep(campos.cep.value);
     const d = digits(campos.cep.value);
     const hint = $('ckCepHint');
-    if (d.length !== 8){ hint.textContent = ''; definirFrete(d); return; }
-    const r = definirFrete(d);
+    if (d !== cepFrete || freteEstado === 'vazio' || freteEstado === 'erro') cotar(d, !buscarEndereco);
+    else pintarFrete();
+    if (d.length !== 8) return;
     cepInput.value = mascaraCep(d);
-    hint.innerHTML = r ? `${esc(r.nome)}: frete <strong>${fmtBRL(r.valor)}</strong>` : 'CEP inválido';
     if (!buscarEndereco || d === ultimoCepBuscado) return;
     ultimoCepBuscado = d;
     fetch(`https://viacep.com.br/ws/${d}/json/`).then(res => res.json()).then(end => {
-      if (end.erro){ hint.innerHTML += '<br>CEP não encontrado: preencha o endereço.'; return; }
+      if (end.erro) return;
       if (end.logradouro) campos.rua.value = end.logradouro;
       if (end.bairro) campos.bairro.value = end.bairro;
       if (end.localidade) campos.cidade.value = end.localidade;
@@ -2514,7 +2594,8 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email)) marcar('email', 'E-mail inválido.');
     const tel = digits(v.telefone);
     if (tel.length < 10 || tel.length > 11) marcar('telefone', 'Informe o WhatsApp com DDD.');
-    if (!regiaoDoCep(v.cep)) marcar('cep', 'CEP inválido.');
+    if (digits(v.cep).length !== 8) marcar('cep', 'CEP inválido.');
+    else if (freteEstado === 'erro') marcar('cep', freteErro);
     if (!v.rua) marcar('rua', 'Informe a rua.');
     if (!v.numero) marcar('numero', 'Informe o número (ou S/N).');
     if (!v.bairro) marcar('bairro', 'Informe o bairro.');
@@ -2557,7 +2638,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       if (!r.ok || !dados.checkoutUrl) throw new Error(dados.erro || 'Não foi possível gerar o pagamento agora.');
       store.set(PEDIDO_KEY, {
         pedido: dados.pedido,
-        total: subtotal() + (freteAtual ? freteAtual.valor : 0),
+        total: subtotal() + (dados.frete ? Number(dados.frete.valor) : freteAtual ? freteAtual.valor : 0),
         itens: lines().map(l => `${l.qty}x ${l.name}`),
       });
       window.location.href = dados.checkoutUrl;
@@ -2795,7 +2876,8 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     Object.values(cart).forEach(it => { it.qty = Math.min(it.qty, CATALOGO[it.id].max); });
     saveCart();
     if (Array.isArray(dados.frete) && dados.frete.length) FRETE = dados.frete;
-    if (freteAtual) definirFrete(freteAtual.cep);
+    freteTransportadora = Boolean(dados.freteTransportadora);
+    if (cepFrete.length === 8) cotar(cepFrete, true);
     pagamentoOnline = Boolean(dados.pagamentoAtivo);
     aplicarModo();
     renderCart();
