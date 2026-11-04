@@ -1,6 +1,6 @@
 // GET /api/catalogo — a página busca aqui os preços oficiais ao abrir,
 // para mostrar exatamente o que será cobrado.
-import { PRODUTOS, FRETE } from '../lib/catalogo.js';
+import { PRODUTOS, FRETE, FRETE_GRATIS_ACIMA } from '../lib/catalogo.js';
 import { freteReal } from '../lib/frete.js';
 
 export default function handler(req, res) {
@@ -14,5 +14,6 @@ export default function handler(req, res) {
     frete: FRETE,
     pagamentoAtivo: Boolean(process.env.MP_ACCESS_TOKEN),
     freteTransportadora: freteReal(),
+    freteGratisAcima: FRETE_GRATIS_ACIMA,
   });
 }

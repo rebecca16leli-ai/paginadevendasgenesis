@@ -371,6 +371,9 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 .frete-result{font-size:13px; color:var(--texto-2); min-height:18px;}
 .frete-result strong{color:var(--ouro-claro);}
 .frete-result.erro{color:#F6C9C4;}
+.frete-gratis-aviso{font-size:12.5px; color:var(--texto-2); margin-top:8px; padding:8px 10px; border:1px dashed rgba(232,176,56,.45); border-radius:6px;}
+.frete-gratis-aviso strong{color:var(--ouro-claro);}
+.frete-gratis-aviso.ganhou{border-style:solid; background:rgba(232,176,56,.1); color:var(--texto);}
 
 .checkout-view{display:none; flex:1; overflow-y:auto; padding:16px 22px 24px;}
 .cart-drawer.step-dados .checkout-view{display:block;}
@@ -740,7 +743,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   <ul>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg><div><strong>Até 15 anos de garantia</strong><span>conforme a linha escolhida</span></div></li>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3 10h18M7 15h4"/></svg><div><strong>Pix, cartão ou boleto</strong><span>pagamento pelo Mercado Pago</span></div></li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3v3h-7"/><circle cx="6.5" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></svg><div><strong>Frete pelo CEP</strong><span>valor e prazo antes de pagar</span></div></li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3v3h-7"/><circle cx="6.5" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></svg><div><strong data-frete-gratis>Frete grátis a partir de R$ 1.000</strong><span data-frete-gratis-sub>valor e prazo pelo CEP antes de pagar</span></div></li>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1"/><rect x="17" y="13" width="4" height="6" rx="1"/><path d="M19 19c0 1.5-2 2-5 2"/></svg><div><strong>Suporte técnico</strong><span>antes e depois da compra</span></div></li>
   </ul>
 </section>
@@ -1160,7 +1163,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     </div>
     <div class="linhas">
     <article class="linha" data-tipo="unico" data-base="camaleao_purple" id="p-camaleao_purple">
-      <div class="linha-foto"><img src="assets/img/pelicula_camaleao.jpg" alt="ELITE CAMALEÃO PURPLE" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto"><img src="assets/img/pelicula_camaleao.jpg" alt="PPF ELITE CAMALEÃO PURPLE" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
       <div class="linha-info">
         <h3>PPF ELITE CAMALEÃO PURPLE</h3>
         <p class="linha-desc">PPF colorido com efeito camaleão: o tom roxo muda conforme o ângulo da luz.</p>
@@ -1189,7 +1192,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="camaleao_black" id="p-camaleao_black">
-      <div class="linha-foto"><img src="assets/img/pelicula_camaleao.jpg" alt="ELITE CAMALEÃO BLACK" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto"><img src="assets/img/camaleao_black.jpg" alt="PPF ELITE CAMALEÃO BLACK" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
       <div class="linha-info">
         <h3>PPF ELITE CAMALEÃO BLACK</h3>
         <p class="linha-desc">PPF colorido com efeito camaleão em tom escuro, que muda conforme o ângulo da luz.</p>
@@ -2207,7 +2210,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 
 <a class="float-wa" href="https://wa.me/5541988866000?text=Ol%C3%A1%21%20Vim%20pela%20loja%20Genesis%20e%20gostaria%20de%20ajuda%20para%20escolher." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2.7C8.6 2.7 2.7 8.6 2.7 16c0 2.5.7 4.8 1.8 6.8l-1.8 6.6 6.8-1.8c2 1.1 4.2 1.7 6.6 1.7 7.4 0 13.3-6 13.3-13.3S23.4 2.7 16 2.7Zm0 24.2c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1 1.1-3.9-.3-.4a10.9 10.9 0 1 1 9.1 5Zm6-8.2c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6l-1-2.4c-.3-.6-.5-.6-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4Z"/></svg></a>
 
-<script type="application/json" id="dadosBobinas">{"skus": {"imperiale-05-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-05-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-15-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-15-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-35-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-35-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-50-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-50-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-75-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "imperiale-75-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "democrazia-05-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-05-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-15-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-15-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-35-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-35-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-50-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "democrazia-50-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "black_gold-05-30": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-05-15": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-15-30": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-15-15": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-35-30": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-35-15": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-50-30": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "black_gold-50-15": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "metal_hp-05-30": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-05-15": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-15-30": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-15-15": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-35-30": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "metal_hp-35-15": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "photochromic-35-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 35% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-35", "base": "photochromic"}, "photochromic-75-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 75% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-75", "base": "photochromic"}, "ppf_elite65": {"name": "GUARDIAN ELITE SERIES 6.5 · BOBINA 1,52 × 15 M", "price": 4700.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite65"}, "ppf_matte": {"name": "GUARDIAN MATTE ULTRA · BOBINA 1,52 × 15 M", "price": 6000.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_matte"}, "ppf_black": {"name": "GUARDIAN BLACK ULTRA · BOBINA 1,52 × 15 M", "price": 6900.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_black"}, "ppf_elite75": {"name": "GUARDIAN ELITE SERIES 7.5 · BOBINA 1,52 × 15 M", "price": 5500.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite75"}, "ppf_scudo": {"name": "GUARDIAN SCUDO 6.5 · BOBINA 1,52 × 15 M", "price": 3950.0, "img": "assets/img/ppf_scudo.jpg?v=2", "codigo": "", "base": "ppf_scudo"}, "camaleao_purple": {"name": "ELITE CAMALEÃO PURPLE · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/pelicula_camaleao.jpg", "codigo": "", "base": "camaleao_purple"}, "camaleao_black": {"name": "ELITE CAMALEÃO BLACK · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/pelicula_camaleao.jpg", "codigo": "", "base": "camaleao_black"}}, "fichas": {"imperiale": {"title": "GUARDIAN IMPERIALE CERÂMICO", "rows": [["Tecnologia", "Cerâmica"], ["Tonalidades (VLT)", "5%, 15%, 35%, 50% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-IMP-05, GDN-IMP-15, GDN-IMP-35, GDN-IMP-50, GDN-IMP-75"]]}, "democrazia": {"title": "GUARDIAN DEMOCRAZIA CARBONO", "rows": [["Tecnologia", "Carbono"], ["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "8 anos"], ["Códigos", "GDN-DEM-05, GDN-DEM-15, GDN-DEM-35, GDN-DEM-50"]]}, "black_gold": {"title": "GUARDIAN BLACK GOLD", "rows": [["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "5 anos"], ["Códigos", "GDN-BG-05, GDN-BG-20, GDN-BG-35, GDN-BG-50"]]}, "metal_hp": {"title": "GUARDIAN METAL HP CERÂMICO", "rows": [["Tecnologia", "Metal cerâmica"], ["Tonalidades (VLT)", "5%, 15% e 35%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "15 anos"], ["Códigos", "GDN-MET-05, GDN-MET-15, GDN-MET-35"]]}, "photochromic": {"title": "GUARDIAN PHOTOCHROMIC SERIES", "rows": [["Tecnologia", "Fotocromática"], ["Tonalidades (VLT)", "35% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "10 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-PHO-35, GDN-PHO-75"]]}, "ppf_elite65": {"title": "GUARDIAN ELITE SERIES 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_matte": {"title": "GUARDIAN MATTE ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Fosco"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_black": {"title": "GUARDIAN BLACK ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Preto"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_elite75": {"title": "GUARDIAN ELITE SERIES 7.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "7,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_scudo": {"title": "GUARDIAN SCUDO 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "7 anos"]]}, "camaleao_purple": {"title": "ELITE CAMALEÃO PURPLE", "rows": [["Linha", "Especial · Películas coloridas"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}, "camaleao_black": {"title": "ELITE CAMALEÃO BLACK", "rows": [["Linha", "Especial · Películas coloridas"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}}}</script>
+<script type="application/json" id="dadosBobinas">{"skus": {"imperiale-05-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-05-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-15-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-15-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-35-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-35-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-50-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-50-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-75-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "imperiale-75-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "democrazia-05-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-05-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-15-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-15-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-35-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-35-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-50-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "democrazia-50-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "black_gold-05-30": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-05-15": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-15-30": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-15-15": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-35-30": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-35-15": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-50-30": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "black_gold-50-15": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "metal_hp-05-30": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-05-15": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-15-30": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-15-15": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-35-30": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "metal_hp-35-15": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "photochromic-35-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 35% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-35", "base": "photochromic"}, "photochromic-75-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 75% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-75", "base": "photochromic"}, "ppf_elite65": {"name": "GUARDIAN ELITE SERIES 6.5 · BOBINA 1,52 × 15 M", "price": 4700.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite65"}, "ppf_matte": {"name": "GUARDIAN MATTE ULTRA · BOBINA 1,52 × 15 M", "price": 6000.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_matte"}, "ppf_black": {"name": "GUARDIAN BLACK ULTRA · BOBINA 1,52 × 15 M", "price": 6900.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_black"}, "ppf_elite75": {"name": "GUARDIAN ELITE SERIES 7.5 · BOBINA 1,52 × 15 M", "price": 5500.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite75"}, "ppf_scudo": {"name": "GUARDIAN SCUDO 6.5 · BOBINA 1,52 × 15 M", "price": 3950.0, "img": "assets/img/ppf_scudo.jpg?v=2", "codigo": "", "base": "ppf_scudo"}, "camaleao_purple": {"name": "PPF ELITE CAMALEÃO PURPLE · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/pelicula_camaleao.jpg", "codigo": "", "base": "camaleao_purple"}, "camaleao_black": {"name": "PPF ELITE CAMALEÃO BLACK · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/camaleao_black.jpg", "codigo": "", "base": "camaleao_black"}}, "fichas": {"imperiale": {"title": "GUARDIAN IMPERIALE CERÂMICO", "rows": [["Tecnologia", "Cerâmica"], ["Tonalidades (VLT)", "5%, 15%, 35%, 50% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-IMP-05, GDN-IMP-15, GDN-IMP-35, GDN-IMP-50, GDN-IMP-75"]]}, "democrazia": {"title": "GUARDIAN DEMOCRAZIA CARBONO", "rows": [["Tecnologia", "Carbono"], ["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "8 anos"], ["Códigos", "GDN-DEM-05, GDN-DEM-15, GDN-DEM-35, GDN-DEM-50"]]}, "black_gold": {"title": "GUARDIAN BLACK GOLD", "rows": [["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "5 anos"], ["Códigos", "GDN-BG-05, GDN-BG-20, GDN-BG-35, GDN-BG-50"]]}, "metal_hp": {"title": "GUARDIAN METAL HP CERÂMICO", "rows": [["Tecnologia", "Metal cerâmica"], ["Tonalidades (VLT)", "5%, 15% e 35%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "15 anos"], ["Códigos", "GDN-MET-05, GDN-MET-15, GDN-MET-35"]]}, "photochromic": {"title": "GUARDIAN PHOTOCHROMIC SERIES", "rows": [["Tecnologia", "Fotocromática"], ["Tonalidades (VLT)", "35% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "10 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-PHO-35, GDN-PHO-75"]]}, "ppf_elite65": {"title": "GUARDIAN ELITE SERIES 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_matte": {"title": "GUARDIAN MATTE ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Fosco"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_black": {"title": "GUARDIAN BLACK ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Preto"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_elite75": {"title": "GUARDIAN ELITE SERIES 7.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "7,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_scudo": {"title": "GUARDIAN SCUDO 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "7 anos"]]}, "camaleao_purple": {"title": "PPF ELITE CAMALEÃO PURPLE", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}, "camaleao_black": {"title": "PPF ELITE CAMALEÃO BLACK", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}}}</script>
 <script>
 (function(){
   'use strict';
@@ -2376,6 +2379,9 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   let assinaturaFrete = '';
   let pedidoFrete = 0;
   let timerFrete = null;
+  let freteGratisAcima = 1000;  // atualizado por /api/catalogo (FRETE_GRATIS_ACIMA em lib/catalogo.js)
+  const ehGratis = () => freteGratisAcima > 0 && lines().length > 0 && subtotal() >= freteGratisAcima;
+  const textoLimite = () => fmtBRL(freteGratisAcima).replace(',00', '');
 
   function regiaoDoCep(cep){
     const d = digits(cep);
@@ -2393,8 +2399,13 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     const el = $('freteResult'); const hint = $('ckCepHint');
     let html = '';
     if (freteEstado === 'calculando') html = 'Calculando o frete…';
-    else if (freteEstado === 'manual') html = 'Frete pela Princesa dos Campos: nossa equipe calcula e envia no WhatsApp.';
+    else if (freteEstado === 'manual') html = ehGratis()
+      ? `<strong>Frete grátis</strong> para compras a partir de ${textoLimite()}. O prazo é confirmado no WhatsApp.`
+      : 'Frete pela Princesa dos Campos: nossa equipe calcula e envia no WhatsApp.';
     else if (freteEstado === 'erro') html = esc(freteErro);
+    else if (freteEstado === 'ok' && freteAtual && freteAtual.gratis){
+      html = `<strong>Frete grátis</strong> pela ${esc(freteAtual.nome)}${freteAtual.dias ? `<br>${prazoTexto(freteAtual)}` : ''}`;
+    }
     else if (freteEstado === 'ok' && freteAtual){
       html = freteAtual.fonte === 'transportadora'
         ? `${esc(freteAtual.nome)}: <strong>${fmtBRL(freteAtual.valor)}</strong>${freteAtual.dias ? `<br>${prazoTexto(freteAtual)}` : ''}`
@@ -2406,8 +2417,8 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     const temFrete = freteEstado === 'ok' && freteAtual;
     $('freteRow').style.display = temFrete ? 'flex' : 'none';
     if (temFrete){
-      $('freteLabel').textContent = freteAtual.fonte === 'transportadora' ? 'Frete' : `Frete (${freteAtual.nome})`;
-      $('freteValue').textContent = fmtBRL(freteAtual.valor);
+      $('freteLabel').textContent = freteAtual.fonte === 'transportadora' || freteAtual.gratis ? 'Frete' : `Frete (${freteAtual.nome})`;
+      $('freteValue').textContent = freteAtual.gratis ? 'Grátis' : fmtBRL(freteAtual.valor);
     }
     updateTotals();
   }
@@ -2418,10 +2429,27 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     $('cartGrandTotal').textContent = fmtBRL(sub + fr);
     $('ckSubtotal').textContent = fmtBRL(sub);
     $('ckFrete').textContent = freteEstado === 'calculando' ? 'Calculando…'
-      : freteEstado === 'manual' ? 'Confirmado no WhatsApp'
-      : freteAtual ? `${fmtBRL(fr)}${freteAtual.dias ? ` (${freteAtual.dias} dias)` : ` (${freteAtual.nome})`}`
+      : freteEstado === 'manual' ? (ehGratis() ? 'Grátis' : 'Confirmado no WhatsApp')
+      : freteAtual ? `${freteAtual.gratis ? 'Grátis' : fmtBRL(fr)}${freteAtual.dias ? ` (${freteAtual.dias} dias)` : freteAtual.gratis ? '' : ` (${freteAtual.nome})`}`
       : 'Informe o CEP';
     $('ckTotal').textContent = fmtBRL(sub + fr);
+    pintarAvisoGratis(sub);
+  }
+
+  // "Faltam R$ X para o frete grátis", logo abaixo do CEP no carrinho.
+  function pintarAvisoGratis(sub){
+    let el = $('freteGratisAviso');
+    if (!el){
+      el = document.createElement('p'); el.id = 'freteGratisAviso'; el.className = 'frete-gratis-aviso';
+      $('freteResult').after(el);
+    }
+    if (!(freteGratisAcima > 0) || lines().length === 0){ el.hidden = true; return; }
+    el.hidden = false;
+    const falta = Math.round((freteGratisAcima - sub) * 100) / 100;
+    el.classList.toggle('ganhou', falta <= 0);
+    el.innerHTML = falta <= 0
+      ? '✓ Seu pedido tem <strong>frete grátis</strong>.'
+      : `Faltam <strong>${fmtBRL(falta)}</strong> para ganhar <strong>frete grátis</strong> (compras a partir de ${textoLimite()}).`;
   }
 
   function cotar(cep, imediato){
@@ -2457,7 +2485,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         if (!r.ok || !(Number(j.valor) >= 0)){
           freteAtual = null; freteEstado = 'erro'; freteErro = j.erro || 'Não foi possível calcular o frete agora. Tente de novo ou finalize pelo WhatsApp.';
         } else {
-          freteAtual = { nome: j.nome, valor: Number(j.valor), cep: d, dias: j.dias || null, fonte: j.fonte };
+          freteAtual = { nome: j.nome, valor: Number(j.valor), cep: d, dias: j.dias || null, fonte: j.fonte, gratis: Boolean(j.gratis) };
           freteEstado = 'ok';
         }
         pintarFrete();
@@ -2487,7 +2515,14 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       msg += `• ${l.qty}x ${l.name}${l.codigo && l.unit === 'bobina' ? ` (${l.codigo})` : ''} — ${fmtBRL(l.qty * l.price)}\n`;
     });
     msg += `\nSubtotal: ${fmtBRL(subtotal())}`;
-    if (freteAtual){
+    if (freteAtual && freteAtual.gratis){
+      msg += `\nFrete: grátis (${freteAtual.nome})${freteAtual.dias ? ` — ${prazoTexto(freteAtual)}` : ''}`;
+      msg += `\nTotal: ${fmtBRL(subtotal())}`;
+      msg += `\nCEP: ${mascaraCep(freteAtual.cep)}`;
+    } else if (!freteAtual && ehGratis()){
+      msg += `\nFrete: grátis (compra a partir de ${textoLimite()})`;
+      if (cepFrete.length === 8) msg += `\nCEP: ${mascaraCep(cepFrete)}`;
+    } else if (freteAtual){
       msg += `\nFrete (${freteAtual.nome}): ${fmtBRL(freteAtual.valor)}${freteAtual.dias ? ` — ${prazoTexto(freteAtual)}` : ''}`;
       msg += `\nTotal: ${fmtBRL(subtotal() + freteAtual.valor)}`;
       msg += `\nCEP: ${mascaraCep(freteAtual.cep)}`;
@@ -2578,9 +2613,11 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     const valor = valorPix();
     const novo = codigoPix(valor, pixPedido);
     $('pixValor').textContent = fmtBRL(valor);
-    $('pixRotulo').textContent = freteNoPix() ? 'produtos + frete' : 'valor dos produtos';
+    $('pixRotulo').textContent = ehGratis() ? 'produtos, com frete grátis' : freteNoPix() ? 'produtos + frete' : 'valor dos produtos';
     const confira = 'Confira o CNPJ 62.406.067/0001-88 no app do banco antes de confirmar.';
-    $('pixNota').textContent = freteNoPix()
+    $('pixNota').textContent = ehGratis()
+      ? `${confira} Frete grátis para compras a partir de ${textoLimite()}.`
+      : freteNoPix()
       ? `${confira} Inclui o frete da Princesa dos Campos: ${fmtBRL(freteAtual.valor)}${freteAtual.dias ? `, ${prazoTexto(freteAtual)}` : ''}.`
       : freteEstado === 'calculando' ? `${confira} Calculando o frete…`
       : freteServidor && freteTransportadora ? `${confira} Informe o CEP para incluir o frete da Princesa dos Campos no Pix.`
@@ -2626,7 +2663,10 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     return d.length === 8 ? mascaraCep(d) : '(vou informar)';
   };
   $('pixComprovante').addEventListener('click', () => {
-    const msg = freteNoPix()
+    const msg = ehGratis()
+      ? `Olá! Fiz o pedido ${pixPedido} pelo site e paguei via Pix (CNPJ 62.406.067/0001-88):\n\n${resumoPedido()}\n\n`
+        + `Total pago no Pix: ${fmtBRL(subtotal())}\nFrete: grátis\nCEP para entrega: ${cepDoPedido()}\n\nSegue o comprovante.`
+      : freteNoPix()
       ? `Olá! Fiz o pedido ${pixPedido} pelo site e paguei via Pix (CNPJ 62.406.067/0001-88):\n\n${resumoPedido()}\n\n`
         + `Produtos: ${fmtBRL(subtotal())}\nFrete (${freteAtual.nome}): ${fmtBRL(freteAtual.valor)}${freteAtual.dias ? ` — ${prazoTexto(freteAtual)}` : ''}\n`
         + `Total pago no Pix: ${fmtBRL(valorPix())}\nCEP para entrega: ${cepDoPedido()}\n\nSegue o comprovante.`
@@ -2635,8 +2675,8 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     window.open(waLink(msg), '_blank', 'noopener');
   });
   $('pedirLink').addEventListener('click', () => {
-    const msg = `Olá! Quero pagar este pedido com cartão ou boleto. Pode me enviar o link de pagamento do Mercado Pago, já com o frete?\n\n${resumoPedido()}\n\n`
-      + `Total dos produtos: ${fmtBRL(subtotal())}\nCEP para entrega: ${cepDoPedido()}`;
+    const msg = `Olá! Quero pagar este pedido com cartão ou boleto. Pode me enviar o link de pagamento do Mercado Pago${ehGratis() ? '' : ', já com o frete'}?\n\n${resumoPedido()}\n\n`
+      + `Total dos produtos: ${fmtBRL(subtotal())}${ehGratis() ? '\nFrete: grátis' : ''}\nCEP para entrega: ${cepDoPedido()}`;
     window.open(waLink(msg), '_blank', 'noopener');
   });
 
@@ -3013,6 +3053,13 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       if (precos.length) el.textContent = fmtBRL(Math.min(...precos));
     });
   }
+  function pintarFaixaGratis(){
+    const t = document.querySelector('[data-frete-gratis]'); const d = document.querySelector('[data-frete-gratis-sub]');
+    if (!t || !d) return;
+    if (freteGratisAcima > 0){ t.textContent = `Frete grátis a partir de ${textoLimite()}`; d.textContent = 'valor e prazo pelo CEP antes de pagar'; }
+    else { t.textContent = 'Frete pelo CEP'; d.textContent = 'valor e prazo antes de pagar'; }
+    updateTotals();
+  }
   function aplicarCatalogo(dados){
     Object.entries(dados.produtos || {}).forEach(([id, p]) => {
       const c = CATALOGO[id];
@@ -3035,6 +3082,8 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     saveCart();
     if (Array.isArray(dados.frete) && dados.frete.length) FRETE = dados.frete;
     freteTransportadora = Boolean(dados.freteTransportadora);
+    if (Number(dados.freteGratisAcima) >= 0) freteGratisAcima = Number(dados.freteGratisAcima);
+    pintarFaixaGratis();
     if (cepFrete.length === 8) cotar(cepFrete, true);
     pagamentoOnline = Boolean(dados.pagamentoAtivo);
     aplicarModo();

@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     pagamento_id: String(p.id),
     status: STATUS[p.status] || p.status,
     valor_total: p.transaction_amount,
-    frete: m.frete_valor ?? '',
+    frete: m.frete_gratis ? `Grátis (custo R$ ${Number(m.frete_custo || 0).toFixed(2).replace('.', ',')})` : (m.frete_valor ?? ''),
     frete_prazo: m.frete_prazo_dias ? `${m.frete_prazo_dias} dias` : '',
     cotacao_transportadora: m.cotacao_id || '',
     forma: p.payment_type_id === 'bank_transfer' ? 'Pix' : (p.payment_type_id || ''),

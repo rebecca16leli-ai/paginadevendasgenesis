@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   try {
     const f = await cotarFrete(corpo.cep, itens, { modo: 'carrinho' });
     res.setHeader('Cache-Control', 'no-store');
-    return res.status(200).json({ fonte: f.fonte, nome: f.nome, valor: f.valor, dias: f.dias });
+    return res.status(200).json({ fonte: f.fonte, nome: f.nome, valor: f.valor, dias: f.dias, gratis: f.gratis });
   } catch (e) {
     const status = e instanceof ErroFrete ? e.status : 500;
     return res.status(status).json({

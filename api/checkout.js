@@ -124,7 +124,7 @@ export default async function handler(req, res) {
         ...(Number.isFinite(numeroCasa) ? { street_number: numeroCasa } : {}),
       },
     },
-    shipments: { mode: 'not_specified', cost: frete.valor },
+    ...(frete.valor > 0 ? { shipments: { mode: 'not_specified', cost: frete.valor } } : {}),
     back_urls: { success: `${site}/`, failure: `${site}/`, pending: `${site}/` },
     auto_return: 'approved',
     external_reference: pedido,
@@ -149,6 +149,8 @@ export default async function handler(req, res) {
       itens_ids: itens.map((i) => `${i.id}:${i.qtd}`).join(','),
       frete_regiao: frete.nome,
       frete_valor: frete.valor,
+      frete_gratis: frete.gratis ? 'sim' : '',
+      frete_custo: frete.custo ?? frete.valor,
       frete_fonte: frete.fonte,
       frete_prazo_dias: frete.dias ?? '',
       cotacao_id: frete.cotacaoId ?? '',
@@ -168,7 +170,7 @@ export default async function handler(req, res) {
       pedido,
       checkoutUrl: pref.init_point,
       frete: {
-        valor: frete.valor, dias: frete.dias, nome: frete.nome,
+        valor: frete.valor, dias: frete.dias, nome: frete.nome, gratis: frete.gratis,
         // Diagnóstico: se a cotação oficial foi registrada na transportadora.
         ...(frete.fonte === 'transportadora' ? { cotacao: frete.cotacaoId ? 'registrada' : `não registrada: ${frete.avisoCotacao}` } : {}),
       },
