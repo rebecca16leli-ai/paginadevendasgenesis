@@ -1,7 +1,7 @@
 // GET /api/olist — confere a ligação com o Olist (sem mostrar o token).
 // GET /api/olist?codigo=GD037CUT — confere se um código da loja existe no Olist.
 // GET /api/olist?pedido=GEN-261104-ABCDE — confere se o pedido da loja chegou no Olist.
-import { olistAtivo, nfAutomatica, bloquearSemEstoque, infoConta, produtoPorCodigo, pedidoPorNumeroLoja } from '../lib/olist.js';
+import { olistAtivo, nfAutomatica, bloquearSemEstoque, infoConta, produtoPorCodigo, pedidosPorNumeroLoja } from '../lib/olist.js';
 
 let ultima = 0;
 
@@ -21,8 +21,8 @@ export default async function handler(req, res) {
   try {
     const numeroPedido = String(req.query?.pedido || '').trim().toUpperCase();
     if (/^GEN-\d{6}-[0-9A-F]{5}$/.test(numeroPedido)) {
-      const p = await pedidoPorNumeroLoja(numeroPedido);
-      return res.status(200).json({ ...base, conectado: true, pedido: numeroPedido, encontrado: !!p, ...(p ? { numeroOlist: p.numero, situacao: p.situacao } : {}) });
+      const lista = await pedidosPorNumeroLoja(numeroPedido);
+      return res.status(200).json({ ...base, conectado: true, pedido: numeroPedido, encontrado: lista.length > 0, noOlist: lista.map((p) => ({ numero: p.numero, situacao: p.situacao })) });
     }
     const codigo = String(req.query?.codigo || '').trim().slice(0, 60);
     if (codigo) {
@@ -30,7 +30,12 @@ export default async function handler(req, res) {
       return res.status(200).json({ ...base, conectado: true, codigo, encontrado: !!p, ...(p ? { nome: p.nome, unidade: p.unidade } : {}) });
     }
     const conta = await infoConta();
-    return res.status(200).json({ ...base, conectado: true, empresa: conta.fantasia || conta.razao_social || '' });
+    return res.status(200).json({
+      ...base, conectado: true,
+      empresa: conta.razao_social || conta.fantasia || '',
+      ...(conta.fantasia && conta.fantasia !== conta.razao_social ? { fantasia: conta.fantasia } : {}),
+      cnpj: conta.cnpj_cpf || '',
+    });
   } catch (e) {
     return res.status(200).json({ ...base, conectado: false, erro: e.message, detalhe: (e.erros || []).slice(0, 3) });
   }

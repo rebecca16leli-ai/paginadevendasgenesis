@@ -25,6 +25,10 @@ export default async function handler(req, res) {
   // Outros avisos (ex.: merchant_order) não interessam aqui.
   if (tipo !== 'payment' || !id) return res.status(200).json({ ok: true, ignorado: true });
 
+  // O Mercado Pago manda o mesmo aviso em dois formatos ao mesmo tempo (webhook e IPN).
+  // O formato IPN (?topic=payment) espera um pouco, para os dois não lançarem juntos no Olist.
+  if (!corpo.type && (q.topic || corpo.topic)) await new Promise((ok) => setTimeout(ok, 5000));
+
   let p;
   try {
     p = await mercadoPago(`/v1/payments/${id}`);
