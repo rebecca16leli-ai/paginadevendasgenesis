@@ -190,11 +190,23 @@ nav.navlinks{display:flex; gap:26px; margin-left:auto;}
 /* Linha de produto: foto | informação | opções | compra */
 .linhas{border-top:1px solid var(--linha);}
 .linha{
-  display:grid; grid-template-columns:136px minmax(0,1.05fr) minmax(0,1.25fr) 236px;
+  display:grid; grid-template-columns:168px minmax(0,1.05fr) minmax(0,1.25fr) 236px;
   gap:28px; padding:28px 0; border-bottom:1px solid var(--linha); align-items:start;
 }
 .linha-foto{aspect-ratio:1/1; background:var(--grafite-2); border:1px solid var(--linha); overflow:hidden;}
 .linha-foto img{width:100%; height:100%; object-fit:cover;}
+/* Carrossel de fotos do produto (caixa + rolos) */
+.carrossel{position:relative;}
+.car-trilho{display:flex; width:100%; height:100%; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; overscroll-behavior-x:contain; outline:none;}
+.car-trilho::-webkit-scrollbar{display:none;}
+.car-trilho img{flex:0 0 100%; width:100%; height:100%; object-fit:cover; scroll-snap-align:start; user-select:none;}
+.car-seta{position:absolute; top:50%; transform:translateY(-50%); width:30px; height:30px; border-radius:50%; border:0; background:rgba(0,0,0,.55); color:#fff; font-size:20px; line-height:28px; text-align:center; cursor:pointer; opacity:0; transition:opacity .2s;}
+.car-seta.ant{left:6px;} .car-seta.prox{right:6px;}
+.carrossel:hover .car-seta, .car-trilho:focus-visible ~ .car-seta, .car-seta:focus-visible{opacity:1;}
+.car-pontos{position:absolute; left:0; right:0; bottom:8px; display:flex; justify-content:center; gap:6px;}
+.car-ponto{width:7px; height:7px; border-radius:50%; border:0; padding:0; background:rgba(0,0,0,.28); box-shadow:0 0 0 1px rgba(255,255,255,.6); cursor:pointer; transition:background .2s, width .2s;}
+.car-ponto.ativo{background:var(--ouro); width:18px; border-radius:4px; box-shadow:none;}
+@media (hover:none){ .car-seta{display:none;} }
 .linha-info h3{font-size:17px; font-weight:800; line-height:1.18; letter-spacing:.01em;}
 .linha-desc{color:var(--texto-2); font-size:14px; margin:8px 0 14px; max-width:30em;}
 .linha-specs{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13px; color:var(--texto-3); margin-bottom:12px;}
@@ -542,7 +554,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   nav.navlinks{order:3; width:100%; margin:0 -24px; padding:2px 24px 12px; overflow-x:auto; gap:22px; scrollbar-width:none;}
   nav.navlinks::-webkit-scrollbar{display:none;}
   html{scroll-padding-top:110px;}
-  .linha{grid-template-columns:96px minmax(0,1fr); gap:16px 18px;}
+  .linha{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:18px 22px;}
   .linha-opcoes,.linha-compra{grid-column:1 / -1;}
   .linha-acoes{min-width:0; width:100%; margin:8px 0 0;}
   .linha-cod{margin-left:auto;}
@@ -568,7 +580,9 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   .marca-grid{padding:60px 16px;}
   .marca-citacao{padding-left:20px;}
   .secao{padding:64px 0 56px;}
-  .linha{grid-template-columns:80px minmax(0,1fr);}
+  .linha{grid-template-columns:1fr; gap:16px;}
+  .linha-foto{width:100%;}
+  .car-ponto{width:8px; height:8px;} .car-ponto.ativo{width:22px;}
   .linha-info h3{font-size:15px;}
   .linha-preco{font-size:24px;}
   .pcard-body{padding:12px 12px 14px;}
@@ -809,7 +823,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     </div>
     <div class="linhas">
     <article class="linha" data-tipo="pelicula" data-base="imperiale" id="p-imperiale">
-      <div class="linha-foto"><img src="assets/img/pelicula_imperiale.jpg?v=2" alt="GUARDIAN IMPERIALE CERÂMICO" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN IMPERIALE CERÂMICO"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_imperiale.jpg?v=2" alt="GUARDIAN IMPERIALE CERÂMICO" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN IMPERIALE CERÂMICO</h3>
         <p class="linha-desc">Película cerâmica premium, disponível em cinco tonalidades.</p>
@@ -848,7 +862,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="democrazia" id="p-democrazia">
-      <div class="linha-foto"><img src="assets/img/pelicula_democrazia.jpg?v=2" alt="GUARDIAN DEMOCRAZIA CARBONO" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN DEMOCRAZIA CARBONO"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_democrazia.jpg?v=2" alt="GUARDIAN DEMOCRAZIA CARBONO" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN DEMOCRAZIA CARBONO</h3>
         <p class="linha-desc">Película de carbono com ótimo custo-benefício.</p>
@@ -886,7 +900,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="black_gold" id="p-black_gold">
-      <div class="linha-foto"><img src="assets/img/pelicula_black_gold.jpg?v=2" alt="GUARDIAN BLACK GOLD" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN BLACK GOLD"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_black_gold.jpg?v=2" alt="GUARDIAN BLACK GOLD" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN BLACK GOLD</h3>
         <p class="linha-desc">A entrada da linha Guardian, com escurecimento uniforme.</p>
@@ -924,7 +938,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="metal_hp" id="p-metal_hp">
-      <div class="linha-foto"><img src="assets/img/pelicula_metal_hp.jpg" alt="GUARDIAN METAL HP CERÂMICO" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN METAL HP CERÂMICO"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_metal_hp.jpg" alt="GUARDIAN METAL HP CERÂMICO" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN METAL HP CERÂMICO</h3>
         <p class="linha-desc">A película com a maior garantia da linha: 15 anos.</p>
@@ -961,7 +975,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="photochromic" id="p-photochromic">
-      <div class="linha-foto"><img src="assets/img/pelicula_photochromic.jpg" alt="GUARDIAN PHOTOCHROMIC SERIES" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN PHOTOCHROMIC SERIES"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_photochromic.jpg" alt="GUARDIAN PHOTOCHROMIC SERIES" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN PHOTOCHROMIC SERIES</h3>
         <p class="linha-desc">Escurece sob a luz do sol e clareia quando a luz diminui.</p>
@@ -1007,7 +1021,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     </div>
     <div class="linhas">
     <article class="linha" data-tipo="unico" data-base="ppf_elite65" id="p-ppf_elite65">
-      <div class="linha-foto"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 6.5" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN ELITE SERIES 6.5"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 6.5" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN ELITE SERIES 6.5</h3>
         <p class="linha-desc">PPF transparente para proteção da pintura.</p>
@@ -1036,7 +1050,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="ppf_matte" id="p-ppf_matte">
-      <div class="linha-foto"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN MATTE ULTRA" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN MATTE ULTRA"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN MATTE ULTRA" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN MATTE ULTRA</h3>
         <p class="linha-desc">PPF fosco: protege a pintura e deixa o acabamento matte.</p>
@@ -1065,7 +1079,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="ppf_black" id="p-ppf_black">
-      <div class="linha-foto"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN BLACK ULTRA" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN BLACK ULTRA"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN BLACK ULTRA" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN BLACK ULTRA</h3>
         <p class="linha-desc">PPF preto: muda a cor da peça e protege a pintura.</p>
@@ -1094,7 +1108,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="ppf_elite75" id="p-ppf_elite75">
-      <div class="linha-foto"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 7.5" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN ELITE SERIES 7.5"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 7.5" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN ELITE SERIES 7.5</h3>
         <p class="linha-desc">A versão mais espessa da Elite Series.</p>
@@ -1123,7 +1137,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="ppf_scudo" id="p-ppf_scudo">
-      <div class="linha-foto"><img src="assets/img/ppf_scudo.jpg?v=2" alt="GUARDIAN SCUDO 6.5" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN SCUDO 6.5"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_scudo.jpg?v=2" alt="GUARDIAN SCUDO 6.5" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN SCUDO 6.5</h3>
         <p class="linha-desc">PPF com ótimo custo-benefício e 7 anos de garantia.</p>
@@ -1163,7 +1177,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     </div>
     <div class="linhas">
     <article class="linha" data-tipo="unico" data-base="camaleao_purple" id="p-camaleao_purple">
-      <div class="linha-foto"><img src="assets/img/pelicula_camaleao.jpg" alt="PPF ELITE CAMALEÃO PURPLE" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto"><img src="assets/img/pelicula_camaleao.jpg" alt="PPF ELITE CAMALEÃO PURPLE" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
       <div class="linha-info">
         <h3>PPF ELITE CAMALEÃO PURPLE</h3>
         <p class="linha-desc">PPF colorido com efeito camaleão: o tom roxo muda conforme o ângulo da luz.</p>
@@ -1192,7 +1206,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="camaleao_black" id="p-camaleao_black">
-      <div class="linha-foto"><img src="assets/img/camaleao_black.jpg" alt="PPF ELITE CAMALEÃO BLACK" loading="lazy" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto"><img src="assets/img/camaleao_black.jpg" alt="PPF ELITE CAMALEÃO BLACK" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
       <div class="linha-info">
         <h3>PPF ELITE CAMALEÃO BLACK</h3>
         <p class="linha-desc">PPF colorido com efeito camaleão em tom escuro, que muda conforme o ângulo da luz.</p>
@@ -2364,6 +2378,31 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     }
     saveCart();
     renderCart();
+  });
+
+  // ================= CARROSSEL DAS FOTOS =================
+  document.querySelectorAll('[data-carrossel]').forEach(car => {
+    const trilho = car.querySelector('.car-trilho');
+    const fotos = trilho.querySelectorAll('img');
+    const pontos = car.querySelectorAll('.car-ponto');
+    const ant = car.querySelector('.car-seta.ant'), prox = car.querySelector('.car-seta.prox');
+    const atual = () => Math.round(trilho.scrollLeft / Math.max(1, trilho.clientWidth));
+    const ir = (i) => trilho.scrollTo({ left: Math.max(0, Math.min(fotos.length - 1, i)) * trilho.clientWidth });
+    const marcar = () => {
+      const i = atual();
+      pontos.forEach((p, k) => p.classList.toggle('ativo', k === i));
+      if (ant) ant.hidden = i === 0;
+      if (prox) prox.hidden = i >= fotos.length - 1;
+    };
+    let t; trilho.addEventListener('scroll', () => { cancelAnimationFrame(t); t = requestAnimationFrame(marcar); }, { passive: true });
+    pontos.forEach((p, k) => p.addEventListener('click', () => ir(k)));
+    if (ant) ant.addEventListener('click', () => ir(atual() - 1));
+    if (prox) prox.addEventListener('click', () => ir(atual() + 1));
+    trilho.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight'){ e.preventDefault(); ir(atual() + 1); }
+      if (e.key === 'ArrowLeft'){ e.preventDefault(); ir(atual() - 1); }
+    });
+    window.addEventListener('resize', () => ir(atual()), { passive: true });
   });
 
   // ================= FRETE =================
