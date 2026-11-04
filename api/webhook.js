@@ -64,6 +64,10 @@ export default async function handler(req, res) {
       if (!jaAprovada) console.error('Aprovar cotação', m.cotacao_id, e.message);
       pedido.cotacao_status = jaAprovada ? 'Aprovada na transportadora' : 'Aprovar manualmente na transportadora';
     }
+  } else if (p.status === 'approved' && m.frete_fonte === 'transportadora') {
+    // A cotação oficial não foi registrada no checkout (o frete veio do cálculo simples).
+    pedido.cotacao_status = 'Registrar a cotação manualmente na transportadora';
+    if (m.cotacao_erro) console.error('Pedido', pedido.pedido, 'sem cotação registrada:', m.cotacao_erro);
   }
 
   const planilha = process.env.PLANILHA_URL;

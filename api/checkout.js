@@ -71,7 +71,11 @@ export default async function handler(req, res) {
     });
   } catch (e) {
     const status = e instanceof ErroFrete ? e.status : 500;
-    return res.status(status).json({ erro: e instanceof ErroFrete ? e.message : 'Não foi possível calcular o frete agora.' });
+    return res.status(status).json({
+      erro: e instanceof ErroFrete ? e.message : 'Não foi possível calcular o frete agora.',
+      // Resposta da transportadora, para diagnóstico (a página não mostra este campo).
+      ...(e instanceof ErroFrete && e.detalhe ? { detalhe: e.detalhe } : {}),
+    });
   }
 
   const pedido = novoNumeroPedido();
@@ -128,6 +132,7 @@ export default async function handler(req, res) {
       frete_fonte: frete.fonte,
       frete_prazo_dias: frete.dias ?? '',
       cotacao_id: frete.cotacaoId ?? '',
+      cotacao_erro: (frete.avisoCotacao || '').slice(0, 250),
     },
   };
   // O Mercado Pago só avisa pedidos (webhook) em endereço https público.
@@ -139,7 +144,15 @@ export default async function handler(req, res) {
       body: preferencia,
       idempotencia: pedido,
     });
-    return res.status(200).json({ pedido, checkoutUrl: pref.init_point, frete: { valor: frete.valor, dias: frete.dias, nome: frete.nome } });
+    return res.status(200).json({
+      pedido,
+      checkoutUrl: pref.init_point,
+      frete: {
+        valor: frete.valor, dias: frete.dias, nome: frete.nome,
+        // Diagnóstico: se a cotação oficial foi registrada na transportadora.
+        ...(frete.fonte === 'transportadora' ? { cotacao: frete.cotacaoId ? 'registrada' : `não registrada: ${frete.avisoCotacao}` } : {}),
+      },
+    });
   } catch (err) {
     const status = err instanceof ErroPagamento ? err.status : 500;
     const erro = status === 503
