@@ -1,3 +1,7 @@
 {
-  "regions": ["gru1"]
+  "regions": ["gru1"],
+  "functions": {
+    "api/checkout.js": { "maxDuration": 30 },
+    "api/webhook.js": { "maxDuration": 60 }
+  }
 }

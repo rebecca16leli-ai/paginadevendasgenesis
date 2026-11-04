@@ -3,7 +3,7 @@
  *
  * 1. Crie uma Planilha Google e renomeie a aba para: Pedidos
  * 2. Na linha 1, cole este cabeçalho (uma palavra por coluna, separadas por TAB):
- *    Data	Pedido	Pagamento ID	Status	Valor total	Frete	Forma	Cliente	CPF/CNPJ	E-mail	WhatsApp	Endereço de entrega	Itens	Prazo do frete	Cotação transportadora	Situação da cotação
+ *    Data	Pedido	Pagamento ID	Status	Valor total	Frete	Forma	Cliente	CPF/CNPJ	E-mail	WhatsApp	Endereço de entrega	Itens	Prazo do frete	Cotação transportadora	Situação da cotação	Olist
  * 3. Extensões → Apps Script → apague tudo, cole este código e troque o SEGREDO abaixo.
  * 4. Implantar → Nova implantação → Tipo "App da Web"
  *      Executar como: Eu  ·  Quem pode acessar: Qualquer pessoa
@@ -25,6 +25,7 @@ function doPost(e) {
     dados.frete, dados.forma, dados.cliente, "'" + dados.documento, dados.email,
     "'" + dados.whatsapp, dados.entrega, dados.itens,
     dados.frete_prazo || '', dados.cotacao_transportadora || '', dados.cotacao_status || '',
+    dados.olist || '',
   ];
 
   // Se o pagamento já está na planilha, só atualiza a linha (ex.: Pix pendente → aprovado).

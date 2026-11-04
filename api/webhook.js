@@ -4,6 +4,7 @@
 // registramos o pedido com endereço de entrega e itens.
 import { mercadoPago, lerCorpo } from '../lib/mercadopago.js';
 import { alterarCotacaoBrudam } from '../lib/brudam.js';
+import { olistAtivo, registrarPedidoOlist, cancelarPedidoOlist } from '../lib/olist.js';
 
 const STATUS = {
   approved: 'Aprovado',
@@ -70,6 +71,31 @@ export default async function handler(req, res) {
     if (m.cotacao_erro) console.error('Pedido', pedido.pedido, 'sem cotação registrada:', m.cotacao_erro);
   }
 
+  // Olist: pagamento aprovado vira pedido aprovado; reembolso/cancelamento cancela o pedido.
+  let repetir = false;
+  if (olistAtivo()) {
+    if (p.status === 'approved') {
+      try {
+        const r = await registrarPedidoOlist(p, m);
+        pedido.olist = r.texto;
+        console.log('Olist:', pedido.pedido, '→', r.texto, r.novo ? '(novo)' : '(já existia)');
+      } catch (e) {
+        console.error('Olist: não consegui lançar o pedido', pedido.pedido, '-', e.message, (e.erros || []).join(' | '));
+        // Olist fora do ar ou no limite de chamadas: responde erro para o Mercado Pago avisar de novo mais tarde.
+        repetir = e.http === 429 || e.http >= 500 || (!e.codigo && !(e.erros || []).length);
+        pedido.olist = repetir ? 'Olist indisponível, tentando de novo' : `Lançar manualmente no Olist (${String(e.message).slice(0, 120)})`;
+      }
+    } else if (['refunded', 'cancelled', 'charged_back'].includes(p.status)) {
+      try {
+        const r = await cancelarPedidoOlist(pedido.pedido);
+        pedido.olist = r ? `Pedido ${r.numero} cancelado no Olist` : '';
+      } catch (e) {
+        console.error('Olist: não consegui cancelar o pedido', pedido.pedido, '-', e.message);
+        pedido.olist = 'Cancelar manualmente no Olist';
+      }
+    }
+  }
+
   const planilha = process.env.PLANILHA_URL;
   if (planilha) {
     try {
@@ -83,5 +109,6 @@ export default async function handler(req, res) {
     }
   }
 
+  if (repetir) return res.status(500).json({ ok: false, repetir: true });
   return res.status(200).json({ ok: true });
 }

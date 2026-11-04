@@ -4,6 +4,7 @@ import { randomUUID } from 'node:crypto';
 import { normalizarItens } from '../lib/pedido.js';
 import { cotarFrete, ErroFrete } from '../lib/frete.js';
 import { mercadoPago, enderecoDoSite, lerCorpo, ErroPagamento } from '../lib/mercadopago.js';
+import { itensSemEstoque } from '../lib/olist.js';
 
 const soDigitos = (v) => String(v ?? '').replace(/\D/g, '');
 const texto = (v, max = 120) => String(v ?? '').trim().replace(/\s+/g, ' ').slice(0, max);
@@ -60,6 +61,16 @@ export default async function handler(req, res) {
 
   const { erros, itens, cliente, entrega } = validar(lerCorpo(req));
   if (erros.length) return res.status(400).json({ erro: erros.join(' ') });
+
+  // Estoque no Olist (só bloqueia com OLIST_ESTOQUE=bloquear na Vercel).
+  const semEstoque = await itensSemEstoque(itens);
+  if (semEstoque.length) {
+    const lista = semEstoque.map((i) => (i.saldo > 0 ? `${i.nome} (temos ${i.saldo})` : `${i.nome} (esgotado)`)).join('; ');
+    return res.status(409).json({
+      erro: `Sem estoque suficiente agora: ${lista}. Ajuste o carrinho ou fale com a gente no WhatsApp.`,
+      semEstoque,
+    });
+  }
 
   // O frete é sempre recalculado aqui (o valor do navegador não vale).
   let frete;
@@ -126,7 +137,16 @@ export default async function handler(req, res) {
       cliente_documento: cliente.documento,
       cliente_telefone: cliente.telefone,
       entrega: enderecoTexto,
+      // Endereço em partes, para o pedido no Olist (e a NF-e) sair completo.
+      entrega_rua: entrega.rua,
+      entrega_numero: entrega.numero,
+      entrega_complemento: entrega.complemento,
+      entrega_bairro: entrega.bairro,
+      entrega_cidade: entrega.cidade,
+      entrega_uf: entrega.uf,
+      entrega_cep: entrega.cep,
       itens: itensTexto,
+      itens_ids: itens.map((i) => `${i.id}:${i.qtd}`).join(','),
       frete_regiao: frete.nome,
       frete_valor: frete.valor,
       frete_fonte: frete.fonte,
