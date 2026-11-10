@@ -6,7 +6,7 @@ import { freteReal } from '../lib/frete.js';
 export default function handler(req, res) {
   const produtos = {};
   for (const [id, p] of Object.entries(PRODUTOS)) {
-    produtos[id] = { preco: p.preco, unidade: p.unidade, max: p.max };
+    produtos[id] = { preco: p.preco, unidade: p.unidade, max: p.max, ...(p.promo ? { promo: p.promo, precoDe: p.precoNormal } : {}) };
   }
   res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
   res.status(200).json({
