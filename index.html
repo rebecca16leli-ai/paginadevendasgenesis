@@ -193,7 +193,7 @@ nav.navlinks{display:flex; gap:26px; margin-left:auto;}
   display:grid; grid-template-columns:168px minmax(0,1.05fr) minmax(0,1.25fr) 236px;
   gap:28px; padding:28px 0; border-bottom:1px solid var(--linha); align-items:start;
 }
-.linha-foto{aspect-ratio:1/1; background:var(--grafite-2); border:1px solid var(--linha); overflow:hidden;}
+.linha-foto{aspect-ratio:1/1; background:var(--grafite-2); border:1px solid var(--linha); overflow:hidden; position:relative;}
 .linha-foto img{width:100%; height:100%; object-fit:cover;}
 /* Carrossel de fotos do produto (caixa + rolos) */
 .carrossel{position:relative;}
@@ -253,6 +253,13 @@ nav.navlinks{display:flex; gap:26px; margin-left:auto;}
 
 .linha-compra{display:flex; flex-direction:column; gap:4px;}
 .linha-cod{font-size:12.5px; color:var(--texto-3);}
+/* Promoção */
+.selo-promo{position:absolute; top:8px; left:8px; z-index:2; background:var(--ouro); color:#0b0b0c; font-weight:800; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; padding:4px 8px; border-radius:4px; pointer-events:none; box-shadow:0 2px 8px rgba(0,0,0,.35);}
+.linha.em-promo{background:linear-gradient(90deg, rgba(232,176,56,.07), rgba(232,176,56,0) 55%);}
+.linha-de{font-size:13px; color:var(--texto-2);}
+.linha-de s{color:var(--texto-2); text-decoration-thickness:1px;}
+.bob .de{display:block; font-size:12px; color:var(--texto-3); text-decoration:line-through; margin-top:2px;}
+[data-de][hidden], [data-selo][hidden], [data-bob-de][hidden]{display:none !important;}
 .linha-preco{font-stretch:var(--largo); font-weight:800; font-size:28px; line-height:1.05; color:var(--ouro-claro); letter-spacing:-.01em;}
 .linha-unid{font-size:13px; color:var(--texto-3); margin-bottom:12px;}
 .linha-acoes{display:flex; gap:8px;}
@@ -554,7 +561,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   nav.navlinks{order:3; width:100%; margin:0 -24px; padding:2px 24px 12px; overflow-x:auto; gap:22px; scrollbar-width:none;}
   nav.navlinks::-webkit-scrollbar{display:none;}
   html{scroll-padding-top:110px;}
-  .linha{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:18px 22px;}
+  .linha{grid-template-columns:220px minmax(0,1fr); gap:18px 22px;}
   .linha-opcoes,.linha-compra{grid-column:1 / -1;}
   .linha-acoes{min-width:0; width:100%; margin:8px 0 0;}
   .linha-cod{margin-left:auto;}
@@ -580,9 +587,9 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   .marca-grid{padding:60px 16px;}
   .marca-citacao{padding-left:20px;}
   .secao{padding:64px 0 56px;}
-  .linha{grid-template-columns:1fr; gap:16px;}
-  .linha-foto{width:100%;}
-  .car-ponto{width:8px; height:8px;} .car-ponto.ativo{width:22px;}
+  .linha{grid-template-columns:minmax(0,42%) minmax(0,1fr); gap:14px 14px;}
+  .linha-desc{font-size:13.5px; margin:6px 0 10px;}
+  .linha-specs{gap:4px 12px; font-size:12.5px;}
   .linha-info h3{font-size:15px;}
   .linha-preco{font-size:24px;}
   .pcard-body{padding:12px 12px 14px;}
@@ -772,7 +779,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         <span class="cat-img"><img src="assets/img/cat_peliculas.jpg?v=2" alt="" width="900" height="675" loading="lazy"></span></a></li>
       <li><a class="cat-card" href="#ppf">
         <span class="cat-titulo">PPF</span>
-        <span class="cat-info">Bobinas de 1,52 × 15 m</span><span class="cat-desde">a partir de <strong data-desde="ppf">R$&nbsp;3.950,00</strong></span>
+        <span class="cat-info">Bobinas de 1,52 × 15 m</span><span class="cat-desde">a partir de <strong data-desde="ppf">R$&nbsp;2.700,00</strong></span>
         <span class="cat-img"><img src="assets/img/cat_ppf.jpg?v=2" alt="" width="900" height="675" loading="lazy"></span></a></li>
       <li><a class="cat-card" href="#especial">
         <span class="cat-titulo">PPF Colorido</span>
@@ -823,7 +830,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     </div>
     <div class="linhas">
     <article class="linha" data-tipo="pelicula" data-base="imperiale" id="p-imperiale">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN IMPERIALE CERÂMICO"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_imperiale.jpg?v=2" alt="GUARDIAN IMPERIALE CERÂMICO" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN IMPERIALE CERÂMICO"><span class="selo-promo" data-selo hidden></span><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_imperiale.jpg?v=2" alt="GUARDIAN IMPERIALE CERÂMICO" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN IMPERIALE CERÂMICO</h3>
         <p class="linha-desc">Película cerâmica premium, disponível em cinco tonalidades.</p>
@@ -842,13 +849,14 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         </fieldset>
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <label class="opt bob"><input type="radio" name="bob-imperiale" value="30" checked><span class="caixa"><span class="m">30 m</span><span class="v" data-bob-preco>R$&nbsp;2.950,00</span><span class="pm" data-bob-pm>R$&nbsp;98,33/m</span></span></label>
-            <label class="opt bob"><input type="radio" name="bob-imperiale" value="15"><span class="caixa"><span class="m">15 m</span><span class="v" data-bob-preco>R$&nbsp;1.650,00</span><span class="pm" data-bob-pm>R$&nbsp;110,00/m</span></span></label>
+            <label class="opt bob"><input type="radio" name="bob-imperiale" value="30" checked><span class="caixa"><span class="m">30 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;2.950,00</span><span class="pm" data-bob-pm>R$&nbsp;98,33/m</span></span></label>
+            <label class="opt bob"><input type="radio" name="bob-imperiale" value="15"><span class="caixa"><span class="m">15 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;1.650,00</span><span class="pm" data-bob-pm>R$&nbsp;110,00/m</span></span></label>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         <span class="linha-cod" data-cod>Cód. GDN-IMP-05</span>
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;2.950,00</span>
         <span class="linha-unid" data-unid>por bobina de 30 m</span>
         <div class="linha-acoes">
@@ -862,7 +870,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="democrazia" id="p-democrazia">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN DEMOCRAZIA CARBONO"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_democrazia.jpg?v=2" alt="GUARDIAN DEMOCRAZIA CARBONO" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN DEMOCRAZIA CARBONO"><span class="selo-promo" data-selo hidden></span><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_democrazia.jpg?v=2" alt="GUARDIAN DEMOCRAZIA CARBONO" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN DEMOCRAZIA CARBONO</h3>
         <p class="linha-desc">Película de carbono com ótimo custo-benefício.</p>
@@ -880,13 +888,14 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         </fieldset>
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <label class="opt bob"><input type="radio" name="bob-democrazia" value="30" checked><span class="caixa"><span class="m">30 m</span><span class="v" data-bob-preco>R$&nbsp;1.700,00</span><span class="pm" data-bob-pm>R$&nbsp;56,67/m</span></span></label>
-            <label class="opt bob"><input type="radio" name="bob-democrazia" value="15"><span class="caixa"><span class="m">15 m</span><span class="v" data-bob-preco>R$&nbsp;900,00</span><span class="pm" data-bob-pm>R$&nbsp;60,00/m</span></span></label>
+            <label class="opt bob"><input type="radio" name="bob-democrazia" value="30" checked><span class="caixa"><span class="m">30 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;1.700,00</span><span class="pm" data-bob-pm>R$&nbsp;56,67/m</span></span></label>
+            <label class="opt bob"><input type="radio" name="bob-democrazia" value="15"><span class="caixa"><span class="m">15 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;900,00</span><span class="pm" data-bob-pm>R$&nbsp;60,00/m</span></span></label>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         <span class="linha-cod" data-cod>Cód. GDN-DEM-05</span>
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;1.700,00</span>
         <span class="linha-unid" data-unid>por bobina de 30 m</span>
         <div class="linha-acoes">
@@ -900,7 +909,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="black_gold" id="p-black_gold">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN BLACK GOLD"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_black_gold.jpg?v=2" alt="GUARDIAN BLACK GOLD" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN BLACK GOLD"><span class="selo-promo" data-selo hidden></span><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_black_gold.jpg?v=2" alt="GUARDIAN BLACK GOLD" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN BLACK GOLD</h3>
         <p class="linha-desc">A entrada da linha Guardian, com escurecimento uniforme.</p>
@@ -918,13 +927,14 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         </fieldset>
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <label class="opt bob"><input type="radio" name="bob-black_gold" value="30" checked><span class="caixa"><span class="m">30 m</span><span class="v" data-bob-preco>R$&nbsp;750,00</span><span class="pm" data-bob-pm>R$&nbsp;25,00/m</span></span></label>
-            <label class="opt bob"><input type="radio" name="bob-black_gold" value="15"><span class="caixa"><span class="m">15 m</span><span class="v" data-bob-preco>R$&nbsp;400,00</span><span class="pm" data-bob-pm>R$&nbsp;26,67/m</span></span></label>
+            <label class="opt bob"><input type="radio" name="bob-black_gold" value="30" checked><span class="caixa"><span class="m">30 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;750,00</span><span class="pm" data-bob-pm>R$&nbsp;25,00/m</span></span></label>
+            <label class="opt bob"><input type="radio" name="bob-black_gold" value="15"><span class="caixa"><span class="m">15 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;400,00</span><span class="pm" data-bob-pm>R$&nbsp;26,67/m</span></span></label>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         <span class="linha-cod" data-cod>Cód. GDN-BG-05</span>
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;750,00</span>
         <span class="linha-unid" data-unid>por bobina de 30 m</span>
         <div class="linha-acoes">
@@ -938,7 +948,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="metal_hp" id="p-metal_hp">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN METAL HP CERÂMICO"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_metal_hp.jpg" alt="GUARDIAN METAL HP CERÂMICO" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN METAL HP CERÂMICO"><span class="selo-promo" data-selo hidden></span><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_metal_hp.jpg" alt="GUARDIAN METAL HP CERÂMICO" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN METAL HP CERÂMICO</h3>
         <p class="linha-desc">A película com a maior garantia da linha: 15 anos.</p>
@@ -955,13 +965,14 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         </fieldset>
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <label class="opt bob"><input type="radio" name="bob-metal_hp" value="30" checked><span class="caixa"><span class="m">30 m</span><span class="v" data-bob-preco>R$&nbsp;4.500,00</span><span class="pm" data-bob-pm>R$&nbsp;150,00/m</span></span></label>
-            <label class="opt bob"><input type="radio" name="bob-metal_hp" value="15"><span class="caixa"><span class="m">15 m</span><span class="v" data-bob-preco>R$&nbsp;2.250,00</span><span class="pm" data-bob-pm>R$&nbsp;150,00/m</span></span></label>
+            <label class="opt bob"><input type="radio" name="bob-metal_hp" value="30" checked><span class="caixa"><span class="m">30 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;4.500,00</span><span class="pm" data-bob-pm>R$&nbsp;150,00/m</span></span></label>
+            <label class="opt bob"><input type="radio" name="bob-metal_hp" value="15"><span class="caixa"><span class="m">15 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;2.250,00</span><span class="pm" data-bob-pm>R$&nbsp;150,00/m</span></span></label>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         <span class="linha-cod" data-cod>Cód. GDN-MET-05</span>
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;4.500,00</span>
         <span class="linha-unid" data-unid>por bobina de 30 m</span>
         <div class="linha-acoes">
@@ -975,7 +986,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="pelicula" data-base="photochromic" id="p-photochromic">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN PHOTOCHROMIC SERIES"><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_photochromic.jpg" alt="GUARDIAN PHOTOCHROMIC SERIES" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN PHOTOCHROMIC SERIES"><span class="selo-promo" data-selo hidden></span><div class="car-trilho" tabindex="0"><img src="assets/img/pelicula_photochromic.jpg" alt="GUARDIAN PHOTOCHROMIC SERIES" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_pelicula.jpg" alt="Rolos de película automotiva Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN PHOTOCHROMIC SERIES</h3>
         <p class="linha-desc">Escurece sob a luz do sol e clareia quando a luz diminui.</p>
@@ -991,12 +1002,13 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         </fieldset>
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <label class="opt bob"><input type="radio" name="bob-photochromic" value="10" checked><span class="caixa"><span class="m">10 m</span><span class="v" data-bob-preco>R$&nbsp;3.000,00</span><span class="pm" data-bob-pm>R$&nbsp;300,00/m</span></span></label>
+            <label class="opt bob"><input type="radio" name="bob-photochromic" value="10" checked><span class="caixa"><span class="m">10 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;3.000,00</span><span class="pm" data-bob-pm>R$&nbsp;300,00/m</span></span></label>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         <span class="linha-cod" data-cod>Cód. GDN-PHO-35</span>
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;3.000,00</span>
         <span class="linha-unid" data-unid>por bobina de 10 m</span>
         <div class="linha-acoes">
@@ -1021,7 +1033,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     </div>
     <div class="linhas">
     <article class="linha" data-tipo="unico" data-base="ppf_elite65" id="p-ppf_elite65">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN ELITE SERIES 6.5"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 6.5" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN ELITE SERIES 6.5"><span class="selo-promo" data-selo hidden></span><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 6.5" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN ELITE SERIES 6.5</h3>
         <p class="linha-desc">PPF transparente para proteção da pintura.</p>
@@ -1031,12 +1043,13 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       <div class="linha-opcoes">
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="v" data-bob-preco>R$&nbsp;4.700,00</span><span class="pm" data-bob-pm>R$&nbsp;313,33/m</span></span></div>
+            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;4.700,00</span><span class="pm" data-bob-pm>R$&nbsp;313,33/m</span></span></div>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;4.700,00</span>
         <span class="linha-unid" data-unid>por bobina de 1,52 × 15 m</span>
         <div class="linha-acoes">
@@ -1050,7 +1063,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="ppf_matte" id="p-ppf_matte">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN MATTE ULTRA"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN MATTE ULTRA" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN MATTE ULTRA"><span class="selo-promo" data-selo hidden></span><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN MATTE ULTRA" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN MATTE ULTRA</h3>
         <p class="linha-desc">PPF fosco: protege a pintura e deixa o acabamento matte.</p>
@@ -1060,12 +1073,13 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       <div class="linha-opcoes">
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="v" data-bob-preco>R$&nbsp;6.000,00</span><span class="pm" data-bob-pm>R$&nbsp;400,00/m</span></span></div>
+            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;6.000,00</span><span class="pm" data-bob-pm>R$&nbsp;400,00/m</span></span></div>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;6.000,00</span>
         <span class="linha-unid" data-unid>por bobina de 1,52 × 15 m</span>
         <div class="linha-acoes">
@@ -1079,7 +1093,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="ppf_black" id="p-ppf_black">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN BLACK ULTRA"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN BLACK ULTRA" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN BLACK ULTRA"><span class="selo-promo" data-selo hidden></span><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN BLACK ULTRA" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN BLACK ULTRA</h3>
         <p class="linha-desc">PPF preto: muda a cor da peça e protege a pintura.</p>
@@ -1089,12 +1103,13 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       <div class="linha-opcoes">
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="v" data-bob-preco>R$&nbsp;6.900,00</span><span class="pm" data-bob-pm>R$&nbsp;460,00/m</span></span></div>
+            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;6.900,00</span><span class="pm" data-bob-pm>R$&nbsp;460,00/m</span></span></div>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;6.900,00</span>
         <span class="linha-unid" data-unid>por bobina de 1,52 × 15 m</span>
         <div class="linha-acoes">
@@ -1108,7 +1123,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="ppf_elite75" id="p-ppf_elite75">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN ELITE SERIES 7.5"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 7.5" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN ELITE SERIES 7.5"><span class="selo-promo" data-selo hidden></span><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_elite.jpg?v=2" alt="GUARDIAN ELITE SERIES 7.5" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN ELITE SERIES 7.5</h3>
         <p class="linha-desc">A versão mais espessa da Elite Series.</p>
@@ -1118,12 +1133,13 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       <div class="linha-opcoes">
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="v" data-bob-preco>R$&nbsp;5.500,00</span><span class="pm" data-bob-pm>R$&nbsp;366,67/m</span></span></div>
+            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;5.500,00</span><span class="pm" data-bob-pm>R$&nbsp;366,67/m</span></span></div>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;5.500,00</span>
         <span class="linha-unid" data-unid>por bobina de 1,52 × 15 m</span>
         <div class="linha-acoes">
@@ -1136,8 +1152,8 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         </div>
       </div>
     </article>
-    <article class="linha" data-tipo="unico" data-base="ppf_scudo" id="p-ppf_scudo">
-      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN SCUDO 6.5"><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_scudo.jpg?v=2" alt="GUARDIAN SCUDO 6.5" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
+    <article class="linha em-promo" data-tipo="unico" data-base="ppf_scudo" id="p-ppf_scudo">
+      <div class="linha-foto carrossel" data-carrossel aria-roledescription="carrossel" aria-label="Fotos de GUARDIAN SCUDO 6.5"><span class="selo-promo" data-selo>Black Friday</span><div class="car-trilho" tabindex="0"><img src="assets/img/ppf_scudo.jpg?v=2" alt="GUARDIAN SCUDO 6.5" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"><img src="assets/img/rolo_ppf.jpg" alt="Rolos de PPF Guardian" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div><button type="button" class="car-seta ant" aria-label="Foto anterior" hidden>‹</button><button type="button" class="car-seta prox" aria-label="Próxima foto">›</button><div class="car-pontos"><button type="button" class="car-ponto ativo" aria-label="Foto 1 de 2"></button><button type="button" class="car-ponto" aria-label="Foto 2 de 2"></button></div></div>
       <div class="linha-info">
         <h3>GUARDIAN SCUDO 6.5</h3>
         <p class="linha-desc">PPF com ótimo custo-benefício e 7 anos de garantia.</p>
@@ -1147,13 +1163,14 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       <div class="linha-opcoes">
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="v" data-bob-preco>R$&nbsp;3.950,00</span><span class="pm" data-bob-pm>R$&nbsp;263,33/m</span></span></div>
+            <div class="opt bob fixa"><span class="caixa"><span class="m">1,52 × 15 m</span><span class="de" data-bob-de>R$&nbsp;3.950,00</span><span class="v" data-bob-preco>R$&nbsp;2.700,00</span><span class="pm" data-bob-pm>R$&nbsp;180,00/m</span></span></div>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         
-        <span class="linha-preco" data-preco>R$&nbsp;3.950,00</span>
+        <span class="linha-de" data-de>de <s>R$&nbsp;3.950,00</s> por</span>
+        <span class="linha-preco" data-preco>R$&nbsp;2.700,00</span>
         <span class="linha-unid" data-unid>por bobina de 1,52 × 15 m</span>
         <div class="linha-acoes">
           <div class="qty-stepper">
@@ -1177,7 +1194,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     </div>
     <div class="linhas">
     <article class="linha" data-tipo="unico" data-base="camaleao_purple" id="p-camaleao_purple">
-      <div class="linha-foto"><img src="assets/img/pelicula_camaleao.jpg" alt="PPF ELITE CAMALEÃO PURPLE" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto"><span class="selo-promo" data-selo hidden></span><img src="assets/img/pelicula_camaleao.jpg" alt="PPF ELITE CAMALEÃO PURPLE" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
       <div class="linha-info">
         <h3>PPF ELITE CAMALEÃO PURPLE</h3>
         <p class="linha-desc">PPF colorido com efeito camaleão: o tom roxo muda conforme o ângulo da luz.</p>
@@ -1187,12 +1204,13 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       <div class="linha-opcoes">
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <div class="opt bob fixa"><span class="caixa"><span class="m">0,50 × 5 m</span><span class="v" data-bob-preco>R$&nbsp;1.150,00</span><span class="pm" data-bob-pm>R$&nbsp;230,00/m</span></span></div>
+            <div class="opt bob fixa"><span class="caixa"><span class="m">0,50 × 5 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;1.150,00</span><span class="pm" data-bob-pm>R$&nbsp;230,00/m</span></span></div>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;1.150,00</span>
         <span class="linha-unid" data-unid>por bobina de 0,50 × 5 m</span>
         <div class="linha-acoes">
@@ -1206,7 +1224,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       </div>
     </article>
     <article class="linha" data-tipo="unico" data-base="camaleao_black" id="p-camaleao_black">
-      <div class="linha-foto"><img src="assets/img/camaleao_black.jpg" alt="PPF ELITE CAMALEÃO BLACK" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
+      <div class="linha-foto"><span class="selo-promo" data-selo hidden></span><img src="assets/img/camaleao_black.jpg" alt="PPF ELITE CAMALEÃO BLACK" loading="lazy" draggable="false" onerror="this.onerror=null;this.src='assets/img/pelicula_placeholder.jpg'"></div>
       <div class="linha-info">
         <h3>PPF ELITE CAMALEÃO BLACK</h3>
         <p class="linha-desc">PPF colorido com efeito camaleão em tom escuro, que muda conforme o ângulo da luz.</p>
@@ -1216,12 +1234,13 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       <div class="linha-opcoes">
         <fieldset class="opt-grupo"><legend>Bobina</legend>
           <div class="bobinas">
-            <div class="opt bob fixa"><span class="caixa"><span class="m">0,50 × 5 m</span><span class="v" data-bob-preco>R$&nbsp;1.150,00</span><span class="pm" data-bob-pm>R$&nbsp;230,00/m</span></span></div>
+            <div class="opt bob fixa"><span class="caixa"><span class="m">0,50 × 5 m</span><span class="de" data-bob-de hidden></span><span class="v" data-bob-preco>R$&nbsp;1.150,00</span><span class="pm" data-bob-pm>R$&nbsp;230,00/m</span></span></div>
           </div>
         </fieldset>
       </div>
       <div class="linha-compra">
         
+        <span class="linha-de" data-de hidden></span>
         <span class="linha-preco" data-preco>R$&nbsp;1.150,00</span>
         <span class="linha-unid" data-unid>por bobina de 0,50 × 5 m</span>
         <div class="linha-acoes">
@@ -2224,7 +2243,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 
 <a class="float-wa" href="https://wa.me/5541988866000?text=Ol%C3%A1%21%20Vim%20pela%20loja%20Genesis%20e%20gostaria%20de%20ajuda%20para%20escolher." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2.7C8.6 2.7 2.7 8.6 2.7 16c0 2.5.7 4.8 1.8 6.8l-1.8 6.6 6.8-1.8c2 1.1 4.2 1.7 6.6 1.7 7.4 0 13.3-6 13.3-13.3S23.4 2.7 16 2.7Zm0 24.2c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1 1.1-3.9-.3-.4a10.9 10.9 0 1 1 9.1 5Zm6-8.2c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6l-1-2.4c-.3-.6-.5-.6-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4Z"/></svg></a>
 
-<script type="application/json" id="dadosBobinas">{"skus": {"imperiale-05-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-05-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-15-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-15-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-35-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-35-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-50-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-50-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-75-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "imperiale-75-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "democrazia-05-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-05-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-15-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-15-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-35-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-35-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-50-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "democrazia-50-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "black_gold-05-30": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-05-15": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-15-30": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-15-15": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-35-30": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-35-15": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-50-30": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "black_gold-50-15": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "metal_hp-05-30": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-05-15": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-15-30": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-15-15": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-35-30": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "metal_hp-35-15": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "photochromic-35-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 35% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-35", "base": "photochromic"}, "photochromic-75-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 75% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-75", "base": "photochromic"}, "ppf_elite65": {"name": "GUARDIAN ELITE SERIES 6.5 · BOBINA 1,52 × 15 M", "price": 4700.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite65"}, "ppf_matte": {"name": "GUARDIAN MATTE ULTRA · BOBINA 1,52 × 15 M", "price": 6000.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_matte"}, "ppf_black": {"name": "GUARDIAN BLACK ULTRA · BOBINA 1,52 × 15 M", "price": 6900.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_black"}, "ppf_elite75": {"name": "GUARDIAN ELITE SERIES 7.5 · BOBINA 1,52 × 15 M", "price": 5500.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite75"}, "ppf_scudo": {"name": "GUARDIAN SCUDO 6.5 · BOBINA 1,52 × 15 M", "price": 3950.0, "img": "assets/img/ppf_scudo.jpg?v=2", "codigo": "", "base": "ppf_scudo"}, "camaleao_purple": {"name": "PPF ELITE CAMALEÃO PURPLE · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/pelicula_camaleao.jpg", "codigo": "", "base": "camaleao_purple"}, "camaleao_black": {"name": "PPF ELITE CAMALEÃO BLACK · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/camaleao_black.jpg", "codigo": "", "base": "camaleao_black"}}, "fichas": {"imperiale": {"title": "GUARDIAN IMPERIALE CERÂMICO", "rows": [["Tecnologia", "Cerâmica"], ["Tonalidades (VLT)", "5%, 15%, 35%, 50% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-IMP-05, GDN-IMP-15, GDN-IMP-35, GDN-IMP-50, GDN-IMP-75"]]}, "democrazia": {"title": "GUARDIAN DEMOCRAZIA CARBONO", "rows": [["Tecnologia", "Carbono"], ["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "8 anos"], ["Códigos", "GDN-DEM-05, GDN-DEM-15, GDN-DEM-35, GDN-DEM-50"]]}, "black_gold": {"title": "GUARDIAN BLACK GOLD", "rows": [["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "5 anos"], ["Códigos", "GDN-BG-05, GDN-BG-20, GDN-BG-35, GDN-BG-50"]]}, "metal_hp": {"title": "GUARDIAN METAL HP CERÂMICO", "rows": [["Tecnologia", "Metal cerâmica"], ["Tonalidades (VLT)", "5%, 15% e 35%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "15 anos"], ["Códigos", "GDN-MET-05, GDN-MET-15, GDN-MET-35"]]}, "photochromic": {"title": "GUARDIAN PHOTOCHROMIC SERIES", "rows": [["Tecnologia", "Fotocromática"], ["Tonalidades (VLT)", "35% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "10 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-PHO-35, GDN-PHO-75"]]}, "ppf_elite65": {"title": "GUARDIAN ELITE SERIES 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_matte": {"title": "GUARDIAN MATTE ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Fosco"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_black": {"title": "GUARDIAN BLACK ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Preto"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_elite75": {"title": "GUARDIAN ELITE SERIES 7.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "7,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_scudo": {"title": "GUARDIAN SCUDO 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "7 anos"]]}, "camaleao_purple": {"title": "PPF ELITE CAMALEÃO PURPLE", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}, "camaleao_black": {"title": "PPF ELITE CAMALEÃO BLACK", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}}}</script>
+<script type="application/json" id="dadosBobinas">{"skus": {"imperiale-05-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-05-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 5% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-05", "base": "imperiale"}, "imperiale-15-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-15-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 15% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-15", "base": "imperiale"}, "imperiale-35-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-35-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 35% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-35", "base": "imperiale"}, "imperiale-50-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-50-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 50% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-50", "base": "imperiale"}, "imperiale-75-30": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 30 M", "price": 2950.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "imperiale-75-15": {"name": "GUARDIAN IMPERIALE CERÂMICO 75% · BOBINA 15 M", "price": 1650.0, "img": "assets/img/pelicula_imperiale.jpg?v=2", "codigo": "GDN-IMP-75", "base": "imperiale"}, "democrazia-05-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-05-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 5% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-05", "base": "democrazia"}, "democrazia-15-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-15-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 15% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-15", "base": "democrazia"}, "democrazia-35-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-35-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 35% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-35", "base": "democrazia"}, "democrazia-50-30": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 30 M", "price": 1700.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "democrazia-50-15": {"name": "GUARDIAN DEMOCRAZIA CARBONO 50% · BOBINA 15 M", "price": 900.0, "img": "assets/img/pelicula_democrazia.jpg?v=2", "codigo": "GDN-DEM-50", "base": "democrazia"}, "black_gold-05-30": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-05-15": {"name": "GUARDIAN BLACK GOLD 5% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-05", "base": "black_gold"}, "black_gold-15-30": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-15-15": {"name": "GUARDIAN BLACK GOLD 15% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-20", "base": "black_gold"}, "black_gold-35-30": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-35-15": {"name": "GUARDIAN BLACK GOLD 35% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-35", "base": "black_gold"}, "black_gold-50-30": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 30 M", "price": 750.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "black_gold-50-15": {"name": "GUARDIAN BLACK GOLD 50% · BOBINA 15 M", "price": 400.0, "img": "assets/img/pelicula_black_gold.jpg?v=2", "codigo": "GDN-BG-50", "base": "black_gold"}, "metal_hp-05-30": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-05-15": {"name": "GUARDIAN METAL HP CERÂMICO 5% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-05", "base": "metal_hp"}, "metal_hp-15-30": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-15-15": {"name": "GUARDIAN METAL HP CERÂMICO 15% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-15", "base": "metal_hp"}, "metal_hp-35-30": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 30 M", "price": 4500.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "metal_hp-35-15": {"name": "GUARDIAN METAL HP CERÂMICO 35% · BOBINA 15 M", "price": 2250.0, "img": "assets/img/pelicula_metal_hp.jpg", "codigo": "GDN-MET-35", "base": "metal_hp"}, "photochromic-35-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 35% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-35", "base": "photochromic"}, "photochromic-75-10": {"name": "GUARDIAN PHOTOCHROMIC SERIES 75% · BOBINA 10 M", "price": 3000.0, "img": "assets/img/pelicula_photochromic.jpg", "codigo": "GDN-PHO-75", "base": "photochromic"}, "ppf_elite65": {"name": "GUARDIAN ELITE SERIES 6.5 · BOBINA 1,52 × 15 M", "price": 4700.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite65"}, "ppf_matte": {"name": "GUARDIAN MATTE ULTRA · BOBINA 1,52 × 15 M", "price": 6000.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_matte"}, "ppf_black": {"name": "GUARDIAN BLACK ULTRA · BOBINA 1,52 × 15 M", "price": 6900.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_black"}, "ppf_elite75": {"name": "GUARDIAN ELITE SERIES 7.5 · BOBINA 1,52 × 15 M", "price": 5500.0, "img": "assets/img/ppf_elite.jpg?v=2", "codigo": "", "base": "ppf_elite75"}, "ppf_scudo": {"name": "GUARDIAN SCUDO 6.5 · BOBINA 1,52 × 15 M", "price": 2700.0, "img": "assets/img/ppf_scudo.jpg?v=2", "codigo": "", "base": "ppf_scudo", "de": 3950.0, "promo": "Black Friday"}, "camaleao_purple": {"name": "PPF ELITE CAMALEÃO PURPLE · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/pelicula_camaleao.jpg", "codigo": "", "base": "camaleao_purple"}, "camaleao_black": {"name": "PPF ELITE CAMALEÃO BLACK · BOBINA 0,50 × 5 M", "price": 1150.0, "img": "assets/img/camaleao_black.jpg", "codigo": "", "base": "camaleao_black"}}, "fichas": {"imperiale": {"title": "GUARDIAN IMPERIALE CERÂMICO", "rows": [["Tecnologia", "Cerâmica"], ["Tonalidades (VLT)", "5%, 15%, 35%, 50% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-IMP-05, GDN-IMP-15, GDN-IMP-35, GDN-IMP-50, GDN-IMP-75"]]}, "democrazia": {"title": "GUARDIAN DEMOCRAZIA CARBONO", "rows": [["Tecnologia", "Carbono"], ["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "8 anos"], ["Códigos", "GDN-DEM-05, GDN-DEM-15, GDN-DEM-35, GDN-DEM-50"]]}, "black_gold": {"title": "GUARDIAN BLACK GOLD", "rows": [["Tonalidades (VLT)", "5%, 15%, 35% e 50%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "5 anos"], ["Códigos", "GDN-BG-05, GDN-BG-20, GDN-BG-35, GDN-BG-50"]]}, "metal_hp": {"title": "GUARDIAN METAL HP CERÂMICO", "rows": [["Tecnologia", "Metal cerâmica"], ["Tonalidades (VLT)", "5%, 15% e 35%"], ["Largura", "1,52 m"], ["Bobinas", "15 m e 30 m"], ["Garantia", "15 anos"], ["Códigos", "GDN-MET-05, GDN-MET-15, GDN-MET-35"]]}, "photochromic": {"title": "GUARDIAN PHOTOCHROMIC SERIES", "rows": [["Tecnologia", "Fotocromática"], ["Tonalidades (VLT)", "35% e 75%"], ["Largura", "1,52 m"], ["Bobinas", "10 m"], ["Garantia", "10 anos"], ["Códigos", "GDN-PHO-35, GDN-PHO-75"]]}, "ppf_elite65": {"title": "GUARDIAN ELITE SERIES 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_matte": {"title": "GUARDIAN MATTE ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Fosco"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_black": {"title": "GUARDIAN BLACK ULTRA", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Acabamento", "Preto"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_elite75": {"title": "GUARDIAN ELITE SERIES 7.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "7,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "10 anos"]]}, "ppf_scudo": {"title": "GUARDIAN SCUDO 6.5", "rows": [["Material", "TPU alifático, que não amarela"], ["Adesivo", "Ashland"], ["Espessura", "6,5 mil"], ["Bobina", "1,52 × 15 m"], ["Garantia", "7 anos"]]}, "camaleao_purple": {"title": "PPF ELITE CAMALEÃO PURPLE", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}, "camaleao_black": {"title": "PPF ELITE CAMALEÃO BLACK", "rows": [["Linha", "Especial · PPF colorido"], ["Efeito", "Camaleão"], ["Bobina", "0,50 × 5 m"], ["Garantia", "5 anos"]]}}}</script>
 <script>
 (function(){
   'use strict';
@@ -2259,7 +2278,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
   try { DADOS = JSON.parse($('dadosBobinas').textContent); } catch(e){}
   const CATALOGO = {};
   Object.entries(DADOS.skus).forEach(([id, s]) => {
-    CATALOGO[id] = { name: s.name, price: Number(s.price), img: s.img, codigo: s.codigo || '', base: s.base, unit: 'bobina', max: MAX_BOBINAS };
+    CATALOGO[id] = { name: s.name, price: Number(s.price), img: s.img, codigo: s.codigo || '', base: s.base, unit: 'bobina', max: MAX_BOBINAS, de: Number(s.de) || 0, promo: s.promo || '' };
   });
   document.querySelectorAll('.cart-controls').forEach(el => {
     CATALOGO[el.dataset.id] = { name: el.dataset.name, price: parseFloat(el.dataset.price), img: el.dataset.img, codigo: el.dataset.id, unit: 'un', max: MAX_UN };
@@ -2955,6 +2974,25 @@ footer{padding:56px 0 40px; background:var(--grafite);}
 
   function esvaziarCarrinho(){ cart = {}; saveCart(); renderCart(); }
 
+  // Link direto de compra (campanhas): ?comprar=ppf_scudo&qtd=1
+  // Põe o produto no carrinho, mostra ele na página e abre o carrinho para o cliente pagar.
+  function linkDeCompra(){
+    const q = new URLSearchParams(window.location.search);
+    const id = q.get('comprar');
+    if (!id) return;
+    const qtd = Math.max(1, parseInt(q.get('qtd') || '1', 10) || 1);
+    q.delete('comprar'); q.delete('qtd');
+    const resto = q.toString();
+    window.history.replaceState({}, '', window.location.pathname + (resto ? `?${resto}` : '') + window.location.hash);
+    const item = CATALOGO[id];
+    if (!item) return;
+    const ja = cart[id] ? cart[id].qty : 0;
+    if (ja < qtd) addToCart(id, qtd - ja);
+    const linha = document.getElementById(`p-${item.base || id}`);
+    if (linha) linha.scrollIntoView({ block: 'center' });
+    openCart();
+  }
+
   function verificarRetorno(){
     const p = new URLSearchParams(window.location.search);
     const paymentId = p.get('payment_id') || p.get('collection_id');
@@ -3033,6 +3071,16 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     const unidEl = row.querySelector('[data-unid]');
     const codEl = row.querySelector('[data-cod]');
     const tomSelEl = row.querySelector('[data-tom-sel]');
+    const deEl = row.querySelector('[data-de]');
+    const seloEl = row.querySelector('[data-selo]');
+    const emPromo = (o) => Boolean(o && o.promo && o.de > o.price);
+    // "de R$ X" riscado em cima do preço de uma opção de bobina
+    const pintarDe = (caixa, o) => {
+      const el = caixa && caixa.querySelector('[data-bob-de]');
+      if (!el) return;
+      el.hidden = !emPromo(o);
+      if (emPromo(o)) el.textContent = fmtBRL(o.de);
+    };
     const marcado = (nome) => { const i = row.querySelector(`input[name="${nome}-${base}"]:checked`); return i ? i.value : null; };
     const skuAtual = () => pelicula ? `${base}-${marcado('tom')}-${marcado('bob')}` : base;
     const qtd = stepper(row.querySelector('.linha-acoes'), () => MAX_BOBINAS);
@@ -3042,6 +3090,9 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       const p = CATALOGO[sku];
       if (!p) return;
       precoEl.textContent = fmtBRL(p.price * qtd.get());
+      row.classList.toggle('em-promo', emPromo(p));
+      if (deEl){ deEl.hidden = !emPromo(p); deEl.innerHTML = emPromo(p) ? `de <s>${fmtBRL(p.de * qtd.get())}</s> por` : ''; }
+      if (seloEl){ seloEl.hidden = !emPromo(p); seloEl.textContent = emPromo(p) ? p.promo : ''; }
       if (pelicula){
         const m = marcado('bob');
         unidEl.textContent = qtd.get() > 1 ? `${qtd.get()} bobinas de ${m} m` : `por bobina de ${m} m`;
@@ -3054,6 +3105,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
           if (!o || !caixa) return;
           caixa.querySelector('[data-bob-preco]').textContent = fmtBRL(o.price);
           caixa.querySelector('[data-bob-pm]').textContent = `${fmtBRL(o.price / Number(inp.value))}/m`;
+          pintarDe(caixa, o);
         });
       } else {
         const fixa = row.querySelector('.bob.fixa');
@@ -3063,6 +3115,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
         if (fixa){
           fixa.querySelector('[data-bob-preco]').textContent = fmtBRL(p.price);
           fixa.querySelector('[data-bob-pm]').textContent = `${fmtBRL(p.price / metros)}/m`;
+          pintarDe(fixa, p);
         }
       }
     }
@@ -3105,6 +3158,8 @@ footer{padding:56px 0 40px; background:var(--grafite);}
       if (!c) return;
       const preco = Number(p.preco);
       if (preco > 0) c.price = preco;
+      c.de = Number(p.precoDe) || 0;
+      c.promo = p.promo || '';
       if (Number(p.max) > 0) c.max = Number(p.max);
     });
     document.querySelectorAll('.cart-controls').forEach(el => {
@@ -3196,6 +3251,7 @@ footer{padding:56px 0 40px; background:var(--grafite);}
     .then(aplicarCatalogo)
     .catch(() => { pagamentoOnline = false; aplicarModo(); });
   verificarRetorno();
+  linkDeCompra();
 })();
 </script>
 </body>

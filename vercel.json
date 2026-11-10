@@ -1,7 +1,20 @@
 {
-  "regions": ["gru1"],
+  "regions": [
+    "gru1"
+  ],
   "functions": {
-    "api/checkout.js": { "maxDuration": 30 },
-    "api/webhook.js": { "maxDuration": 60 }
-  }
+    "api/checkout.js": {
+      "maxDuration": 30
+    },
+    "api/webhook.js": {
+      "maxDuration": 60
+    }
+  },
+  "redirects": [
+    {
+      "source": "/blackfriday",
+      "destination": "/?comprar=ppf_scudo&utm_campaign=black-friday",
+      "permanent": false
+    }
+  ]
 }
